@@ -10,6 +10,8 @@ RUN npm run build
 FROM node:22-bookworm-slim AS runtime
 WORKDIR /app
 ENV NODE_ENV=production
+# Containers must accept traffic from outside the loopback interface.
+ENV AGENT_HOST=0.0.0.0
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 COPY --from=build /app/dist ./dist

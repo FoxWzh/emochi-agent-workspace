@@ -85,6 +85,7 @@ For a demo whose edits should survive restart/redeploy, attach a persistent volu
 ```text
 EMOCHI_DATA_DIR=/persistent/emochi-agent-data
 AGENT_PORT=8789
+AGENT_HOST=0.0.0.0   # required when the platform routes external traffic to the process; local default is 127.0.0.1
 NODE_ENV=production
 ```
 
