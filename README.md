@@ -2,7 +2,9 @@
 
 > A **Claude Agent SDK** creative-agent application for creating and editing Bots, characters, worlds, interactive stories and image directions.
 
-The repository contains the full delivery: React/Vite UI, Node/SSE API, Claude Agent SDK orchestration, in-process MCP tools, runtime Skills/References, portable JSON data, creative-material library, Langfuse observability, and multi-turn evaluation scripts/evidence.
+The repository contains the full delivery: React/Vite UI, Node/SSE API, Claude Agent SDK orchestration, in-process MCP tools, runtime Skills/References, portable **demo-scale JSON data**, creative-material library, Langfuse observability, and multi-turn evaluation scripts/evidence.
+
+> **Data scope:** the shipped JSON files are small production-like demo samples and a temporary file-backed database for this demo—not a full production/customer database. See `DEPLOYMENT.md` before deploying or retaining user data.
 
 ## Deployment handoff
 

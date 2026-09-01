@@ -46,26 +46,41 @@ KAON_GATEWAY_API_KEY   # secret; never commit
 
 The adapter maps those values internally to `ANTHROPIC_BASE_URL` and `ANTHROPIC_API_KEY` for the SDK process.
 
-## 3. Included data and persistence
+## 3. Demo data, temporary database and persistence
 
-All required current data is tracked in the private repository:
+### This is a demo-scale file database
+
+The current persistence layer is deliberately a **small, demo-oriented JSON database**, not a production multi-user database service. `server/store.js` treats the configured data directory as its database and serializes mutations in-process. The repository ships only small, usable production-like samples for demonstration, visual verification and evaluation; it does **not** contain a complete production dataset, customer database or a managed DB dump.
+
+The online deployment agent must preserve this distinction:
+
+- Deploying the repository as-is produces a functioning **demo** with the committed sample Bots, sessions, image-task records and creative-material subset.
+- Writes made by users (new sessions, Bot edits, uploaded images, image tasks) are stored in JSON files in `EMOCHI_DATA_DIR`.
+- It is suitable for a small internal demo or single-instance evaluation. It is not safe for horizontal scaling, multiple independently running API instances, high concurrent writes, backups/restore guarantees, user isolation or a large production dataset.
+- Do not call the committed samples “production database data.” They are intentionally limited production-like demo data.
+
+All demo/evaluation data required to reproduce the current project state is tracked in this private repository:
 
 ```text
 data/workspace.json                         # Bot/artifact index + Session metadata
-data/sessions/*.json                         # Complete conversation records
-data/image-tasks.json                        # Image task state/history
+data/sessions/*.json                         # Demo conversation records
+data/image-tasks.json                        # Demo image task state/history
 data/uploads/*                               # Uploaded demo/reference image bytes
-demo-seed/bot-library.seed.json              # First-run Bot seed
-docs/creative-material-library/*.json        # Material-search dataset
+demo-seed/bot-library.seed.json              # First-run Bot sample seed
+docs/creative-material-library/*.json        # Small curated material-search dataset
 evals/agent-scenarios.json                   # Multi-turn fixtures/scenarios
 evals/runs/*                                 # Prior SSE/evaluation/Langfuse evidence
 ```
 
 Attachment locations are committed as relative `uploads/<filename>` paths and hydrated against the active data directory at runtime. The clone does not depend on the original developer machine path.
 
-### Required durable storage
+### Demo deployment storage
 
-Persistence is currently file-backed JSON. For a durable online deployment, attach a persistent volume/path and set:
+For a disposable online demo, initialize a writable volume from the repository `data/` folder and mount it at `EMOCHI_DATA_DIR`. It will begin with the included sample state. If the volume is deleted/recreated, copy `data/` again to reset the demo.
+
+### Required durable storage for a retained demo
+
+For a demo whose edits should survive restart/redeploy, attach a persistent volume/path and set:
 
 ```text
 EMOCHI_DATA_DIR=/persistent/emochi-agent-data
@@ -80,7 +95,7 @@ mkdir -p /persistent/emochi-agent-data
 cp -a data/. /persistent/emochi-agent-data/
 ```
 
-Do not use an ephemeral filesystem for production user data. If the target provider has no persistent volume, replace `server/store.js` with a durable database/blob adapter before production.
+Do not use an ephemeral filesystem when the demo's edits must survive. For a real production rollout, replace `server/store.js` with a durable database/blob adapter (and move uploads to object storage) before enabling multi-user or multi-instance usage. Perform an explicit migration from this demo JSON snapshot; do not assume it is a production database.
 
 ## 4. Secrets configuration
 
@@ -154,8 +169,9 @@ npm run build
 
 ### C. Configure storage and secrets
 
-1. Prepare/mount the persistent data volume, copy `data/` as shown above.
+1. Prepare/mount the persistent data volume, copy `data/` as shown above. This is the demo's temporary file database.
 2. Set `EMOCHI_DATA_DIR`, `AGENT_PORT`, Agent SDK gateway variables, and optional Langfuse/image gateway values as encrypted runtime configuration.
+3. If this is only an ephemeral demo, document its reset policy; deleting/recreating the volume resets all runtime changes to the Git snapshot.
 
 ### D. Start and route
 
@@ -208,7 +224,8 @@ Verify:
 - evaluation result has a `session_id`, per-turn SSE events, final visible reply and trace IDs;
 - Langfuse contains the expected agent/tool/Skill/reference/usage spans;
 - uncounted image request creates four candidates after the image gateway completes;
-- the mounted `EMOCHI_DATA_DIR` survives service restart.
+- the mounted `EMOCHI_DATA_DIR` survives service restart;
+- the deployment is labeled as a demo and its temporary JSON data/reset policy is clear to users and operators.
 
 ## 9. Safe maintenance / rollback
 
