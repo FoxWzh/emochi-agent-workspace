@@ -1,0 +1,14 @@
+.env*
+node_modules
+data/
+artifacts/
+dist/
+evals/
+*.sse
+*.ndjson
+*.manifest.json
+repro-langfuse*.mjs
+
+agent-spec/
+
+vendor/

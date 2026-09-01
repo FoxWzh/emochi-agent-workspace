@@ -1,0 +1,16 @@
+{
+  "messages": [],
+  "artifactIds": [
+    "artifact_a23ba310-408e-4aad-9ae6-1585bf0d2444"
+  ],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": "9f56fa1c-99ff-4db2-ab3e-ec64849c8252",
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 27,
+  "id": "session_699fcb14-1d9f-4cd0-a7de-8250751f2d0e",
+  "title": "新的创作对话",
+  "workObjectId": null,
+  "created_at": "2026-08-31T10:24:32.003Z",
+  "updated_at": "2026-08-31T13:04:17.107Z"
+}

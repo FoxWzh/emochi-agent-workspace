@@ -1,0 +1,14 @@
+{
+  "messages": [],
+  "artifactIds": [],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": "74149535-06dc-46ce-a7fb-abb3501ab275",
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 3,
+  "id": "session_b879edf3-dbbd-4daf-a50c-326fc4e4055a",
+  "title": "Langfuse token verification",
+  "workObjectId": null,
+  "created_at": "2026-08-31T14:01:22.354Z",
+  "updated_at": "2026-08-31T14:01:33.998Z"
+}

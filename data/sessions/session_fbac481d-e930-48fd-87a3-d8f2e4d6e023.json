@@ -1,0 +1,14 @@
+{
+  "messages": [],
+  "artifactIds": [],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": null,
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 0,
+  "id": "session_fbac481d-e930-48fd-87a3-d8f2e4d6e023",
+  "title": "Trace ID exact verification",
+  "workObjectId": null,
+  "created_at": "2026-08-31T05:28:17.901Z",
+  "updated_at": "2026-08-31T05:28:17.915Z"
+}

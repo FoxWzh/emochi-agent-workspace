@@ -1,0 +1,18 @@
+{
+  "messages": [],
+  "artifactIds": [
+    "artifact_75721648-70d4-4a27-bad7-297283e938a2",
+    "artifact_bc89d4b7-a9c3-4cfa-8c5e-053e160dcd16",
+    "artifact_a152334d-cd46-48f4-835f-c904ab0e0bc6"
+  ],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": null,
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 0,
+  "id": "session_2b4cc5b3-7499-483d-8125-24f0795605b3",
+  "title": "Per-query simple retry",
+  "workObjectId": "bot_sample_01",
+  "created_at": "2026-08-31T06:48:01.118Z",
+  "updated_at": "2026-08-31T06:51:07.260Z"
+}

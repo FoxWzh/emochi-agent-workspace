@@ -1,0 +1,18 @@
+{
+  "messages": [],
+  "artifactIds": [
+    "artifact_cddeb5cf-8963-480f-ac0c-8a25d20be466",
+    "artifact_ec51efb0-899b-45fd-82e6-0e27268559d6",
+    "artifact_ff091cf7-259d-45c6-bdef-3cb3f5448bfd"
+  ],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": null,
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 0,
+  "id": "session_b471b742-e353-4b9d-8e83-c069935139b7",
+  "title": "新的创作对话",
+  "workObjectId": "bot_sample_01",
+  "created_at": "2026-08-28T12:34:04.279Z",
+  "updated_at": "2026-08-31T03:24:51.498Z"
+}

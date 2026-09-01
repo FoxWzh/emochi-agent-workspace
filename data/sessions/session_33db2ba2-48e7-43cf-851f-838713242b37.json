@@ -1,0 +1,19 @@
+{
+  "messages": [],
+  "artifactIds": [
+    "artifact_7b049a80-7f91-49a4-a133-d02e9c6bfb71",
+    "artifact_4b430d44-0f00-45a1-89b3-1af2c9d151f9",
+    "artifact_9b5b93f2-3bdc-4c82-abbe-2ebf4b985920"
+  ],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": null,
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 0,
+  "id": "session_33db2ba2-48e7-43cf-851f-838713242b37",
+  "title": "Langfuse live trace verification",
+  "workObjectId": "bot_sample_01",
+  "created_at": "2026-08-31T04:14:29.319Z",
+  "updated_at": "2026-08-31T06:42:55.649Z",
+  "langfuse_trace_id": "d96aaa1a-644d-42d2-8f17-df96dea333f0"
+}

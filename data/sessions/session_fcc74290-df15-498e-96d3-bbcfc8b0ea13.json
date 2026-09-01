@@ -1,0 +1,19 @@
+{
+  "messages": [],
+  "artifactIds": [
+    "artifact_8eddb003-4642-4509-a9a0-4de19e66fc64",
+    "artifact_b8768408-a635-4a67-a1f7-d89c83118c6d",
+    "artifact_945f97f3-027e-477d-a8d2-58388a7fda52",
+    "artifact_092ec6ab-508d-4ebc-a71c-1de75b63140c"
+  ],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": "d693db85-1f2e-4189-a572-d29583fbc971",
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 8,
+  "id": "session_fcc74290-df15-498e-96d3-bbcfc8b0ea13",
+  "title": "Full process payload definitive test",
+  "workObjectId": "bot_sample_01",
+  "created_at": "2026-08-31T07:40:04.621Z",
+  "updated_at": "2026-08-31T07:47:32.965Z"
+}

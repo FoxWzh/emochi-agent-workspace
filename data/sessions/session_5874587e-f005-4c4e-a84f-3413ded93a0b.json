@@ -1,0 +1,20 @@
+{
+  "messages": [],
+  "artifactIds": [
+    "artifact_89e08df7-7eef-44cd-b442-07f02a07e317",
+    "artifact_e47919bc-0d19-4c9a-80cb-a0e5acdbedb5",
+    "artifact_2bc7bdc1-0cee-4d0c-98c1-561c884ff410",
+    "artifact_bfac9b5d-7c78-4431-8e9e-6316896b0eb7"
+  ],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": null,
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 0,
+  "id": "session_5874587e-f005-4c4e-a84f-3413ded93a0b",
+  "title": "Observability full process verification",
+  "workObjectId": "bot_sample_01",
+  "created_at": "2026-08-31T06:23:22.532Z",
+  "updated_at": "2026-08-31T06:39:55.230Z",
+  "langfuse_trace_id": "04aa0bde-6af3-416d-88d5-6e5bcec33664"
+}

@@ -1,0 +1,14 @@
+{
+  "messages": [],
+  "artifactIds": [],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": "ce695403-a8cf-4437-81f0-83b5e6c34b6d",
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 1,
+  "id": "session_e39426ab-573b-4d71-bd41-bda06b632170",
+  "title": "Token observability validation",
+  "workObjectId": null,
+  "created_at": "2026-08-31T13:02:22.013Z",
+  "updated_at": "2026-08-31T13:02:22.038Z"
+}

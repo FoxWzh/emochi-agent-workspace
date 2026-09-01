@@ -1,0 +1,34 @@
+{
+  "messages": [
+    {
+      "id": "msg_59d1f79e-3186-4294-8b01-35f998a02d81",
+      "role": "user",
+      "content": "请联网搜索 2026 年北京国际电影节举办日期，并给出一个来源链接。",
+      "attachments": [],
+      "created_at": "2026-09-01T08:33:59.064Z",
+      "trace_id": "9184d0001391635460eab1c520ef5ea7"
+    },
+    {
+      "id": "msg_e86cf0b9-8268-48f7-bcf2-1dff73c92e97",
+      "role": "assistant",
+      "content": "2026年第十六届北京国际电影节定于 **2026年4月16日至4月25日** 在北京举办。\n\n一个可靠的来源链接：\n\n- 新华社报道：[第十六届北京国际电影节将于4月16日开幕](https://www.news.cn/ent/20260317/2bb426f445494196b6d70513318be0c5/c.html)\n- 北京国际电影节官网：[春光拂柳，燕舞天坛，第16届北京国际电影节官宣举办时间](https://www.bjiff.com/bannergdtp/202603/t20260316_191312.html)\n\n补充说明：本届电影节主题为\"天坛映百花，光影耀京华\"，包含天坛奖主竞赛、开幕红毯、北京展映、核心论坛、北京市场、电影嘉年华、大学生电影节及闭幕颁奖等主体板块，共计上百场活动。",
+      "trace_id": "9184d0001391635460eab1c520ef5ea7",
+      "created_at": "2026-09-01T08:34:09.898Z"
+    }
+  ],
+  "artifactIds": [
+    "artifact_9e6980bd-8e35-4512-a2f4-d82d3e6c0134"
+  ],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": "4ee1e98c-3e9d-486b-86ab-13c5159bdeea",
+  "sdk_seen_tool_use_ids": [
+    "call_00_amGpjNmA3iAfkE6OBDjS2319"
+  ],
+  "business_revision": 2,
+  "id": "session_0234f360-76e9-467d-afe0-c8042d575034",
+  "title": "[验证] SDK 联网",
+  "workObjectId": null,
+  "created_at": "2026-09-01T08:33:58.894Z",
+  "updated_at": "2026-09-01T08:34:09.898Z"
+}

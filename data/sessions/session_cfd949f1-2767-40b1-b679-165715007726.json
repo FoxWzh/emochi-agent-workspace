@@ -1,0 +1,14 @@
+{
+  "messages": [],
+  "artifactIds": [],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": "48d44de6-f8d3-44af-9f2a-a3966d7bb8f9",
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 3,
+  "id": "session_cfd949f1-2767-40b1-b679-165715007726",
+  "title": "Reference path guard verification",
+  "workObjectId": null,
+  "created_at": "2026-08-31T12:59:51.611Z",
+  "updated_at": "2026-08-31T13:00:33.207Z"
+}

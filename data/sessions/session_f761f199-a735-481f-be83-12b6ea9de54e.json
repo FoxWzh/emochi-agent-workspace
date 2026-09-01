@@ -1,0 +1,30 @@
+{
+  "messages": [
+    {
+      "id": "msg_98d144af-8f97-414b-a6a7-5595b3dfaf3a",
+      "role": "user",
+      "content": "你好",
+      "attachments": [],
+      "created_at": "2026-09-01T03:46:54.663Z",
+      "trace_id": "91abea731b82fc47a28080510b964b65"
+    },
+    {
+      "id": "msg_addc6a4b-8f2a-473c-9956-691d26b05159",
+      "role": "assistant",
+      "content": "你好！我是 Emochi 创作 Agent，可以帮你创作、完善、审查或管理互动娱乐 Bot。\n\n目前还没有选定的工作对象，你可以从任意一点开始，比如：\n\n- **从灵感出发**：告诉我想法，我帮你梳理成一个可进入互动的角色或体验。\n- **补全或优化**：基于已有 Bot 做局部修改。\n- **查找或对比**：搜索、比较或参考现有 Bot。\n- **专项深化**：角色设计、世界观、剧情/剧场、玩法、视觉方案等。\n\n你想从哪开始？如果有具体想法，直接说就行。",
+      "trace_id": "91abea731b82fc47a28080510b964b65",
+      "created_at": "2026-09-01T03:46:59.465Z"
+    }
+  ],
+  "artifactIds": [],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": "738bc302-51f9-4dc7-a50e-307bcf1c21c8",
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 2,
+  "id": "session_f761f199-a735-481f-be83-12b6ea9de54e",
+  "title": "Langfuse recheck",
+  "workObjectId": null,
+  "created_at": "2026-09-01T03:46:54.638Z",
+  "updated_at": "2026-09-01T03:46:59.465Z"
+}

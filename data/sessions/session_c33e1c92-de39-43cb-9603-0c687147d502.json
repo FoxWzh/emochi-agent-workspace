@@ -1,0 +1,73 @@
+{
+  "messages": [
+    {
+      "id": "msg_35845687-bbc6-449f-8396-2dbda49a977c",
+      "role": "user",
+      "content": "给我做一个ntr的本子",
+      "attachments": [],
+      "created_at": "2026-08-31T14:57:55.776Z",
+      "trace_id": "6f2d5d03ccc2c35ba25bee039e88ede0"
+    },
+    {
+      "id": "msg_372964a0-b168-4106-a939-a5e411b98aab",
+      "role": "assistant",
+      "content": "理解，你想做一个 **NTR 主题的互动 Bot（本子/故事）**。这类题材可以做，但我会先定几条安全边界，确保它可执行且合规：\n\n- **所有角色必须明确是成年人**，年龄身份清晰，避免任何暧昧表述。\n- **不包含强迫、下药、胁迫、偷拍等非自愿/违法桥段**——核心张力应来自\"关系背叛与心理博弈\"这种成人自愿情境，而不是侵犯。\n- 走心理拉扯、信息差、选择与后果的互动路线，而不是纯粹的流程化段落。\n\n在你确认动工前，我想先对齐方向——这决定整个 Bot 的体验承诺和玩法核心。你更想要哪种 NTR 故事形态？方向选择已经准备好了，等待你的决定。你可以：\n\n- 在右侧点选上面某个方向，或者\n- 直接告诉我你自己的想法（比如特定的角色设定、氛围、玩法侧重），我来据此细化。\n\n选定后，我会整理出**角色、剧情结构、核心张力机制和互动玩法**的完整方案给你过目，**确认后才会创建 Bot**——不会自动建任何东西。",
+      "trace_id": "6f2d5d03ccc2c35ba25bee039e88ede0",
+      "created_at": "2026-08-31T14:58:06.521Z"
+    }
+  ],
+  "artifactIds": [],
+  "timeline": [],
+  "interactions": [
+    {
+      "id": "interaction_dd901528-7092-4ba2-9eb6-872e0e0de4d8",
+      "type": "choice",
+      "title": "NTR 本子的核心形态",
+      "description": "选一个方向作为互动体验核心，或自定义。确认后我再细化角色与剧情，并征得你同意后才创建 Bot。",
+      "options": [
+        {
+          "id": "husband_view",
+          "title": "男友/丈夫视角",
+          "description": "玩家扮演被背叛一方，通过聊天、怀疑、调查逐步拼出真相，信息差和证据收集是核心玩法。"
+        },
+        {
+          "id": "affair_view",
+          "title": "出轨一方视角",
+          "description": "玩家扮演在关系与禁忌之间摇摆的一方，每个选择都在累积后果，情感代价与暴露风险是张力来源。"
+        },
+        {
+          "id": "observer_view",
+          "title": "第三者/观察者视角",
+          "description": "玩家身处多角关系中央，需要周旋两方、操纵信息差，博弈与双面撒谎是核心。"
+        },
+        {
+          "id": "twist_view",
+          "title": "反转式 NTR",
+          "description": "表面是背叛戏，中期反转真相——可能是误会、报复或隐藏协议，考验玩家对局势的判断。"
+        }
+      ],
+      "allow_custom": true,
+      "status": "resolved",
+      "turn_id": "turn_01f20c6a-19de-4509-8800-67cd3d4f436d",
+      "after_message_id": "msg_372964a0-b168-4106-a939-a5e411b98aab",
+      "created_at": "2026-08-31T14:58:04.315Z",
+      "resolved_at": "2026-08-31T14:59:20.838Z",
+      "response": {
+        "option_id": "husband_view",
+        "title": "男友/丈夫视角",
+        "description": "玩家扮演被背叛一方，通过聊天、怀疑、调查逐步拼出真相，信息差和证据收集是核心玩法。"
+      },
+      "display_at": "2026-08-31T14:58:06.521Z"
+    }
+  ],
+  "sdk_session_id": "f31e98e3-502b-42fb-b2b2-7314a7e0904d",
+  "sdk_seen_tool_use_ids": [
+    "call_00_0JJ4Nl1khIW9CRRK6o3M2478"
+  ],
+  "business_revision": 4,
+  "id": "session_c33e1c92-de39-43cb-9603-0c687147d502",
+  "title": "新的创作对话",
+  "workObjectId": null,
+  "created_at": "2026-08-31T14:57:48.300Z",
+  "updated_at": "2026-08-31T14:59:20.838Z"
+}

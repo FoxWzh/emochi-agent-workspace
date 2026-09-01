@@ -1,0 +1,3 @@
+interface:
+  display_name: "游戏设计"
+  short_description: "设计玩法、状态和反馈循环"

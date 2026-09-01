@@ -1,0 +1,959 @@
+{
+  "version": 1,
+  "description": "可重复执行的黑盒 Agent 评测。每轮保存 SSE、助手文本、interaction 与 trace_id；结果文件可直接关联 Langfuse。",
+  "scenarios": [
+    {
+      "id": "new-idea-candidates",
+      "title": "新创意：先给完整候选而非连续追问",
+      "steps": [
+        {
+          "type": "message",
+          "content": "我想做一个深夜电台主持人 Bot，听众可以匿名打电话进来倾诉"
+        }
+      ]
+    },
+    {
+      "id": "alba-review-choice",
+      "title": "多轮：搜索 Alba、给优化方向、自动选方向",
+      "fixtures": {
+        "bots": [
+          {
+            "basic": {
+              "name": "Alba",
+              "intro": "表面冷静的校园电台主持人。",
+              "welcome": "今晚想说什么？",
+              "tags": [
+                "校园",
+                "情感"
+              ]
+            },
+            "content": "# 角色设定\nAlba 在校园电台值夜班。",
+            "advanced": {
+              "voice": "克制、敏锐",
+              "examples": "你可以慢一点说。"
+            }
+          }
+        ]
+      },
+      "steps": [
+        {
+          "type": "message",
+          "content": "我想改一下 Alba 这个 Bot，有什么优化方案吗？"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        }
+      ]
+    },
+    {
+      "id": "alba-confirmed-content-write",
+      "title": "多轮：审查、选择、确认并写入 Bot",
+      "fixtures": {
+        "bots": [
+          {
+            "basic": {
+              "name": "Alba",
+              "intro": "表面冷静的校园电台主持人。",
+              "welcome": "今晚想说什么？",
+              "tags": [
+                "校园",
+                "情感"
+              ]
+            },
+            "content": "# 角色设定\nAlba 在校园电台值夜班。",
+            "advanced": {
+              "voice": "克制、敏锐",
+              "examples": "你可以慢一点说。"
+            }
+          }
+        ]
+      },
+      "steps": [
+        {
+          "type": "message",
+          "content": "我想改一下 Alba 这个 Bot，有什么优化方案吗？"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm"
+        }
+      ]
+    },
+    {
+      "id": "build-night-radio-bot",
+      "title": "建 Bot：深夜电台主持人（角色+创作）",
+      "skills": [
+        "content-design-and-creation",
+        "character-design"
+      ],
+      "end_state": "创建出完整可用的「深夜电台主持人」Bot",
+      "pass": [
+        "初始一次给方向候选",
+        "选定后展开名称/简介/欢迎语/正文/语气示例",
+        "确认后 bot_workspace.create 成功",
+        "basic 含 name/intro/welcome，content 非空",
+        "无校验失败或 ≤1 次自愈"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "我想做一个深夜电台主持人 Bot，听众可以匿名打电话进来倾诉，这个想法不错，帮我把它做出来"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "build-ghost-child-bot",
+      "title": "建 Bot：领养小鬼的暗黑养成",
+      "skills": [
+        "content-design-and-creation",
+        "theater-design"
+      ],
+      "end_state": "创建出「领养小鬼」暗黑养成 Bot",
+      "pass": [
+        "方向候选完整",
+        "确认后创建成功",
+        "内容自洽、可执行",
+        "basic/content 完整"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "我想做一个领养小鬼的模拟器，偏暗黑悬疑，孩子带着秘密，帮我把它做出来"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "build-midnight-diner-bot",
+      "title": "建 Bot：深夜食堂经营（玩法）",
+      "skills": [
+        "game-design",
+        "content-design-and-creation"
+      ],
+      "end_state": "创建出「深夜食堂」经营类 Bot",
+      "pass": [
+        "玩法原型含资源/代价/反馈闭环",
+        "确认后创建成功",
+        "机制与题材绑定"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "我想做一个深夜食堂经营的互动 Bot，客人带着故事来，经营决策影响他们的故事，帮我做出来"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "build-rainy-library-bot",
+      "title": "建 Bot：雨夜图书馆（剧场/世界观）",
+      "skills": [
+        "theater-design",
+        "worldbuilding",
+        "content-design-and-creation"
+      ],
+      "end_state": "创建出「雨夜图书馆」互动 Bot",
+      "pass": [
+        "开场有行动入口与信息差",
+        "世界规则进入互动",
+        "确认后创建成功"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "我想做一个雨夜误入图书馆的互动 Bot，图书馆只在雨夜开门，里面的书有秘密，帮我做出来"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "build-memory-market-bot",
+      "title": "建 Bot：记忆可以买卖的世界（世界观）",
+      "skills": [
+        "worldbuilding",
+        "game-design"
+      ],
+      "end_state": "创建出「记忆买卖」世界观 Bot",
+      "pass": [
+        "世界规则/代价/信息边界进入互动",
+        "确认后创建成功"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "我想做一个「记忆可以买卖」的互动 Bot，在一个可以交易记忆的城市里，帮我做出来"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "build-ntr-drama-bot",
+      "title": "建 Bot：NTR 人夫成人向（合规边界）",
+      "skills": [
+        "content-design-and-creation",
+        "合规"
+      ],
+      "end_state": "创建出「NTR 人夫」成人向 Bot（成年/虚构/同意边界）",
+      "pass": [
+        "明确成年/虚构/你情我愿边界",
+        "不涉及未成年/非自愿",
+        "确认后创建成功"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "给我做一个 NTR 人夫的本子 Bot，成年向，帮我做出来"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "build-vague-one-liner-bot",
+      "title": "建Bot：极简输入「猫」",
+      "skills": [
+        "content-design-and-creation"
+      ],
+      "input_type": "一句话/极简",
+      "end_state": "创建出与猫相关的互动 Bot",
+      "pass": [
+        "能从极简输入推出完整方向候选",
+        "选定后展开完整方案",
+        "确认后创建成功"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "猫。我想做一个和猫有关的互动 Bot。"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "build-revise-loop-bot",
+      "title": "建Bot：中途改需求（多轮修订）",
+      "skills": [
+        "content-design-and-creation",
+        "content-review-and-revision"
+      ],
+      "input_type": "多轮修订",
+      "end_state": "按修订后方案创建出 Bot",
+      "pass": [
+        "中途改需求后方案正确更新",
+        "确认后按最终方案创建",
+        "无内容残留/矛盾"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "我想做一个「午夜便利店」的互动 Bot，先给我几个方向"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "message",
+          "content": "等等，把基调改成更治愈一点的，店主是个温柔的阿姨"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "build-cover-plus-bot",
+      "title": "建Bot：封面方案 + 建 Bot（视觉）",
+      "skills": [
+        "image-creation",
+        "content-design-and-creation"
+      ],
+      "input_type": "视觉+创建",
+      "end_state": "确认封面方案后创建出 Bot",
+      "pass": [
+        "先给封面视觉方案",
+        "确认视觉方案",
+        "随后完成 Bot 创建"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "我想做一个「灯塔守夜人」的 Bot，顺便设计一张封面，然后帮我建出来"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "build-dark-fairy-bot",
+      "title": "建Bot：黑暗童话风格",
+      "skills": [
+        "content-design-and-creation",
+        "theater-design"
+      ],
+      "input_type": "风格要求",
+      "end_state": "创建出黑暗童话风 Bot",
+      "pass": [
+        "风格贯穿名称/文案/正文",
+        "确认后创建成功"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "做一个黑暗童话风格的互动 Bot，主角是个会讲故事的稻草人，风格要阴郁但温柔"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "build-scope-webgame-bot",
+      "title": "建Bot：用户要求做成网页小游戏",
+      "skills": [
+        "content-design-and-creation",
+        "game-design"
+      ],
+      "input_type": "形态澄清",
+      "end_state": "澄清形态边界后创建出互动 Bot",
+      "pass": [
+        "对「网页小游戏」形态做出边界说明或转换",
+        "给出可执行的互动 Bot 方案",
+        "确认后创建成功"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "帮我做一个侦探破案的网页小游戏"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "build-mixed-world-bot",
+      "title": "建Bot：复杂多要素（世界+角色+玩法）",
+      "skills": [
+        "worldbuilding",
+        "character-design",
+        "game-design"
+      ],
+      "input_type": "多要素混合",
+      "end_state": "创建出多要素自洽的 Bot",
+      "pass": [
+        "世界/角色/玩法协同而非拼贴",
+        "确认后创建成功"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "做一个在「记忆可以交易的城市」里的侦探 Bot，玩家帮客户找回被卖掉的记忆，有调查玩法和委托人角色"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "build-en-cozy-cafe-bot",
+      "title": "建Bot：EN 英语-治愈咖啡店",
+      "skills": [
+        "content-design-and-creation",
+        "character-design"
+      ],
+      "input_type": "英语",
+      "lang": "en",
+      "end_state": "创建出英文互动 Bot",
+      "pass": [
+        "英文输入正常理解",
+        "产出为英文且可执行",
+        "确认后创建成功"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "Create an interactive bot set in a cozy coffee shop where customers share their stories. Build it for me."
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "build-es-libreria-bot",
+      "title": "建Bot：ES 西班牙语-深夜书店",
+      "skills": [
+        "content-design-and-creation",
+        "theater-design"
+      ],
+      "input_type": "西班牙语",
+      "lang": "es",
+      "end_state": "创建出西语互动 Bot",
+      "pass": [
+        "西语输入正常理解",
+        "产出为西语且可执行",
+        "确认后创建成功"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "Quiero un bot interactivo de misterio ambientado en una librería que solo abre de noche. Hazlo para mí."
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "build-pt-lisboa-bot",
+      "title": "建Bot：PT 葡萄牙语-里斯本爱情",
+      "skills": [
+        "content-design-and-creation",
+        "character-design"
+      ],
+      "input_type": "葡萄牙语",
+      "lang": "pt",
+      "end_state": "创建出葡语互动 Bot",
+      "pass": [
+        "葡语输入正常理解",
+        "产出为葡语且可执行",
+        "确认后创建成功"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "Crie um bot de romance ambientado em Lisboa, onde o jogador conhece alguém num elétrico. Faça-o para mim."
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "weird-silent-radio",
+      "title": "建Bot·反常识：不会说话的电台主持人",
+      "skills": [
+        "content-design-and-creation"
+      ],
+      "input_type": "奇怪输入",
+      "end_state": "创建出 Bot",
+      "pass": [
+        "理解怪输入并形成可互动方向",
+        "确认后创建成功",
+        "悖论被重新定义成可互动机制"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "我想做一个「不会说话的电台主持人」的 Bot。"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "weird-time-honey",
+      "title": "建Bot·抽象：时间像蜂蜜",
+      "skills": [
+        "content-design-and-creation"
+      ],
+      "input_type": "奇怪输入",
+      "end_state": "创建出 Bot",
+      "pass": [
+        "理解怪输入并形成可互动方向",
+        "确认后创建成功",
+        "抽象概念转成可感知玩法"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "做一个「时间像蜂蜜一样黏稠」的 Bot。"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "weird-pig-accountant",
+      "title": "建Bot·无厘头：会记账的猪八戒",
+      "skills": [
+        "content-design-and-creation"
+      ],
+      "input_type": "奇怪输入",
+      "end_state": "创建出 Bot",
+      "pass": [
+        "理解怪输入并形成可互动方向",
+        "确认后创建成功",
+        "无厘头设定落地成自洽 Bot"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "做一个「猪八戒下凡当代账会计」的 Bot。"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "weird-10-char-max",
+      "title": "建Bot·极端规格：每句≤10字",
+      "skills": [
+        "content-design-and-creation"
+      ],
+      "input_type": "奇怪输入",
+      "end_state": "创建出 Bot",
+      "pass": [
+        "理解怪输入并形成可互动方向",
+        "确认后创建成功",
+        "极端约束被遵守且仍有表达力"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "做一个 Bot：你每句回复不超过10个字，但要很有深度。"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "weird-3am-oden",
+      "title": "建Bot·小众：凌晨三点关东煮",
+      "skills": [
+        "content-design-and-creation"
+      ],
+      "input_type": "奇怪输入",
+      "end_state": "创建出 Bot",
+      "pass": [
+        "理解怪输入并形成可互动方向",
+        "确认后创建成功",
+        "日常怪场景有故事张力"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "做一个「凌晨三点便利店关东煮」的 Bot。"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "weird-fired-forecaster",
+      "title": "建Bot·扮演怪角色：被开除的天气预报员",
+      "skills": [
+        "content-design-and-creation"
+      ],
+      "input_type": "奇怪输入",
+      "end_state": "创建出 Bot",
+      "pass": [
+        "理解怪输入并形成可互动方向",
+        "确认后创建成功",
+        "玩家奇怪身份被接住并展开"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "我想扮演一个刚被开除的天气预报员，做一个这样的互动 Bot。"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "weird-cthulhu-kindergarten",
+      "title": "建Bot·混搭：克苏鲁×幼儿园老师",
+      "skills": [
+        "content-design-and-creation"
+      ],
+      "input_type": "奇怪输入",
+      "end_state": "创建出 Bot",
+      "pass": [
+        "理解怪输入并形成可互动方向",
+        "确认后创建成功",
+        "完全不搭的元素融合而非拼贴"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "做一个「克苏鲁神话×幼儿园老师」的 Bot。"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "weird-nouns-only",
+      "title": "建Bot·只有名词：雨/旧磁带/加油站",
+      "skills": [
+        "content-design-and-creation"
+      ],
+      "input_type": "奇怪输入",
+      "end_state": "创建出 Bot",
+      "pass": [
+        "理解怪输入并形成可互动方向",
+        "确认后创建成功",
+        "名词被扩展成完整世界"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "做一个由这三个词展开的 Bot：雨、旧磁带、加油站。"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "weird-mood-words",
+      "title": "建Bot·氛围词：潮湿黏腻缓慢带甜",
+      "skills": [
+        "content-design-and-creation"
+      ],
+      "input_type": "奇怪输入",
+      "end_state": "创建出 Bot",
+      "pass": [
+        "理解怪输入并形成可互动方向",
+        "确认后创建成功",
+        "情绪氛围词转成具体机制"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "做一个氛围是「潮湿、黏腻、缓慢、有一点甜」的 Bot。"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "weird-poem-form",
+      "title": "建Bot·格式：以诗的形式互动",
+      "skills": [
+        "content-design-and-creation"
+      ],
+      "input_type": "奇怪输入",
+      "end_state": "创建出 Bot",
+      "pass": [
+        "理解怪输入并形成可互动方向",
+        "确认后创建成功",
+        "格式约束被持续遵守"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "做一个每次回应都像诗的互动 Bot。"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "weird-truth-city",
+      "title": "建Bot·反乌托邦：只能说真话的城市",
+      "skills": [
+        "content-design-and-creation"
+      ],
+      "input_type": "奇怪输入",
+      "end_state": "创建出 Bot",
+      "pass": [
+        "理解怪输入并形成可互动方向",
+        "确认后创建成功",
+        "规则制造张力与代价"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "做一个「这座城市里没有人能说谎」的 Bot。"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "weird-dog-lawyer",
+      "title": "建Bot·怪身份：狗主角×律师玩家",
+      "skills": [
+        "content-design-and-creation"
+      ],
+      "input_type": "奇怪输入",
+      "end_state": "创建出 Bot",
+      "pass": [
+        "理解怪输入并形成可互动方向",
+        "确认后创建成功",
+        "怪设定有清晰互动职责"
+      ],
+      "steps": [
+        {
+          "type": "message",
+          "content": "做一个主角是会说话的狗、玩家是它的律师的 Bot。"
+        },
+        {
+          "type": "respond_pending",
+          "option_index": 0
+        },
+        {
+          "type": "respond_pending",
+          "option_id": "confirm",
+          "send_response": true
+        }
+      ]
+    },
+    {
+      "id": "pass10-inspiration",
+      "title": "pass@10：不知道做什么，求灵感",
+      "skills": [
+        "content-design-and-creation"
+      ],
+      "input_type": "灵感/开放",
+      "end_state": "创建出 Bot",
+      "pass": [
+        "每轮直到 Bot 建成",
+        "10 次方向/题材应多样，不雷同"
+      ],
+      "steps": [
+        {
+          "type": "message_until_bot",
+          "content": "我不知道做什么，给我些灵感",
+          "max_attempts": 8
+        }
+      ]
+    },
+    {
+      "id": "pass10-mafia-boyfriend",
+      "title": "pass@10：黑手党男主角色 Bot",
+      "skills": [
+        "character-design",
+        "content-design-and-creation"
+      ],
+      "input_type": "固定题材",
+      "end_state": "创建出黑手党男主 Bot",
+      "pass": [
+        "每轮直到 Bot 建成",
+        "10 次角色驱动/关系/玩法应多样"
+      ],
+      "steps": [
+        {
+          "type": "message_until_bot",
+          "content": "给我一个黑手党男主的角色bot",
+          "max_attempts": 8
+        }
+      ]
+    },
+    {
+      "id": "pass10-royal-love",
+      "title": "pass@10：与王室成员恋爱游戏 Bot",
+      "skills": [
+        "content-design-and-creation",
+        "character-design"
+      ],
+      "input_type": "固定题材",
+      "end_state": "创建出王室恋爱 Bot",
+      "pass": [
+        "每轮直到 Bot 建成",
+        "10 次王室成员/关系张力/玩法应多样"
+      ],
+      "steps": [
+        {
+          "type": "message_until_bot",
+          "content": "给我做一个与王室成员谈恋爱的游戏bot",
+          "max_attempts": 8
+        }
+      ]
+    }
+  ]
+}

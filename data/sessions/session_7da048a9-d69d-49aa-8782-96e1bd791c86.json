@@ -1,0 +1,14 @@
+{
+  "messages": [],
+  "artifactIds": [],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": null,
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 0,
+  "id": "session_7da048a9-d69d-49aa-8782-96e1bd791c86",
+  "title": "Langfuse nested loop verification",
+  "workObjectId": null,
+  "created_at": "2026-08-31T04:30:57.413Z",
+  "updated_at": "2026-08-31T04:35:07.531Z"
+}

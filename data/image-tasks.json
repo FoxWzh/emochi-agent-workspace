@@ -1,0 +1,1673 @@
+[
+  {
+    "id": "image_task_42e191ad-00f3-48a7-9284-52c4b6f60c06",
+    "session_id": "session_c7f71250-1c9e-43f8-84ac-470403c92d2b",
+    "status": "completed",
+    "title": "夜窗温柔 · 陪伴系封面",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "a1",
+        "title": "半身捧茶",
+        "prompt": "Cozy night window scene, semi-realistic illustrated portrait of a young woman with a warm gentle smile, sitting by a large floor-to-ceiling window at night, holding a warm steaming mug of tea in both hands, head slightly tilted toward the viewer with a relaxed, content expression. Warm amber desk-lamp light from the left illuminating her face; soft cool blue city lights as bokeh through the window behind her. Soft knit cardigan, relaxed homey atmosphere. Semi-realistic digital painting, thick-brush painterly texture, close to realistic proportions with illustrative warmth. Half-body composition, subject slightly left of center, warm light against cool blue night contrast. No text, no logo, no watermark."
+      },
+      {
+        "id": "a2",
+        "title": "暖光特写",
+        "prompt": "Intimate chest-up close-up, semi-realistic illustration of a young woman in a soft knit sweater at night, warm amber desk-lamp glow from the side, cozy home atmosphere, holding a warm mug near her face with both hands, gentle relaxed smile, eyes looking softly at the viewer, warm bokeh around, cool blue night city lights through a window in soft-focus background. Painterly thick-brush semi-realistic digital illustration, realistic proportions with warm illustrative style, warm color palette with cool blue contrast. Portrait composition, face as focal point. No text, no logo, no watermark."
+      },
+      {
+        "id": "a3",
+        "title": "窗边沙发",
+        "prompt": "Medium-wide cozy interior scene, semi-realistic illustration of a young woman relaxing on a sofa beside a large floor-to-ceiling window at night, wrapped in a soft blanket, holding a warm cup of tea, gazing toward the window with a calm peaceful expression, soft warm amber lamp light inside, blurred cool blue city night lights outside. Painterly semi-realistic digital illustration, thick-brush texture, warm inviting homey mood. Environmental composition showing more of the room, subject placed to one side of frame. No text, no logo, no watermark."
+      }
+    ],
+    "created_at": "2026-08-31T08:24:32.404Z",
+    "updated_at": "2026-08-31T08:24:36.501Z",
+    "artifacts": [
+      {
+        "id": "artifact_image_batch_42e191ad",
+        "type": "image",
+        "title": "夜窗温柔 · 陪伴系封面",
+        "description": "本轮生成的 3 张图片候选。",
+        "data": {
+          "task_id": "image_task_42e191ad-00f3-48a7-9284-52c4b6f60c06",
+          "images": [
+            {
+              "id": "artifact_e18077bf-2391-4298-a47a-5bc66f1e1b5b",
+              "title": "半身捧茶",
+              "url": "https://image-cdn.flowgpt.com/image-generation/laDqtIXTXhjzKrrwkFIXcZzQGkyUUd.webp"
+            },
+            {
+              "id": "artifact_c0b40223-dce4-4dbb-8da6-d44a51bbf211",
+              "title": "暖光特写",
+              "url": "https://image-cdn.flowgpt.com/image-generation/sRAChovgyUlrakDJLOVpgPWmdfOZwZ.webp"
+            },
+            {
+              "id": "artifact_92b1d178-608e-4183-9b3d-4d24e075507d",
+              "title": "窗边沙发",
+              "url": "https://image-cdn.flowgpt.com/image-generation/BWtJZJWRLwRGSKSSATwMHRgkyhXsko.webp"
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-08-31T08:24:36.498Z",
+        "updated_at": "2026-08-31T08:24:36.498Z"
+      }
+    ],
+    "error": null,
+    "after_message_id": "msg_03516a19-9f9e-4707-bb05-7413a13d8d3b"
+  },
+  {
+    "id": "image_task_95b309d3-4056-4be9-9dd6-c40634df8a37",
+    "session_id": "session_c7f71250-1c9e-43f8-84ac-470403c92d2b",
+    "turn_id": "turn_fea5d4c6-9635-40bd-ac02-a1d0e00a368c",
+    "after_message_id": "msg_a9352b80-8990-44ba-b0fb-a274d3b71f85",
+    "status": "completed",
+    "title": "全息偶像 · 赛博朋克封面",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "c1",
+        "title": "全息舞台",
+        "prompt": "2D anime style illustration, cyberpunk holographic idol, a young female idol on a neon holographic stage at night, dynamic energetic pose with one hand raised, glowing fluorescent hair in pink and cyan, futuristic stage outfit with LED accents, high-saturation pink blue purple neon light, holographic screens and light beams surrounding her, strong perspective, audience silhouettes in shadow, vivid cel-shaded anime style, high visual impact. Half-to-full body dynamic composition. No text, no logo, no watermark."
+      },
+      {
+        "id": "c2",
+        "title": "舞台近景",
+        "prompt": "2D anime style close performance shot, cyberpunk holographic idol, a young female idol seen from a low fan-view angle, mid-performance gesture, sparkling confident smile, fluorescent hair glowing in vivid pink and cyan, futuristic holographic costume with light trails, neon stage lights and floating holographic particles around, high-saturation pink blue purple color grading, cel-shaded anime style, strong perspective, dramatic rim light. Chest-up to half-body dynamic composition. No text, no logo, no watermark."
+      },
+      {
+        "id": "c3",
+        "title": "全息广告牌前",
+        "prompt": "2D anime style illustration, cyberpunk holographic idol standing in front of a giant holographic billboard displaying her own glowing hologram, night city street, fluorescent hair in pink and cyan, stylish futuristic streetwear idol look, neon signs and holographic projections around, high-saturation pink blue purple neon palette, cel-shaded anime style, medium shot showing scale contrast between the small idol and the huge hologram behind, moody futuristic atmosphere. No text, no logo, no watermark."
+      }
+    ],
+    "created_at": "2026-08-31T08:35:04.471Z",
+    "updated_at": "2026-08-31T08:35:08.688Z",
+    "artifacts": [
+      {
+        "id": "artifact_79442241-4c42-46aa-a48a-be272d0eef8b",
+        "type": "image",
+        "title": "全息偶像 · 赛博朋克封面",
+        "description": "本轮生成的 3 张图片候选。",
+        "data": {
+          "task_id": "image_task_95b309d3-4056-4be9-9dd6-c40634df8a37",
+          "images": [
+            {
+              "id": "artifact_62b53e59-ec91-4331-8d7b-cca944387a2e",
+              "title": "全息舞台",
+              "url": "https://image-cdn.flowgpt.com/image-generation/cWNSuhIBixWgDurEYQMMeKMzYlMpzW.webp"
+            },
+            {
+              "id": "artifact_48ec5196-1314-4332-a2f4-92acefe607da",
+              "title": "舞台近景",
+              "url": "https://image-cdn.flowgpt.com/image-generation/KwfdZPQKIVGDUtIuZFeNDZfVZcmUvI.webp"
+            },
+            {
+              "id": "artifact_388f32be-2b2c-4414-926f-7327cb5bf225",
+              "title": "全息广告牌前",
+              "url": "https://image-cdn.flowgpt.com/image-generation/QJjSHbdttJgPjLHnKoljNyCZpsHKcy.webp"
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-08-31T08:35:08.686Z",
+        "updated_at": "2026-08-31T08:35:08.686Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_c4188371-0722-4154-91b0-13ddea63ae05",
+    "session_id": "session_4d4eea0e-18b7-474e-aef5-3d796ba507ea",
+    "turn_id": "turn_2dfc1ac4-d86d-41a7-9ffe-c90f6a7aa573",
+    "after_message_id": "msg_33177e8f-7e5a-46da-ae42-c8bc13d45f36",
+    "status": "completed",
+    "title": "末代命名师 · 封面（命名之触）",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "cover_touch_closeup",
+        "title": "命名之触 · 竖版特写",
+        "prompt": "Fantasy book cover illustration in ink-wash and paper-texture style. Extreme close-up in a dark, dust-filled room: a human hand reaches into a shapeless, outline-less gray-white mist. At the exact point where the fingertip touches the mist, the fog visibly coalesces and begins taking form, faintly revealing the silhouette of a small grey creature emerging from the fog. A tiny semi-transparent ink-sparrow, a wordbird made of ink strokes and torn paper, perches nearby watching nervously with small bright eyes. Muted gray palette with a single faint warm glow at the point of contact; floating dust motes and paper fibers in the air. Quiet, mysterious, ethereal mood. Shallow depth of field, soft cinematic lighting. Vertical composition. No text, no logo, no watermark, no readable characters."
+      },
+      {
+        "id": "cover_touch_wider",
+        "title": "命名之触 · 稍广环境",
+        "prompt": "Fantasy book cover illustration in ink-wash and paper-texture style. A dark room filled with stacks of blank books and floating dust; in the foreground a human hand reaches toward a shapeless, outline-less gray-white mist, and at the touch point the mist is beginning to take the faint outline of a small grey creature. A small semi-transparent ink-sparrow made of ink strokes and torn paper watches from the figure's shoulder. Muted gray palette with a single warm glow at the contact point, dust motes and loose paper fibers floating in the air. Quiet, mysterious, ethereal mood. No text, no logo, no watermark, no readable characters."
+      }
+    ],
+    "created_at": "2026-08-31T08:51:24.176Z",
+    "updated_at": "2026-08-31T08:51:28.006Z",
+    "artifacts": [
+      {
+        "id": "artifact_6129292a-eb43-4180-9666-f692f161f268",
+        "type": "image",
+        "title": "末代命名师 · 封面（命名之触）",
+        "description": "本轮生成的 2 张图片候选。",
+        "data": {
+          "task_id": "image_task_c4188371-0722-4154-91b0-13ddea63ae05",
+          "images": [
+            {
+              "id": "artifact_fad4d7a4-9d61-4e2a-9a04-21dcc2cae7ba",
+              "title": "命名之触 · 竖版特写",
+              "url": "https://image-cdn.flowgpt.com/image-generation/XqzbtqKWcUQJEwHlBGUpIHKrLJybiJ.webp"
+            },
+            {
+              "id": "artifact_e5dba337-2ef3-4012-963d-27e3639f9436",
+              "title": "命名之触 · 稍广环境",
+              "url": "https://image-cdn.flowgpt.com/image-generation/gFpPllexvPMXCsvgmvgoBnMvTsqKBm.webp"
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-08-31T08:51:28.003Z",
+        "updated_at": "2026-08-31T08:51:28.003Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_07c50df5-52be-46f3-8384-343ef4684faa",
+    "session_id": "session_53565760-792c-4113-bc1e-09b4ad9ed961",
+    "turn_id": "turn_3ac0c00c-efd7-4abc-b3b8-670947ec6a8c",
+    "after_message_id": "msg_5de5b12a-8478-4b5b-90c5-dbd4e359233f",
+    "status": "completed",
+    "title": "Jungkook · 风暴夜封面",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "stormy_window_main",
+        "title": "风暴夜 · 窗边烛火",
+        "prompt": "Cinematic medium shot of a handsome Korean man in his twenties, 183 cm tall, athletic build, dark hair styled in a modern Korean cut, a small silver piercing on the right side of his lower lip, an intricate black ink tattoo covering his entire right arm. He stands by a floor-to-ceiling window in a luxury penthouse during a blackout storm. Rain streaks down the glass, faint lightning flashes outside, warm candlelight from inside casts soft flickering shadows across his face and the room. He is slightly turned toward the camera, one hand touching his lower lip piercing, gaze intense and intimate, looking directly at the viewer. He wears dark, stylish oversized clothing. Moody, dramatic, romantic tension. Deep shadows and warm highlights, shallow depth of field, high detail, photorealistic. No text, no logo, no watermark."
+      }
+    ],
+    "created_at": "2026-08-31T09:37:15.621Z",
+    "updated_at": "2026-08-31T09:37:19.392Z",
+    "artifacts": [
+      {
+        "id": "artifact_ce75151c-de29-4ccd-a6d2-942883c9a8dc",
+        "type": "image",
+        "title": "Jungkook · 风暴夜封面",
+        "description": "本轮生成的 1 张图片候选。",
+        "data": {
+          "task_id": "image_task_07c50df5-52be-46f3-8384-343ef4684faa",
+          "images": [
+            {
+              "id": "artifact_f8bad98d-e28b-456e-adff-0d2dfcf16426",
+              "title": "候选 1 · 近景人物钩子",
+              "url": "https://image-cdn.flowgpt.com/image-generation/TxMyIEPcXpHFEoZqfZBFrRZKcGrlSg.webp"
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-08-31T09:37:19.388Z",
+        "updated_at": "2026-08-31T09:37:19.388Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_5bb99e18-c216-4b3b-b071-409c3360cedc",
+    "session_id": "session_53565760-792c-4113-bc1e-09b4ad9ed961",
+    "turn_id": "turn_7d11d752-2930-496e-b868-9b3679ee399a",
+    "after_message_id": "msg_7a9918f8-9024-43f7-91ac-cf7690ddb71d",
+    "status": "completed",
+    "title": "Jungkook · 封面高清重绘",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "hd_redraw_preserve",
+        "title": "高清重绘·保留原构图",
+        "prompt": "Based on the input image, redraw and optimize it at higher quality while preserving the original composition. PRESERVE: the same handsome Korean man — his facial identity and features, modern Korean hairstyle, black ink tattoo covering his right arm, silver lower-lip piercing, clothing, pose, framing and overall mood. CHANGE: increase resolution and fine detail — smoother and more refined skin texture, sharper and more intricate tattoo detail, cleaner and more polished lighting, remove noise, grain and any artifacts, richer depth and clarity. Keep the same subject, pose and composition unchanged. Avoid adding text, logos or watermarks; do not alter the person's identity or facial features."
+      }
+    ],
+    "created_at": "2026-08-31T09:44:00.323Z",
+    "updated_at": "2026-08-31T09:44:06.272Z",
+    "artifacts": [
+      {
+        "id": "artifact_a4786ab2-4f12-49f4-94d9-21cfb02c6a43",
+        "type": "image",
+        "title": "Jungkook · 封面高清重绘",
+        "description": "本轮生成的 1 张图片候选。",
+        "data": {
+          "task_id": "image_task_5bb99e18-c216-4b3b-b071-409c3360cedc",
+          "images": [
+            {
+              "id": "artifact_4d0d9da9-4768-410d-876d-93fb56ccf964",
+              "title": "候选 1 · 近景人物钩子",
+              "url": "https://image-cdn.flowgpt.com/image-generation/RgkUVXjmCsFUwiOIUYWiqKRFkwUCTd.webp"
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-08-31T09:44:06.267Z",
+        "updated_at": "2026-08-31T09:44:06.267Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_934a4f50-6865-46b2-b3d3-3948bda51c4b",
+    "session_id": "session_699fcb14-1d9f-4cd0-a7de-8250751f2d0e",
+    "turn_id": "turn_942a0f74-277c-4c03-b502-18c22484ceb8",
+    "after_message_id": "msg_ed2a6894-5ae3-4fad-9907-62246e961996",
+    "status": "completed",
+    "title": "《你看得见我》封面视觉（三方案）",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "A",
+        "title": "对视钩子（近景）",
+        "prompt": "阴郁的老福利院走廊，近景特写。七岁小女孩站在旧柜子投下的阴影里，微微抬头直视镜头，眼神警惕又带着试探，像在问『你看得见我？』。她穿着洗旧的小外套，一只小手攥着一个旧铁皮糖果盒。身形略显半透明，脚下没有影子。走廊尽头一扇高窗透进冷白的光，墙壁泛黄剥落，空气安静发冷。整体冷色调，悬疑暗黑氛围，但孩子神情脆弱而不恐怖，无性化。电影感插画风格。无文字，无水印，无logo。"
+      },
+      {
+        "id": "B",
+        "title": "空间叙事（大全景）",
+        "prompt": "阴郁的老福利院走廊，大全景纵深构图。走廊很长很空，尽头一扇高窗斜射下冷白的光，在地面拉出一道亮带。七岁小女孩很小地坐在画面右下角的旧柜子下，抱着旧铁皮糖果盒，低着头。她脚下的地面没有影子。左侧大片空走廊和剥落的墙面占据画面，暗示所有人都绕开了这个角落。冷色调，安静孤独，悬疑氛围，孩子无性化。电影感插画风格。无文字，无水印，无logo。"
+      },
+      {
+        "id": "C",
+        "title": "威胁临近（冲突瞬间）",
+        "prompt": "夜晚的老旧居室，中景。房间一半被窗外月光照亮，一半陷在阴影里。七岁小女孩站在阴影中、月光照不到的地方，双手抱着旧铁皮糖果盒，侧头望向门口方向，身体微微发抖。门缝底部透进一缕不正常的冷光，门边地上落着半张黄色符纸。画面一侧一盏暖黄色小台灯亮着，与门外冷光形成冷暖对比。小女孩没有影子。悬疑、紧张，但带着被守护的温暖感，孩子无性化。电影感插画风格。无文字，无水印，无logo。"
+      }
+    ],
+    "created_at": "2026-08-31T12:37:16.595Z",
+    "updated_at": "2026-08-31T12:37:27.806Z",
+    "artifacts": [
+      {
+        "id": "artifact_a23ba310-408e-4aad-9ae6-1585bf0d2444",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 1 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_934a4f50-6865-46b2-b3d3-3948bda51c4b",
+              "title": "《你看得见我》封面视觉（三方案）",
+              "created_at": "2026-08-31T12:37:27.803Z",
+              "images": [
+                {
+                  "id": "artifact_a4d984c1-75d0-402c-9373-428677c4a497",
+                  "title": "对视钩子（近景）",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/TBjFfKbxWGTpDbNwzrNLgotmCENoXI.webp"
+                },
+                {
+                  "id": "artifact_59a38642-e9f2-4580-8166-38f2625f327d",
+                  "title": "空间叙事（大全景）",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/TyfrdgObkDmVKTKMsJeygjXWCPGkrw.webp"
+                },
+                {
+                  "id": "artifact_f1150a00-8809-4c54-a7fb-4cfa0c475d94",
+                  "title": "威胁临近（冲突瞬间）",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/tTSTjPGcdxWLAWhdQxKieIXsfmuTwT.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-08-31T12:37:27.803Z",
+        "updated_at": "2026-08-31T12:37:27.803Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_7ab1ceb3-2ef3-418c-87e0-9964f70445be",
+    "session_id": "session_699fcb14-1d9f-4cd0-a7de-8250751f2d0e",
+    "turn_id": "turn_ffe9f564-5379-4cfb-aa28-463417457dcf",
+    "after_message_id": "msg_c13440ae-94f5-42bb-af5b-89ab820b4431",
+    "status": "completed",
+    "title": "《你看得见我》封面视觉（四张重制）",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "D",
+        "title": "接住瞬间",
+        "prompt": "老福利院走廊，黄昏冷光，过肩视角。一个成年人的手蹲下，把一只旧铁皮糖果盒伸向阴影里的小女孩。小女孩犹犹豫豫地伸出小手，指尖快要碰到盒子。她穿着洗旧的小外套，身形半透明，脚下没有影子。走廊空荡，墙壁泛黄剥落。整体冷色调，悬疑暗黑但带着一丝希望与温柔。孩子无性化。电影感插画风格。无文字，无水印，无logo。"
+      },
+      {
+        "id": "E",
+        "title": "窗台守望",
+        "prompt": "夜晚的老旧居室，窗框构图。七岁小女孩抱着旧铁皮糖果盒坐在窗台上，月光从窗外洒进来，她的身体在月光下呈现半透明的轮廓，脚下没有影子。窗外是模糊的城市夜灯，冷蓝调；室内一角一盏暖黄小台灯。她望着窗外，神情安静而专注，像在等一个人。冷中带暖，悬疑但温柔。孩子无性化。电影感插画风格。无文字，无水印，无logo。"
+      },
+      {
+        "id": "F",
+        "title": "她挡在你面前",
+        "prompt": "夜晚旧居，门口视角。门被推开一条缝，门外透进不正常的冷白光线。七岁小女孩站在画面近处，张开双臂挡在你身前，抱着旧铁皮糖果盒，神情害怕却坚定，回头看你一眼。她的脚下没有影子。室内昏暗，只有门缝的冷光勾勒出她的轮廓。紧张、危险，但充满守护的暖意。孩子无性化。电影感插画风格。无文字，无水印，无logo。"
+      },
+      {
+        "id": "G",
+        "title": "静静守护",
+        "prompt": "夜晚卧室，门口视角。你躺在床上盖着被子睡着，只见轮廓。小女孩坐在床边地板上，抱着旧铁皮糖果盒，安静地看着你，像在确认你还在。月光透过窗帘洒在她身上，她的身体半透明，脚下没有影子。房间安静温暖，冷蓝月光与一点点暖色交织。安静、守护、感人。孩子无性化。电影感插画风格。无文字，无水印，无logo。"
+      }
+    ],
+    "created_at": "2026-08-31T12:53:34.998Z",
+    "updated_at": "2026-08-31T12:53:40.602Z",
+    "artifacts": [
+      {
+        "id": "artifact_a23ba310-408e-4aad-9ae6-1585bf0d2444",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 2 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_934a4f50-6865-46b2-b3d3-3948bda51c4b",
+              "title": "《你看得见我》封面视觉（三方案）",
+              "created_at": "2026-08-31T12:37:27.803Z",
+              "images": [
+                {
+                  "id": "artifact_a4d984c1-75d0-402c-9373-428677c4a497",
+                  "title": "对视钩子（近景）",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/TBjFfKbxWGTpDbNwzrNLgotmCENoXI.webp"
+                },
+                {
+                  "id": "artifact_59a38642-e9f2-4580-8166-38f2625f327d",
+                  "title": "空间叙事（大全景）",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/TyfrdgObkDmVKTKMsJeygjXWCPGkrw.webp"
+                },
+                {
+                  "id": "artifact_f1150a00-8809-4c54-a7fb-4cfa0c475d94",
+                  "title": "威胁临近（冲突瞬间）",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/tTSTjPGcdxWLAWhdQxKieIXsfmuTwT.webp"
+                }
+              ]
+            },
+            {
+              "id": "image_task_7ab1ceb3-2ef3-418c-87e0-9964f70445be",
+              "title": "《你看得见我》封面视觉（四张重制）",
+              "created_at": "2026-08-31T12:53:40.594Z",
+              "images": [
+                {
+                  "id": "artifact_9cfb4aec-1916-4478-a1ed-330f419e8108",
+                  "title": "接住瞬间",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/elAvblkHhQHzCSXifhkCtPobfxcuNo.webp"
+                },
+                {
+                  "id": "artifact_fdb190c9-3ff4-4916-8f2f-5095e12cad92",
+                  "title": "窗台守望",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/FRemoImUdiEeikWlocGJAkIJEiNIrq.webp"
+                },
+                {
+                  "id": "artifact_63bd941a-5acb-4814-bf70-50caa10208f7",
+                  "title": "她挡在你面前",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/tGLOoCxyQVfuYASlVfUjMqZgOEYNBy.webp"
+                },
+                {
+                  "id": "artifact_22c3cf12-0ca3-475d-90cb-f88d6ee6f243",
+                  "title": "静静守护",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/zKyGLkKttlghwjmsAjxmXbBMFaGETK.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-08-31T12:37:27.803Z",
+        "updated_at": "2026-08-31T12:53:40.594Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_b39ed340-ab1d-4c19-83fa-0ae2c6b04111",
+    "session_id": "session_699fcb14-1d9f-4cd0-a7de-8250751f2d0e",
+    "turn_id": "turn_6776c62d-8e1f-4757-a7ea-49a6669c93da",
+    "after_message_id": "msg_f22887fb-1f5f-4a83-a9ec-f95c48c03992",
+    "status": "completed",
+    "title": "《你看得见我》封面视觉（四张新场景）",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "H",
+        "title": "福利院初遇",
+        "prompt": "福利院空旷的大厅，中景。几个成年领养人模糊地经过、绕开画面右侧的角落，只有一个成年人停下来，蹲在角落前。角落里坐着一个七岁小女孩，抱着旧铁皮糖果盒，抬头看向这个人。她穿着洗旧的小外套，身形半透明，脚下没有影子。大厅冷光，玻璃窗透进灰白天光。活人世界的日常与她的角落形成两个世界的分隔。悬疑、安静。孩子无性化。电影感插画风格。无文字，无水印，无logo。"
+      },
+      {
+        "id": "I",
+        "title": "厨房日常",
+        "prompt": "夜晚老旧的厨房，暖黄色灯光。七岁小女孩半透明地站在小凳子上，努力踮脚想够到柜子上的杯子，像在帮你准备东西。她穿着洗旧的小外套，脚下没有影子。灶台上有一杯冒着热气的水，暖光笼罩，画面日常而温暖，但她的半透明提醒她不是活人。冷中带暖。孩子无性化。电影感插画风格。无文字，无水印，无logo。"
+      },
+      {
+        "id": "J",
+        "title": "雨夜窗边",
+        "prompt": "夜晚的旧居，窗边。窗外下着雨，雨水模糊了城市的灯光。七岁小女孩站在窗边，用手指在起雾的玻璃上画着什么，侧脸安静。她身形半透明，脚下没有影子。冷蓝雨夜与室内一点暖色对比。孤独、安静、怀念。孩子无性化。电影感插画风格。无文字，无水印，无logo。"
+      },
+      {
+        "id": "K",
+        "title": "睡前共读",
+        "prompt": "夜晚的卧室，台灯暖光。你靠在床头给七岁小女孩读故事书，画面只见你的手和书本；她半透明地坐在你身边，抱膝听着，没有影子。月光透过窗帘洒进来。画面温暖亲密，但她的轮廓微微发亮、透明，带着一种即将消失的哀伤感。冷中带暖。孩子无性化。电影感插画风格。无文字，无水印，无logo。"
+      }
+    ],
+    "created_at": "2026-08-31T13:00:37.042Z",
+    "updated_at": "2026-08-31T13:00:41.554Z",
+    "artifacts": [
+      {
+        "id": "artifact_a23ba310-408e-4aad-9ae6-1585bf0d2444",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 3 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_934a4f50-6865-46b2-b3d3-3948bda51c4b",
+              "title": "《你看得见我》封面视觉（三方案）",
+              "created_at": "2026-08-31T12:37:27.803Z",
+              "images": [
+                {
+                  "id": "artifact_a4d984c1-75d0-402c-9373-428677c4a497",
+                  "title": "对视钩子（近景）",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/TBjFfKbxWGTpDbNwzrNLgotmCENoXI.webp"
+                },
+                {
+                  "id": "artifact_59a38642-e9f2-4580-8166-38f2625f327d",
+                  "title": "空间叙事（大全景）",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/TyfrdgObkDmVKTKMsJeygjXWCPGkrw.webp"
+                },
+                {
+                  "id": "artifact_f1150a00-8809-4c54-a7fb-4cfa0c475d94",
+                  "title": "威胁临近（冲突瞬间）",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/tTSTjPGcdxWLAWhdQxKieIXsfmuTwT.webp"
+                }
+              ]
+            },
+            {
+              "id": "image_task_7ab1ceb3-2ef3-418c-87e0-9964f70445be",
+              "title": "《你看得见我》封面视觉（四张重制）",
+              "created_at": "2026-08-31T12:53:40.594Z",
+              "images": [
+                {
+                  "id": "artifact_9cfb4aec-1916-4478-a1ed-330f419e8108",
+                  "title": "接住瞬间",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/elAvblkHhQHzCSXifhkCtPobfxcuNo.webp"
+                },
+                {
+                  "id": "artifact_fdb190c9-3ff4-4916-8f2f-5095e12cad92",
+                  "title": "窗台守望",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/FRemoImUdiEeikWlocGJAkIJEiNIrq.webp"
+                },
+                {
+                  "id": "artifact_63bd941a-5acb-4814-bf70-50caa10208f7",
+                  "title": "她挡在你面前",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/tGLOoCxyQVfuYASlVfUjMqZgOEYNBy.webp"
+                },
+                {
+                  "id": "artifact_22c3cf12-0ca3-475d-90cb-f88d6ee6f243",
+                  "title": "静静守护",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/zKyGLkKttlghwjmsAjxmXbBMFaGETK.webp"
+                }
+              ]
+            },
+            {
+              "id": "image_task_b39ed340-ab1d-4c19-83fa-0ae2c6b04111",
+              "title": "《你看得见我》封面视觉（四张新场景）",
+              "created_at": "2026-08-31T13:00:41.549Z",
+              "images": [
+                {
+                  "id": "artifact_4b6a2b65-d945-4dc2-9087-57f56d74a949",
+                  "title": "福利院初遇",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/GIAjgxZhXBHzKFKHaFUDeFyKteJiMV.webp"
+                },
+                {
+                  "id": "artifact_ebd1ea0a-e9ea-4bb7-8fa3-683dacd7dc31",
+                  "title": "厨房日常",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/OxciHedQvsxMQXnwAiNtEftjpfYMGd.webp"
+                },
+                {
+                  "id": "artifact_be8bc378-5806-419f-a2c0-a4f95fcebde8",
+                  "title": "雨夜窗边",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/pOKeCRUlzMrlMVgyllOAaUwFQbQkMp.webp"
+                },
+                {
+                  "id": "artifact_ee3ae26e-c12a-4a7a-b96a-5c1c6204f6e5",
+                  "title": "睡前共读",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/AVJUwTFIKNzvuWaPRpvLTcmMygmVjB.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-08-31T12:37:27.803Z",
+        "updated_at": "2026-08-31T13:00:41.549Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_4e07836d-99d3-4e75-b298-c5a966cfc45d",
+    "session_id": "session_958c1e02-6811-4225-954e-e5eac335e8f3",
+    "turn_id": "turn_4b784484-6bd6-4290-b82a-015a3b327804",
+    "after_message_id": "msg_64a99697-3a13-4d68-9ec7-97fb213aaab5",
+    "status": "completed",
+    "title": "桃奈 · 封面（近景眼神钩子）",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "a_closeup",
+        "title": "A · 近景眼神钩子",
+        "prompt": "电影感人像半身特写封面，一位成年地雷系风格少女正面望向观者。娃娃脸、圆而大的眼睛、浓密长睫毛、淡粉腮红、樱色微抿的唇；黑色长直发别着蝴蝶结发饰，戴银色小十字耳环，黑色蕾丝领口与甜暗混搭的连衣裙。眼神带着小心翼翼的防备，又藏不住一丝想靠近的期待——微微垂眸又抬眼看你。柔和顶光勾勒面部轮廓，背景虚化为暗色店内光晕，暗粉与黑为主色调，浅景深。柔焦、精致细节，无文字、无水印、无Logo。"
+      }
+    ],
+    "created_at": "2026-08-31T13:50:29.236Z",
+    "updated_at": "2026-08-31T13:50:33.062Z",
+    "artifacts": [
+      {
+        "id": "artifact_53e17908-6da0-4ce1-b994-0aee38b3a541",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 1 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_4e07836d-99d3-4e75-b298-c5a966cfc45d",
+              "title": "桃奈 · 封面（近景眼神钩子）",
+              "created_at": "2026-08-31T13:50:33.057Z",
+              "images": [
+                {
+                  "id": "artifact_86697594-3d0d-4709-b804-165f9d42bf78",
+                  "title": "Dark Fantasy Aesthetic（暗黑幻想） · 候选 1 · 近景人物钩子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/gSwruGGkTeeruULZvKAvsntIRQdJcN.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-08-31T13:50:33.057Z",
+        "updated_at": "2026-08-31T13:50:33.057Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_8033f490-9883-498f-b61a-5248b306dbed",
+    "session_id": "session_958c1e02-6811-4225-954e-e5eac335e8f3",
+    "turn_id": "turn_0d021ae5-1505-4b9c-9777-23ef2d629376",
+    "after_message_id": "msg_946abfe3-ebb4-4ce4-8b95-2b4a3a3fc8cc",
+    "status": "completed",
+    "title": "桃奈 · 封面（近景眼神钩子·重制版）",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "a_closeup_v2",
+        "title": "A · 近景眼神钩子·重制",
+        "prompt": "精致的日式二次元厚涂半身像封面，一位成年地雷系风格少女正面望向观者。圆而大的水亮眼睛、浓密长睫毛、透亮淡粉腮红、小巧微抿的樱唇，娃娃脸甜中带一丝冷漠疏离。黑色柔顺长直发别着蕾丝蝴蝶结发饰，戴银色小十字耳环，黑色蕾丝高领与甜暗混搭的黑色针织连衣裙，锁骨处露一点暗色缎带。眼神神情微垂又抬眼，戒备中藏不住期待。柔和唯美的顶光，背景为深色店铺的暖色光斑虚化，暗粉与黑主色调，浅景深。精致厚涂质感、干净构图、画面居中、细腻光影，无文字、无水印、无Logo。"
+      }
+    ],
+    "created_at": "2026-08-31T13:54:18.531Z",
+    "updated_at": "2026-08-31T13:54:22.402Z",
+    "artifacts": [
+      {
+        "id": "artifact_53e17908-6da0-4ce1-b994-0aee38b3a541",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 2 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_4e07836d-99d3-4e75-b298-c5a966cfc45d",
+              "title": "桃奈 · 封面（近景眼神钩子）",
+              "created_at": "2026-08-31T13:50:33.057Z",
+              "images": [
+                {
+                  "id": "artifact_86697594-3d0d-4709-b804-165f9d42bf78",
+                  "title": "Dark Fantasy Aesthetic（暗黑幻想） · 候选 1 · 近景人物钩子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/gSwruGGkTeeruULZvKAvsntIRQdJcN.webp"
+                }
+              ]
+            },
+            {
+              "id": "image_task_8033f490-9883-498f-b61a-5248b306dbed",
+              "title": "桃奈 · 封面（近景眼神钩子·重制版）",
+              "created_at": "2026-08-31T13:54:22.398Z",
+              "images": [
+                {
+                  "id": "artifact_95ae6c87-8ee6-4f7f-8e3b-64a1266a89a4",
+                  "title": "Dark Fantasy Aesthetic（暗黑幻想） · 候选 1 · 近景人物钩子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/zmpIFlDCYJDBnpRWqrTxvCteRrnWUx.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-08-31T13:50:33.057Z",
+        "updated_at": "2026-08-31T13:54:22.398Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_ea86bcec-0d7e-45c0-a28f-6eaab2798a68",
+    "session_id": "session_958c1e02-6811-4225-954e-e5eac335e8f3",
+    "turn_id": "turn_b3bac442-af09-4467-92c6-e8434753dad5",
+    "after_message_id": "msg_66008e7c-bc2f-4f5a-b030-74cc5a577401",
+    "status": "completed",
+    "title": "桃奈 · 封面（空气感画风版）",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "air_style_v3",
+        "title": "空气感画风版",
+        "prompt": "清透空气感的日系动画插画半身像封面，一位成年地雷系风格少女正面望向观者。圆而大的水亮眼睛、浓密卷翘长睫毛、柔和淡粉腮红、小巧微抿的樱唇，娃娃脸甜美中带一丝冷淡疏离的静谧气质。黑色柔顺长发别着蕾丝蝴蝶结与银色小十字发饰，黑色蕾丝高领配甜暗混搭的黑色连衣裙，颈间一条暗色缎带。眼神微微垂眸又抬眼，戒备中藏着藏不住的期待与一丝不安。柔和唯美空气感光影，背景深色店铺的暖色光斑虚化，暗粉、灰紫与黑主色调，浅景深，清透柔和、笔触干净、画面居中，无文字、无水印、无Logo。"
+      }
+    ],
+    "created_at": "2026-08-31T13:58:03.913Z",
+    "updated_at": "2026-08-31T13:58:08.131Z",
+    "artifacts": [
+      {
+        "id": "artifact_53e17908-6da0-4ce1-b994-0aee38b3a541",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 3 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_4e07836d-99d3-4e75-b298-c5a966cfc45d",
+              "title": "桃奈 · 封面（近景眼神钩子）",
+              "created_at": "2026-08-31T13:50:33.057Z",
+              "images": [
+                {
+                  "id": "artifact_86697594-3d0d-4709-b804-165f9d42bf78",
+                  "title": "Dark Fantasy Aesthetic（暗黑幻想） · 候选 1 · 近景人物钩子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/gSwruGGkTeeruULZvKAvsntIRQdJcN.webp"
+                }
+              ]
+            },
+            {
+              "id": "image_task_8033f490-9883-498f-b61a-5248b306dbed",
+              "title": "桃奈 · 封面（近景眼神钩子·重制版）",
+              "created_at": "2026-08-31T13:54:22.398Z",
+              "images": [
+                {
+                  "id": "artifact_95ae6c87-8ee6-4f7f-8e3b-64a1266a89a4",
+                  "title": "Dark Fantasy Aesthetic（暗黑幻想） · 候选 1 · 近景人物钩子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/zmpIFlDCYJDBnpRWqrTxvCteRrnWUx.webp"
+                }
+              ]
+            },
+            {
+              "id": "image_task_ea86bcec-0d7e-45c0-a28f-6eaab2798a68",
+              "title": "桃奈 · 封面（空气感画风版）",
+              "created_at": "2026-08-31T13:58:08.125Z",
+              "images": [
+                {
+                  "id": "artifact_6b72bd32-c1f4-4ce0-9594-1721e7e5bcdf",
+                  "title": "Dark Fantasy Aesthetic（暗黑幻想） · 候选 1 · 近景人物钩子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/bOwmrOwxWzuxBJPjvTJlsHaqRPfnad.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-08-31T13:50:33.057Z",
+        "updated_at": "2026-08-31T13:58:08.125Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_6e274c6a-7be4-496c-8343-ad230e79b1d3",
+    "session_id": "session_958c1e02-6811-4225-954e-e5eac335e8f3",
+    "turn_id": "turn_5c6e9fa2-c179-46c6-b3a8-a68c5c9a1573",
+    "after_message_id": "msg_da21d1ea-165b-4a2a-9c9a-b4db9553138b",
+    "status": "completed",
+    "title": "桃奈 · 封面（可爱傲娇版）",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "cute_tsundere_v4",
+        "title": "可爱傲娇版",
+        "prompt": "超可爱日系动画插画半身像封面，一位成年地雷系风格少女，傲娇又软萌的气质。圆而大的水亮眼睛、浓密卷翘长睫毛、明显透粉的腮红、微嘟的樱唇，娃娃脸甜美娇俏；她微微别过脸、带着一点被看穿的慌乱，眼神却忍不住悄悄瞥向观者——口是心非的傲娇表情，像在说‘才、才不是因为你呢’。黑色柔顺长发扎起蝴蝶结发饰，配银色小十字发夹，黑色蕾丝高领加甜暗混搭的黑色短裙，暗色缎带与蝴蝶结点缀。柔和唯美空气感光影，背景深色店铺的暖色光斑虚化，以粉、黑、灰紫为主色调，浅景深，软萌可爱、笔触干净、画面居中、高饱和甜度，无文字、无水印、无Logo。"
+      }
+    ],
+    "created_at": "2026-08-31T13:58:40.656Z",
+    "updated_at": "2026-08-31T13:58:44.453Z",
+    "artifacts": [
+      {
+        "id": "artifact_53e17908-6da0-4ce1-b994-0aee38b3a541",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 4 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_4e07836d-99d3-4e75-b298-c5a966cfc45d",
+              "title": "桃奈 · 封面（近景眼神钩子）",
+              "created_at": "2026-08-31T13:50:33.057Z",
+              "images": [
+                {
+                  "id": "artifact_86697594-3d0d-4709-b804-165f9d42bf78",
+                  "title": "Dark Fantasy Aesthetic（暗黑幻想） · 候选 1 · 近景人物钩子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/gSwruGGkTeeruULZvKAvsntIRQdJcN.webp"
+                }
+              ]
+            },
+            {
+              "id": "image_task_8033f490-9883-498f-b61a-5248b306dbed",
+              "title": "桃奈 · 封面（近景眼神钩子·重制版）",
+              "created_at": "2026-08-31T13:54:22.398Z",
+              "images": [
+                {
+                  "id": "artifact_95ae6c87-8ee6-4f7f-8e3b-64a1266a89a4",
+                  "title": "Dark Fantasy Aesthetic（暗黑幻想） · 候选 1 · 近景人物钩子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/zmpIFlDCYJDBnpRWqrTxvCteRrnWUx.webp"
+                }
+              ]
+            },
+            {
+              "id": "image_task_ea86bcec-0d7e-45c0-a28f-6eaab2798a68",
+              "title": "桃奈 · 封面（空气感画风版）",
+              "created_at": "2026-08-31T13:58:08.125Z",
+              "images": [
+                {
+                  "id": "artifact_6b72bd32-c1f4-4ce0-9594-1721e7e5bcdf",
+                  "title": "Dark Fantasy Aesthetic（暗黑幻想） · 候选 1 · 近景人物钩子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/bOwmrOwxWzuxBJPjvTJlsHaqRPfnad.webp"
+                }
+              ]
+            },
+            {
+              "id": "image_task_6e274c6a-7be4-496c-8343-ad230e79b1d3",
+              "title": "桃奈 · 封面（可爱傲娇版）",
+              "created_at": "2026-08-31T13:58:44.450Z",
+              "images": [
+                {
+                  "id": "artifact_469a176a-5f96-4d65-91a1-00f978c83267",
+                  "title": "Dark Fantasy Aesthetic（暗黑幻想） · 候选 1 · 近景人物钩子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/sMeXkCvtRVZiQYBEdwCrmBOqJDDCVG.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-08-31T13:50:33.057Z",
+        "updated_at": "2026-08-31T13:58:44.450Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_b53858a6-566c-43db-a890-0da839e125dd",
+    "session_id": "session_958c1e02-6811-4225-954e-e5eac335e8f3",
+    "turn_id": "turn_6570acd7-767a-4410-9233-ab135d6c727c",
+    "after_message_id": "msg_dd8b5a37-ba56-4ce5-a069-b55444a7c6e8",
+    "status": "completed",
+    "title": "桃奈 · 四风格封面组",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "cel_v1",
+        "title": "① 清新赛璐璐",
+        "prompt": "干净明快的日漫赛璐璐插画半身像封面，一位成年地雷系少女，可爱傲娇气质。圆而大的眼睛、浓密长睫、透亮淡粉腮红、微嘟的樱唇，娃娃脸甜美；别过脸又忍不住偷瞄的傲娇表情。黑色长发别蝴蝶结发饰与银色小十字夹，黑色蕾丝高领配甜暗混搭短裙。亮粉与黑高对比平涂，清爽色块、干净线条，背景深色店铺暖光虚化，画面居中，甜度最高，无文字、无水印、无Logo。"
+      },
+      {
+        "id": "painted_v2",
+        "title": "② 暗黑华丽厚涂",
+        "prompt": "暗黑华丽的油彩厚涂半身像封面，一位成年地雷系少女，危险外表里藏着傲娇软萌。圆大眼、长睫、淡粉腮红、微抿的唇，娃娃脸甜中带冷；微微别过脸、眼神偷瞄的口是心非。黑色长发与黑蔷薇、缎带交织，黑色蕾丝高领配华丽暗色裙装，暗色缎带点缀。深色电影质感光影，黑、暗粉、深红为主调，戏剧性顶光，厚重笔触、华丽细节，浅景深，画面居中，无文字、无水印、无Logo。"
+      },
+      {
+        "id": "watercolor_v3",
+        "title": "③ 柔彩水彩",
+        "prompt": "柔彩水彩晕染的半身像封面，一位成年地雷系少女，软萌温柔又带点傲娇。圆大眼、长睫、粉嫩腮红、微嘟唇，娃娃脸可爱；侧过脸却偷瞄的害羞傲娇神情。黑色柔软长发别蝴蝶结，黑色蕾丝领配浅色内搭，暗粉与灰紫点缀。水彩纸质感、色彩晕染过渡、空气感梦幻，背景深色店铺暖光虚化，柔和朦胧、情绪温柔，画面居中，无文字、无水印、无Logo。"
+      },
+      {
+        "id": "minimal_v4",
+        "title": "④ 暗调极简",
+        "prompt": "低饱和冷灰调的极简半身像封面，一位成年地雷系少女，神秘高级又藏一点傲娇。圆大眼、长睫、淡淡腮红、抿唇，面无表情中眼神却带着一丝偷看的倔强。黑色长发、简约黑色裙装，无多余装饰。冷灰、暗蓝、黑色为主的低饱和配色，大片留白，单一侧光勾勒轮廓，靠眼神与光影讲故事，极简构图、高级感，无文字、无水印、无Logo。"
+      }
+    ],
+    "created_at": "2026-08-31T13:59:17.875Z",
+    "updated_at": "2026-08-31T13:59:22.699Z",
+    "artifacts": [
+      {
+        "id": "artifact_53e17908-6da0-4ce1-b994-0aee38b3a541",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 5 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_4e07836d-99d3-4e75-b298-c5a966cfc45d",
+              "title": "桃奈 · 封面（近景眼神钩子）",
+              "created_at": "2026-08-31T13:50:33.057Z",
+              "images": [
+                {
+                  "id": "artifact_86697594-3d0d-4709-b804-165f9d42bf78",
+                  "title": "Dark Fantasy Aesthetic（暗黑幻想） · 候选 1 · 近景人物钩子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/gSwruGGkTeeruULZvKAvsntIRQdJcN.webp"
+                }
+              ]
+            },
+            {
+              "id": "image_task_8033f490-9883-498f-b61a-5248b306dbed",
+              "title": "桃奈 · 封面（近景眼神钩子·重制版）",
+              "created_at": "2026-08-31T13:54:22.398Z",
+              "images": [
+                {
+                  "id": "artifact_95ae6c87-8ee6-4f7f-8e3b-64a1266a89a4",
+                  "title": "Dark Fantasy Aesthetic（暗黑幻想） · 候选 1 · 近景人物钩子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/zmpIFlDCYJDBnpRWqrTxvCteRrnWUx.webp"
+                }
+              ]
+            },
+            {
+              "id": "image_task_ea86bcec-0d7e-45c0-a28f-6eaab2798a68",
+              "title": "桃奈 · 封面（空气感画风版）",
+              "created_at": "2026-08-31T13:58:08.125Z",
+              "images": [
+                {
+                  "id": "artifact_6b72bd32-c1f4-4ce0-9594-1721e7e5bcdf",
+                  "title": "Dark Fantasy Aesthetic（暗黑幻想） · 候选 1 · 近景人物钩子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/bOwmrOwxWzuxBJPjvTJlsHaqRPfnad.webp"
+                }
+              ]
+            },
+            {
+              "id": "image_task_6e274c6a-7be4-496c-8343-ad230e79b1d3",
+              "title": "桃奈 · 封面（可爱傲娇版）",
+              "created_at": "2026-08-31T13:58:44.450Z",
+              "images": [
+                {
+                  "id": "artifact_469a176a-5f96-4d65-91a1-00f978c83267",
+                  "title": "Dark Fantasy Aesthetic（暗黑幻想） · 候选 1 · 近景人物钩子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/sMeXkCvtRVZiQYBEdwCrmBOqJDDCVG.webp"
+                }
+              ]
+            },
+            {
+              "id": "image_task_b53858a6-566c-43db-a890-0da839e125dd",
+              "title": "桃奈 · 四风格封面组",
+              "created_at": "2026-08-31T13:59:22.690Z",
+              "images": [
+                {
+                  "id": "artifact_51b59855-31ad-4b11-87ed-a2c347cfc271",
+                  "title": "① 清新赛璐璐",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/BBivMCjHuiSEREFBfmIcoPaYQTDbwG.webp"
+                },
+                {
+                  "id": "artifact_c7910471-29c3-49e9-b7b0-104f304f640f",
+                  "title": "② 暗黑华丽厚涂",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/NRXRpmPxQlrnIAswDLIUtjGqVjYFsN.webp"
+                },
+                {
+                  "id": "artifact_3bc00f5b-5a47-4305-b3f7-5594d323ce26",
+                  "title": "③ 柔彩水彩",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/FPnKNKsdudpqJjmurDbmwpnqWLfzRb.webp"
+                },
+                {
+                  "id": "artifact_8f445164-5950-4b06-910d-df7db591abd2",
+                  "title": "④ 暗调极简",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/YynfihbPojdEakQErhoNXsyNnrcIAR.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-08-31T13:50:33.057Z",
+        "updated_at": "2026-08-31T13:59:22.690Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_cbf20a19-baf8-4920-b751-4f9795b1b95b",
+    "session_id": "session_cc33dfd6-3d13-4032-ab52-a311ea7a64a4",
+    "turn_id": "turn_f57cb98d-dfc5-42ab-924d-5f50a21c9944",
+    "after_message_id": "msg_2e4b775c-007a-4b81-9fe1-ed4f985f16fd",
+    "status": "failed",
+    "title": "《他在等你说对不起》封面 · 冲突瞬间",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "v1",
+        "title": "C·冲突瞬间 主稿",
+        "prompt": "心理惊悚互动本封面，正反打张力构图。画面从走廊向一扇反锁的浴室门拍摄。前景：一只女性手掌按在门上，指节发白、轻微发抖，手背青筋若隐若现。门缝后隐约可见一个蹲坐的女性身影轮廓，被室内冷光勾勒。门的另一侧画面右侧边缘，一个高大的男性剪影正俯身贴近门板，姿态温和却压迫，仿佛正低声说着什么。走廊一侧暖黄灯光，浴室一侧冷蓝阴影，两股光源在门缝处交汇，把画面劈成冷暖两半——她在冷的一边，他在暖的一边，门是界碑。整体：克制的心理张力、压抑、微妙不安，不血腥不露骨。冷蓝暗青色为主色调，细腻电影质感，写实插画风格。不要任何文字、Logo、水印、标题或品牌元素。竖构图封面。"
+      },
+      {
+        "id": "v2",
+        "title": "C·冲突瞬间 更高暖冷对比",
+        "prompt": "心理惊悚互动本封面，正反打张力构图。画面从走廊向一扇反锁的浴室门拍摄。前景：一只女性手掌按在门上，指节发白、轻微发抖。门缝后隐约可见一个蹲坐的女性身影轮廓，被室内冷光勾勒。门的另一侧画面右侧边缘，一个高大的男性剪影正俯身贴近门板，姿态温和却压迫，仿佛正低声说着什么。走廊一侧暖黄灯光，浴室一侧冷蓝阴影，两股光源在门缝处交汇，把画面劈成冷暖两半。加强冷暖对比度与阴影层次，更强烈的戏剧性光影，压抑氛围更浓。整体：克制的心理张力、微妙不安，不血腥不露骨。冷蓝暗青色为主，细腻电影质感，写实插画风格。不要任何文字、Logo、水印、标题或品牌元素。竖构图封面。"
+      },
+      {
+        "id": "v3",
+        "title": "C·冲突瞬间 更写实近距",
+        "prompt": "心理惊悚互动本封面，正反打张力构图。镜头更贴近门板。前景：一只女性手掌的特写按在门上，指节发白、指尖微颤，指甲修剪整齐、无名指戴一枚磨损的婚戒。门缝后隐约可见一个蹲坐的女性身影轮廓，被室内冷光勾勒。门的另一侧画面右侧边缘，一个高大的男性剪影正俯身贴近门板，姿态温和却压迫，仿佛正低声说着什么。走廊一侧暖黄灯光，浴室一侧冷蓝阴影，两股光源在门缝处交汇，把画面劈成冷暖两半。更写实、更近的镜头，突出手部细节与戒指的疲惫感。整体：克制的心理张力、微妙不安，不血腥不露骨。冷蓝暗青色为主，细腻电影质感，写实插画风格。不要任何文字、Logo、水印、标题或品牌元素。竖构图封面。"
+      }
+    ],
+    "created_at": "2026-08-31T15:03:57.316Z",
+    "updated_at": "2026-08-31T15:03:57.337Z",
+    "artifacts": [],
+    "error": {
+      "message": "fetch failed",
+      "code": "image_generation_failed",
+      "retryable": false
+    }
+  },
+  {
+    "id": "image_task_16bbcabf-9fe2-4599-b99e-047c2eb117dd",
+    "session_id": "session_cc33dfd6-3d13-4032-ab52-a311ea7a64a4",
+    "turn_id": "turn_12f65b06-86e8-48dc-8304-5512281f3d75",
+    "after_message_id": "msg_872d5740-bfb0-486a-8201-e7ff20147084",
+    "status": "completed",
+    "title": "《他在等你说对不起》封面 · 冲突瞬间",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "v1",
+        "title": "C·冲突瞬间 主稿",
+        "prompt": "心理惊悚互动本封面，正反打张力构图。画面从走廊向一扇反锁的浴室门拍摄。前景：一只女性手掌按在门上，指节发白、轻微发抖，手背青筋若隐若现。门缝后隐约可见一个蹲坐的女性身影轮廓，被室内冷光勾勒。门的另一侧画面右侧边缘，一个高大的男性剪影正俯身贴近门板，姿态温和却压迫，仿佛正低声说着什么。走廊一侧暖黄灯光，浴室一侧冷蓝阴影，两股光源在门缝处交汇，把画面劈成冷暖两半——她在冷的一边，他在暖的一边，门是界碑。整体：克制的心理张力、压抑、微妙不安，不血腥不露骨。冷蓝暗青色为主色调，细腻电影质感，写实插画风格。不要任何文字、Logo、水印、标题或品牌元素。竖构图封面。"
+      },
+      {
+        "id": "v2",
+        "title": "C·冲突瞬间 更高暖冷对比",
+        "prompt": "心理惊悚互动本封面，正反打张力构图。画面从走廊向一扇反锁的浴室门拍摄。前景：一只女性手掌按在门上，指节发白、轻微发抖。门缝后隐约可见一个蹲坐的女性身影轮廓，被室内冷光勾勒。门的另一侧画面右侧边缘，一个高大的男性剪影正俯身贴近门板，姿态温和却压迫，仿佛正低声说着什么。走廊一侧暖黄灯光，浴室一侧冷蓝阴影，两股光源在门缝处交汇，把画面劈成冷暖两半。加强冷暖对比度与阴影层次，更强烈的戏剧性光影，压抑氛围更浓。整体：克制的心理张力、微妙不安，不血腥不露骨。冷蓝暗青色为主，细腻电影质感，写实插画风格。不要任何文字、Logo、水印、标题或品牌元素。竖构图封面。"
+      },
+      {
+        "id": "v3",
+        "title": "C·冲突瞬间 更写实近距",
+        "prompt": "心理惊悚互动本封面，正反打张力构图。镜头更贴近门板。前景：一只女性手掌的特写按在门上，指节发白、指尖微颤，指甲修剪整齐、无名指戴一枚磨损的婚戒。门缝后隐约可见一个蹲坐的女性身影轮廓，被室内冷光勾勒。门的另一侧画面右侧边缘，一个高大的男性剪影正俯身贴近门板，姿态温和却压迫，仿佛正低声说着什么。走廊一侧暖黄灯光，浴室一侧冷蓝阴影，两股光源在门缝处交汇，把画面劈成冷暖两半。更写实、更近的镜头，突出手部细节与戒指的疲惫感。整体：克制的心理张力、微妙不安，不血腥不露骨。冷蓝暗青色为主，细腻电影质感，写实插画风格。不要任何文字、Logo、水印、标题或品牌元素。竖构图封面。"
+      }
+    ],
+    "created_at": "2026-09-01T03:49:46.602Z",
+    "updated_at": "2026-09-01T03:49:50.670Z",
+    "artifacts": [
+      {
+        "id": "artifact_7e2fcdbf-cbbe-43f5-9404-41884eecdc11",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 1 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_16bbcabf-9fe2-4599-b99e-047c2eb117dd",
+              "title": "《他在等你说对不起》封面 · 冲突瞬间",
+              "created_at": "2026-09-01T03:49:50.667Z",
+              "images": [
+                {
+                  "id": "artifact_b7e69404-39b1-4c62-aa8c-8fb55e16d4fb",
+                  "title": "C·冲突瞬间 主稿",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/FBHdPGTSZPabgIrszAzBlgHXlUfugX.webp"
+                },
+                {
+                  "id": "artifact_2bfd452a-a31c-4c3b-b42f-e76b7c9c1ac4",
+                  "title": "C·冲突瞬间 更高暖冷对比",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/cqmypUcxVwkwGKrDZlEkDXtLoTDWGn.webp"
+                },
+                {
+                  "id": "artifact_f6238c22-3f69-4f7b-b4ae-5bb2dd767802",
+                  "title": "C·冲突瞬间 更写实近距",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/kBaKWbkqrQaEqIpCJWQHJmpxKvFdev.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-09-01T03:49:50.667Z",
+        "updated_at": "2026-09-01T03:49:50.667Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_62e7c9c6-0c36-4ef7-bd43-69bc4df6dd39",
+    "session_id": "session_cc33dfd6-3d13-4032-ab52-a311ea7a64a4",
+    "turn_id": "turn_a388a583-dceb-4da6-9224-ea7f7413aa4d",
+    "after_message_id": "msg_66229ef4-b868-49dc-a1b5-1295ea17f13c",
+    "status": "completed",
+    "title": "《他在等你说对不起》封面 · 4种风格",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "s1",
+        "title": "风格1 · 电影写实",
+        "prompt": "心理惊悚互动本封面。深夜反锁的浴室门外，一只女性手掌按在门板上指节发白、轻微发抖。门缝透出走廊暖黄灯光，她所在的浴室是冷蓝阴影，一个高大的男性剪影俯身贴近门外低声说话，姿态温和却压迫。冷暖两股光在门缝交汇，把画面劈成冷暖两半。裂成两半的旧照片散落在地。风格：细腻电影质感的写实摄影感，真实光影、颗粒噪点、冷蓝暗青色主调，克制压抑的心理张力，不血腥不露骨。不要任何文字、Logo、水印或品牌元素。竖构图封面。"
+      },
+      {
+        "id": "s2",
+        "title": "风格2 · 水彩手绘",
+        "prompt": "心理惊悚互动本封面。深夜反锁的浴室门外，一只女性手掌按在门板上指节发白，门缝透出走廊暖黄光晕，她所在的浴室是冷蓝水彩晕染，一个男性剪影俯身贴近门外低声说话。冷暖两股光在门缝交汇把画面劈成两半，裂成两半的旧照片散落。风格：柔和的水彩手绘插画，笔触可见、纸纹肌理，冷蓝与暖黄的湿画法晕染，氛围含蓄哀伤而克制，不血腥不露骨。不要任何文字、Logo、水印或品牌元素。竖构图封面。"
+      },
+      {
+        "id": "s3",
+        "title": "风格3 · 黑色漫画",
+        "prompt": "心理惊悚互动本封面。深夜反锁的浴室门外，一只女性手掌按在门板上指节发白，门缝透出走廊暖黄光，她所在的浴室是冷蓝阴影，一个高大的男性剪影俯身贴近门外低声说话，压迫感强。冷暖两股光在门缝交汇把画面劈成两半，裂成两半的旧照片散落。风格：硬朗的黑色电影漫画/图像小说风，强烈黑白灰与单色高对比、粗犷排线阴影、戏剧性光源，紧张压抑，不血腥不露骨。不要任何文字、Logo、水印或品牌元素。竖构图封面。"
+      },
+      {
+        "id": "s4",
+        "title": "风格4 · 极简海报",
+        "prompt": "心理惊悚互动本封面。极简高概念构图：画面中央只有一扇被暖光和冷光从门缝一分为二的浴室门，暖光一侧映着一个高大男性剪影，冷光一侧是一只按在门上的女性手掌剪影，裂成两半的旧照片以极小形态点缀门缝下方。风格：极简现代海报风，大块平涂冷暖色块、简洁几何、大量留白，克制的符号化表达，静谧而有压迫感，不血腥不露骨。不要任何文字、Logo、水印或品牌元素。竖构图封面。"
+      }
+    ],
+    "created_at": "2026-09-01T03:51:13.393Z",
+    "updated_at": "2026-09-01T03:51:18.368Z",
+    "artifacts": [
+      {
+        "id": "artifact_7e2fcdbf-cbbe-43f5-9404-41884eecdc11",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 2 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_16bbcabf-9fe2-4599-b99e-047c2eb117dd",
+              "title": "《他在等你说对不起》封面 · 冲突瞬间",
+              "created_at": "2026-09-01T03:49:50.667Z",
+              "images": [
+                {
+                  "id": "artifact_b7e69404-39b1-4c62-aa8c-8fb55e16d4fb",
+                  "title": "C·冲突瞬间 主稿",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/FBHdPGTSZPabgIrszAzBlgHXlUfugX.webp"
+                },
+                {
+                  "id": "artifact_2bfd452a-a31c-4c3b-b42f-e76b7c9c1ac4",
+                  "title": "C·冲突瞬间 更高暖冷对比",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/cqmypUcxVwkwGKrDZlEkDXtLoTDWGn.webp"
+                },
+                {
+                  "id": "artifact_f6238c22-3f69-4f7b-b4ae-5bb2dd767802",
+                  "title": "C·冲突瞬间 更写实近距",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/kBaKWbkqrQaEqIpCJWQHJmpxKvFdev.webp"
+                }
+              ]
+            },
+            {
+              "id": "image_task_62e7c9c6-0c36-4ef7-bd43-69bc4df6dd39",
+              "title": "《他在等你说对不起》封面 · 4种风格",
+              "created_at": "2026-09-01T03:51:18.365Z",
+              "images": [
+                {
+                  "id": "artifact_82bfaeed-9ea2-4f1e-b5e3-441c4df4fbd3",
+                  "title": "风格1 · 电影写实",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/PilyIFqALpQAqcjXyMCKGEtaxfrUJO.webp"
+                },
+                {
+                  "id": "artifact_3027998f-7283-452f-8b11-3b1b7083f337",
+                  "title": "风格2 · 水彩手绘",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/hbjKxJHLCmAzYGnQeJoyaDeAeqfuFy.webp"
+                },
+                {
+                  "id": "artifact_1360538a-b183-48e2-a8f4-05ad5f7c860c",
+                  "title": "风格3 · 黑色漫画",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/rKNSBLnFVUfhFzmPpdMzmgAfOOXLfS.webp"
+                },
+                {
+                  "id": "artifact_fdb6c8b9-bffc-4f9d-903b-affc7c1de88e",
+                  "title": "风格4 · 极简海报",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/veQAzsfZccRLHYFDjqjOewstLhmjrb.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-09-01T03:49:50.667Z",
+        "updated_at": "2026-09-01T03:51:18.365Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_8ba1f473-2f7f-4a6c-8fc2-e51c1e0b335e",
+    "session_id": "session_5391f123-4001-48c7-a1bb-bb065dc0f38e",
+    "turn_id": "turn_b1cb2226-3545-4c09-a914-ee93efc52bdd",
+    "after_message_id": "msg_6b573fc5-262e-4db3-87f5-1765ba0c8184",
+    "status": "completed",
+    "title": "雾海信号灯 — 封面",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "v1",
+        "title": "风暴夜孤塔",
+        "prompt": "电影感写实暗调插画，风暴将至的深夜，孤礁上的白色灯塔，白色光束如利刃切开浓重海雾与巨浪，海面一艘若隐若现的船影正驶向光，塔顶一盏孤独灯火，天际线泛着一层不属于天空的幽蓝沉落微光，深蓝雾气，电影构图，忧郁神秘氛围，无文字。"
+      },
+      {
+        "id": "v2",
+        "title": "雾海灯语",
+        "prompt": "电影感写实暗调插画，浓雾弥漫的夜海，灯塔俯瞰视角，白色光束在海面上扫出一道细长光路，光路上有一道细小的船影，远处海面下透出幽蓝的沉落微光，深蓝黑与雾灰，压抑神秘，电影构图，无文字。"
+      }
+    ],
+    "created_at": "2026-09-01T05:58:39.333Z",
+    "updated_at": "2026-09-01T05:58:43.161Z",
+    "artifacts": [
+      {
+        "id": "artifact_bbf9af6b-131d-4987-9b5c-122857c40db3",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 1 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_8ba1f473-2f7f-4a6c-8fc2-e51c1e0b335e",
+              "title": "雾海信号灯 — 封面",
+              "created_at": "2026-09-01T05:58:43.156Z",
+              "images": [
+                {
+                  "id": "artifact_97e9aea1-12df-4455-955b-d7376b3ff7e2",
+                  "title": "风暴夜孤塔",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/IKiOEhyhiOEXgXnaXkDISFOZKRnihx.webp"
+                },
+                {
+                  "id": "artifact_59266f5a-4ac1-4611-953a-4d1193ff7250",
+                  "title": "雾海灯语",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/DymutLQqsoDTAGYeLBLZrOefSCeiXI.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-09-01T05:58:43.156Z",
+        "updated_at": "2026-09-01T05:58:43.157Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_9775338d-797d-4158-a9a1-910d51bacabb",
+    "session_id": "session_29e20e3b-d7a3-4ec4-95ce-dfabb2b8561c",
+    "turn_id": "turn_de626c58-5d9a-42db-8053-aec72012857e",
+    "after_message_id": "msg_d4bb24ea-dc09-4538-b009-9886a03f3272",
+    "status": "completed",
+    "title": "养大还是查清 · 封面 A（近景钩子）",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "A1",
+        "title": "A·近景钩子（确认版）",
+        "prompt": "暗黑悬疑养成游戏封面。近景特写：一名约七八岁的东方女孩侧脸低垂，右手捏着蜡笔，正低头去补画纸上窗边的一个淡淡人影；人影只勾了几笔、没有画完。女孩眼里映着一点落地灯暖光，表情安静克制，但眼神深处藏着细微的不安。背景被虚化成深灰色的暴雨夜旧宅客厅，只有一盏落地灯泛着暖黄。冷蓝主调、局部暖黄光晕，克制、静谧、带悬疑压迫感。低机位贴近女孩侧脸，人物占据画面右侧，左侧留出大片冷色雨夜暗部。无文字、无Logo、无水印。"
+      }
+    ],
+    "created_at": "2026-09-01T06:58:10.649Z",
+    "updated_at": "2026-09-01T06:58:14.479Z",
+    "artifacts": [
+      {
+        "id": "artifact_0cf21158-faec-4d0c-a647-767c7587c172",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 1 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_9775338d-797d-4158-a9a1-910d51bacabb",
+              "title": "养大还是查清 · 封面 A（近景钩子）",
+              "created_at": "2026-09-01T06:58:14.472Z",
+              "images": [
+                {
+                  "id": "artifact_9a5f6963-aada-4563-9f0d-ab8b2508d6a5",
+                  "title": "Dark Fantasy Aesthetic（暗黑幻想） · 候选 1 · 近景人物钩子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/jHfjgnJaMbFIuYbDMybfujOzoEELWO.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-09-01T06:58:14.472Z",
+        "updated_at": "2026-09-01T06:58:14.472Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_b4cff3b6-7255-4d90-a24c-5200821c12a8",
+    "session_id": "session_29e20e3b-d7a3-4ec4-95ce-dfabb2b8561c",
+    "turn_id": "turn_d03d60dd-18e6-4207-9265-259eef887051",
+    "after_message_id": "msg_5f360359-7c27-4c70-9b7b-58535ae4ad38",
+    "status": "completed",
+    "title": "养大还是查清 · 方案A系列候选",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "A2",
+        "title": "A2·中景半身·轮廓光",
+        "prompt": "暗黑悬疑养成游戏封面。中景偏半身：约七八岁的东方女孩侧身坐在磨损的地毯上，画纸摊在膝前，右手握着蜡笔，微微低头看着画纸上窗边那个只勾了几笔、未画完的淡淡人影。落地灯在她身后投出暖黄轮廓光，把她的影子拉长到墙壁上，与窗边人影形成呼应。背景是深灰暴雨夜旧宅客厅，冷蓝主调、局部暖黄。克制、静谧、带悬疑压迫感。无文字、无Logo、无水印。"
+      },
+      {
+        "id": "A3",
+        "title": "A3·抬眼瞬间·暖光眼神",
+        "prompt": "暗黑悬疑养成游戏封面。近景：约七八岁的东方女孩侧脸，右手捏着蜡笔悬停在画纸上，正要抬头、眼神越过画纸看向观者一侧，眼里映着一点落地灯暖光，神情安静而克制，藏着未说出口的依赖与戒备。前景是摊开的画纸，纸角画着窗边一个未画完的淡淡人影。背景深灰雨夜旧宅虚化。冷蓝主调、眼神与笔尖处局部暖黄。无文字、无Logo、无水印。"
+      },
+      {
+        "id": "A4",
+        "title": "A4·竖构图·眼神与手特写",
+        "prompt": "暗黑悬疑养成游戏封面，竖构图特写。画面上部是女孩低垂的眉眼与半张侧脸，眼里映着落地灯暖光；画面下部是握蜡笔的小手，正落笔在画纸上补一个淡色的窗边人影轮廓。两处被暖黄光点亮，其余大面积冷蓝暗部。背景暴雨夜旧宅氛围虚化，克制、静谧、带悬疑压迫感。无文字、无Logo、无水印。"
+      }
+    ],
+    "created_at": "2026-09-01T07:02:17.810Z",
+    "updated_at": "2026-09-01T07:02:21.698Z",
+    "artifacts": [
+      {
+        "id": "artifact_0cf21158-faec-4d0c-a647-767c7587c172",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 2 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_9775338d-797d-4158-a9a1-910d51bacabb",
+              "title": "养大还是查清 · 封面 A（近景钩子）",
+              "created_at": "2026-09-01T06:58:14.472Z",
+              "images": [
+                {
+                  "id": "artifact_9a5f6963-aada-4563-9f0d-ab8b2508d6a5",
+                  "title": "Dark Fantasy Aesthetic（暗黑幻想） · 候选 1 · 近景人物钩子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/jHfjgnJaMbFIuYbDMybfujOzoEELWO.webp"
+                }
+              ]
+            },
+            {
+              "id": "image_task_b4cff3b6-7255-4d90-a24c-5200821c12a8",
+              "title": "养大还是查清 · 方案A系列候选",
+              "created_at": "2026-09-01T07:02:21.692Z",
+              "images": [
+                {
+                  "id": "artifact_2f537acb-cfa2-4110-9bbf-4420295e4c90",
+                  "title": "A2·中景半身·轮廓光",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/ZcklYLqUSfnjzLMWPSQPyudLdAaClz.webp"
+                },
+                {
+                  "id": "artifact_9ade7ac1-0211-47d4-9c38-18bd58c32400",
+                  "title": "A3·抬眼瞬间·暖光眼神",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/artueQFvdYjEVyQEinCIfiYRSbEwwe.webp"
+                },
+                {
+                  "id": "artifact_3c1b09fd-f8bd-4197-bf74-28a85fde4d05",
+                  "title": "A4·竖构图·眼神与手特写",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/GoydKWsKtKRBDYpQoFfNmOmqBcWQsA.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-09-01T06:58:14.472Z",
+        "updated_at": "2026-09-01T07:02:21.692Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_1fb401d6-649c-43e4-a390-9e107880f0a5",
+    "session_id": "session_9d94c2b4-eee4-4cb1-8125-5a06b989a007",
+    "turn_id": "turn_4aa1feb1-06fb-4000-97a6-fd71df3ed0e4",
+    "after_message_id": "msg_adca2551-b5a1-4a84-baff-41472b6a5852",
+    "status": "completed",
+    "title": "午夜专线 · 闻晚 封面候选",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "A",
+        "title": "近景接住",
+        "prompt": "深夜电台主持人闻晚的半身近景封面，柔和写实插画质感。她戴着录音室耳机、耳机滑到颈间，眼神低垂而专注地听着电话，嘴唇微抿。暖黄台灯只照亮她的一侧脸，另一侧陷入温柔的阴影，轮廓光勾勒下颌线。画面边缘有一支复古麦克风，一盏小小的红色ON AIR灯在暗处投下一片红光。背景是黑暗的直播间与隐约的窗。整体温暖、安静、被接住的感觉。缩略图清晰可读。不要任何文字、Logo、水印。"
+      },
+      {
+        "id": "B",
+        "title": "空间叙事",
+        "prompt": "深夜电台直播间全景封面，柔和写实插画质感。深夜城市窗外黑成一片，唯独房间里这盏暖黄台灯亮着，形成黑暗里唯一的光。主持闻晚小小的身影坐在桌后，面前一支复古大麦克风，手边一杯冒着热气的温水。画面强调空间与孤独中的一盏温暖之光。人物清晰可辨，轮廓光勾勒。不要任何文字、Logo、水印。"
+      },
+      {
+        "id": "C",
+        "title": "温柔瞬间",
+        "prompt": "深夜电台主持人闻晚半身近景封面，捕捉一个温柔的动作瞬间，柔和写实插画质感。她正轻轻伸手扶起耳边的耳机，身体微微前倾，像刚要接起一通电话，姿态从容而专注。暖黄台灯从背后勾出她肩膀与手臂的轮廓光，桌上有麦克风和一杯温水。光线温暖、明暗有呼吸感，主体清晰可读。不要任何文字、Logo、水印。"
+      },
+      {
+        "id": "D",
+        "title": "轮廓与暖光",
+        "prompt": "深夜电台主持人闻晚的侧影封面，柔和写实插画质感。她的剪影正对窗外深夜城市，身体微微前倾，像认真倾听一个人说话。桌面只有复古麦克风与一杯冒着热气的温水被暖黄光照亮，其余陷在温柔的阴影里。光与影把人物钉在倾听这个动作上，温暖而克制。主体轮廓清晰可读。不要任何文字、Logo、水印。"
+      }
+    ],
+    "created_at": "2026-09-01T07:31:46.374Z",
+    "updated_at": "2026-09-01T07:31:50.507Z",
+    "artifacts": [
+      {
+        "id": "artifact_501a5466-8589-4c77-8045-1beb2aeb486a",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 1 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_1fb401d6-649c-43e4-a390-9e107880f0a5",
+              "title": "午夜专线 · 闻晚 封面候选",
+              "created_at": "2026-09-01T07:31:50.506Z",
+              "images": [
+                {
+                  "id": "artifact_95c6e33c-74b8-45ba-a41d-7eaba6103b96",
+                  "title": "近景接住",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/kxZwUthEduXNPlKhbzjzNlLtfsOFXd.webp"
+                },
+                {
+                  "id": "artifact_6880c018-f28e-4b0f-b9e8-48625a7e9298",
+                  "title": "空间叙事",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/fuYvGweZCEBMRJrBepltSfFCzexdfU.webp"
+                },
+                {
+                  "id": "artifact_ade17d39-9384-4bb6-b48d-440aaeac1140",
+                  "title": "温柔瞬间",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/ndJQlbRcirJJWcUDpeXCKARSbCIYzN.webp"
+                },
+                {
+                  "id": "artifact_d54892eb-9d1a-485c-9e8e-ff0ad07d54dd",
+                  "title": "轮廓与暖光",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/XhOjGYnvtTLVUuozqSKfELREiVToyX.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-09-01T07:31:50.506Z",
+        "updated_at": "2026-09-01T07:31:50.506Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_b0f4fd14-698f-435c-a858-7e8bc9c900f9",
+    "session_id": "session_ee5e40ba-880e-4eb5-97dc-02a28edab1c3",
+    "turn_id": "turn_c3397cf2-d12f-4ad5-87c7-b2d39d10870c",
+    "after_message_id": "msg_54aeb837-a6ce-4e51-9c7e-64e485c5f111",
+    "status": "completed",
+    "title": "Luca 封面候选 · 方案B 慵懒邀约半身",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "B1",
+        "title": "冷蓝月光沙发",
+        "prompt": "Half-body portrait of a handsome cold, arrogant male character, dark hair, sharp jawline, slight mocking smirk, in a dim luxury living room. He lounges back against a leather sofa by a large window, one arm draped over the backrest, the other hand raised with a finger crooking in a lazy “come here” invite. Cool blue moonlight rim-lights his profile from the window while warm dim interior light softly warms the scene, high contrast between the two light sources. Direct-to-camera, cold teasing gaze. Semi-realistic cinematic style, shallow depth of field, readable face and expression in thumbnail. No text, no watermark, no other people."
+      },
+      {
+        "id": "B2",
+        "title": "酒吧斜倚",
+        "prompt": "Half-body portrait of a handsome cold, arrogant male character, dark hair, smoldering cold teasing gaze, leaning sideways against a bar counter. One hand holds a glass, the other slightly raised in a relaxed “come over” gesture. Behind him warm amber liquor bottles and bokeh lights glow; his face is lit by a cool side light while the foreground stays darker. Slightly low camera angle, lazy confident posture. Semi-realistic cinematic style, shallow depth of field, readable face and expression in thumbnail. No text, no watermark, no other people."
+      },
+      {
+        "id": "B3",
+        "title": "床头灯邀约",
+        "prompt": "Half-body portrait of a handsome cold, arrogant male character, dark tousled hair, half-reclined in a dim bedroom on a sofa, collar loosely open. One hand propped behind him, the other hand lightly patting the empty seat right beside him, inviting the viewer to sit. Single warm bedside lamp glows with deep heavy shadows around him, intimate moody atmosphere. Calm teasing expression looking at the viewer. Semi-realistic cinematic style, strong chiaroscuro, readable face and expression in thumbnail. No text, no watermark, no other people."
+      },
+      {
+        "id": "B4",
+        "title": "夜景扶手椅",
+        "prompt": "Half-body portrait of a handsome cold, arrogant dominating male character, dark hair, sharp features, seated upright in a single private-lounge armchair with legs crossed. One hand rests on the armrest, the other performs a commanding “come here” gesture. Behind him a floor-to-ceiling window blurs into cool city-night lights; overall cool desaturated tone with a crisp rim light on his face. Dominant cold gaze at the viewer. Semi-realistic cinematic style, shallow depth of field, readable face and expression in thumbnail. No text, no watermark, no other people."
+      }
+    ],
+    "created_at": "2026-09-01T08:01:38.888Z",
+    "updated_at": "2026-09-01T08:01:43.369Z",
+    "artifacts": [
+      {
+        "id": "artifact_c626811c-02f4-4840-8378-cf37bf67f674",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 1 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_b0f4fd14-698f-435c-a858-7e8bc9c900f9",
+              "title": "Luca 封面候选 · 方案B 慵懒邀约半身",
+              "created_at": "2026-09-01T08:01:43.367Z",
+              "images": [
+                {
+                  "id": "artifact_c3fb4636-d937-4afc-87d5-5aab36170243",
+                  "title": "冷蓝月光沙发",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/DnfqZHNeqfioXFhxMGVzSOJRQmVXyZ.webp"
+                },
+                {
+                  "id": "artifact_7f764601-6ea9-48ae-add5-56cb88aadc78",
+                  "title": "酒吧斜倚",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/nSFXpKzGYtByHGJVoHsotOVvgeultk.webp"
+                },
+                {
+                  "id": "artifact_96c86cc9-fe3d-4f59-8f69-405957b5f27f",
+                  "title": "床头灯邀约",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/ZAKfnhxIRlQQbjNfrcinRNjANULJgy.webp"
+                },
+                {
+                  "id": "artifact_7e6e414d-43b8-4334-bf76-d6b62eca0ea0",
+                  "title": "夜景扶手椅",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/ojVkezAoRlEjPPrkGpWKiffRAjwhYW.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-09-01T08:01:43.367Z",
+        "updated_at": "2026-09-01T08:01:43.367Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_e3367f86-ff4d-42cb-bc34-f7e5962a7207",
+    "session_id": "session_1c8b625a-cc23-4015-92ad-f8f21e33ed22",
+    "turn_id": "turn_9dc08ef4-a5c2-4f1a-964f-f84502a48d5a",
+    "after_message_id": "msg_9cae8436-d7ce-416d-8ebf-a84a93f36f78",
+    "status": "completed",
+    "title": "Kaelen 方向 B 半身张力封面候选",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "b1",
+        "title": "正面 · 冷光轮廓",
+        "prompt": "半身正面构图，Kaelen 虎背熊腰的壮汉刚从昏暗地下格斗场走廊走出，双拳在身前攥紧、指节红肿带伤，下颌紧绷，钢灰色眼睛在阴影中半掩却锐利含怒。撕裂的白色 T 恤汗渍斑斑绷在厚实肌肉上，左颊新鲜瘀伤，暗色乱发沾汗与尘土。正后方门口一道冷光勾勒出他的轮廓线。昏暗地下氛围，面部与眼睛保留清晰高光，缩略图下主体醒目。不要文字、Logo、水印。"
+      },
+      {
+        "id": "b2",
+        "title": "低角度仰拍 · 眼神逼近",
+        "prompt": "半身略侧、低角度仰拍。Kaelen 虎背熊腰，刚从昏暗地下格斗场走廊走出，走向镜头，钢灰色眼睛锐利含怒直视前方，仿佛质问。双拳攥紧、指节红肿带伤，撕裂的白色 T 恤汗渍斑斑绷在厚实肌肉上，左颊新鲜瘀伤，暗色乱发沾汗与尘土。走廊尽头冷光直射而来。昏暗地下氛围，面部与眼睛保留清晰高光，缩略图下主体醒目。不要文字、Logo、水印。"
+      },
+      {
+        "id": "b3",
+        "title": "扶门框 · 逆光剪影",
+        "prompt": "半身构图。Kaelen 虎背熊腰，一手扶住门框、身体前倾，刚从昏暗地下格斗场走出，疲惫与怒火交织。撕裂的白色 T 恤汗渍斑斑绷在厚实肌肉上，左颊新鲜瘀伤，暗色乱发沾汗与尘土。门口逆光在他身后形成清晰的边缘剪影光，面部大半沉入阴影，只有眼睛与半边脸的轮廓被冷光切亮。压抑昏暗的地下氛围，面部与眼睛保留清晰高光，缩略图下主体醒目。不要文字、Logo、水印。"
+      },
+      {
+        "id": "b4",
+        "title": "侧脸近景 · 明暗切割",
+        "prompt": "半身特写偏近。Kaelen 虎背熊腰，侧脸朝向镜头，左颊新鲜瘀伤清晰可见，钢灰色眼睛含怒。撕裂的白色 T 恤汗渍斑斑绷在厚实肌肉上，双拳攥紧、指节红肿带伤，暗色乱发沾汗与尘土。面部一半沉入阴影、一半被硬冷光切亮，形成强烈明暗对比，背后是昏暗地下格斗场走廊。面部与眼睛保留清晰高光，缩略图下主体醒目。不要文字、Logo、水印。"
+      }
+    ],
+    "created_at": "2026-09-01T08:08:10.681Z",
+    "updated_at": "2026-09-01T08:08:16.633Z",
+    "artifacts": [
+      {
+        "id": "artifact_989182aa-836d-49ce-9ff9-16b2d8efe167",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 1 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_e3367f86-ff4d-42cb-bc34-f7e5962a7207",
+              "title": "Kaelen 方向 B 半身张力封面候选",
+              "created_at": "2026-09-01T08:08:16.633Z",
+              "images": [
+                {
+                  "id": "artifact_c850132b-f0b7-4ed4-b1c5-18b964fbb9f4",
+                  "title": "正面 · 冷光轮廓",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/aIIVQauZeWQzmRIAYGhiMMAheLHQij.webp"
+                },
+                {
+                  "id": "artifact_8c9524c3-d742-4518-8d14-0ec5c9c4c53c",
+                  "title": "低角度仰拍 · 眼神逼近",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/dsrYVGfVhWoQdWozaZbcJdgYFqvQUB.webp"
+                },
+                {
+                  "id": "artifact_5fc94dee-318a-4ef3-9857-64cdee133dd5",
+                  "title": "扶门框 · 逆光剪影",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/BJyynrtlggDMhmTGIjXtpJaZWUfyAy.webp"
+                },
+                {
+                  "id": "artifact_ff598bb5-8be0-45b0-afc3-1fb993ae27ab",
+                  "title": "侧脸近景 · 明暗切割",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/GfpwrLLpjXNSkytpXlkmtlZrMJHiKN.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-09-01T08:08:16.633Z",
+        "updated_at": "2026-09-01T08:08:16.633Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_9422ac81-9541-4209-95e8-5809b0150986",
+    "session_id": "session_0a7221d1-628c-4bea-a05f-527e0fac2dcf",
+    "turn_id": "turn_16efa4d1-4ad2-45a1-ab61-90d2b60dd991",
+    "after_message_id": "msg_2c5ba83e-ed91-4560-a7b4-81bcb64f7654",
+    "status": "completed",
+    "title": "王冠契约 封面",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "v1",
+        "title": "双面台阶（推荐）",
+        "prompt": "写实向言情游戏封面，冷冽的皇家蓝与暖金光线交织，克制而华丽、暧昧又疏离。一位年轻王位继承人（男性，冷峻克制，白衬衫，领口纹丝不动）站在宫殿大理石台阶顶端，微微朝画面下方伸出手邀请。画面下半部是拥挤的媒体人群剪影，闪光灯像雪片般闪烁。台阶被一道光切开：一半处在明亮的聚光灯下，一半隐入阴影。构图暗示光鲜与隐忍并存的双面主题。成人向、体面克制，不露骨。"
+      },
+      {
+        "id": "v2",
+        "title": "台阶光影特写",
+        "prompt": "浪漫言情封面风格，年轻王位继承人的半身特写，站在宫殿台阶上，身后是虚化的金碧辉煌与媒体闪光灯。他一侧脸被暖光照亮、眼神克制，另一侧脸沉入蓝调阴影。冷冽皇家蓝与暖金对比强烈，暗含演给世界看与做给一个人看的双重身份。成人向、体面克制，不露骨。"
+      }
+    ],
+    "created_at": "2026-09-01T12:05:46.701Z",
+    "updated_at": "2026-09-01T12:05:51.427Z",
+    "artifacts": [
+      {
+        "id": "artifact_d8ce40eb-cb7e-438e-8570-56b042b46dc5",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 1 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_9422ac81-9541-4209-95e8-5809b0150986",
+              "title": "王冠契约 封面",
+              "created_at": "2026-09-01T12:05:51.417Z",
+              "images": [
+                {
+                  "id": "artifact_fcdca34f-7fda-4060-982e-cc53772010b6",
+                  "title": "双面台阶（推荐）",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/TGMdnqsJVqvqHrIqJbuJxecRSQOSkD.webp"
+                },
+                {
+                  "id": "artifact_09cc57f9-000d-499f-bd97-8ec49eb936c9",
+                  "title": "台阶光影特写",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/XzirEYlcgjFOtbKvNfIXMMDKkbFUxF.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-09-01T12:05:51.417Z",
+        "updated_at": "2026-09-01T12:05:51.417Z"
+      }
+    ],
+    "error": null
+  },
+  {
+    "id": "image_task_3204ef14-1df2-4d2f-bd99-c7c9c6fba487",
+    "session_id": "session_0a7221d1-628c-4bea-a05f-527e0fac2dcf",
+    "turn_id": "turn_419a6922-52b3-4381-b954-0d32665fd07d",
+    "after_message_id": "msg_b1c1906e-2712-43cf-91a2-7522f1df002d",
+    "status": "completed",
+    "title": "王冠契约 封面·人物聚焦",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "v1",
+        "title": "半脸光影特写（推荐）",
+        "prompt": "写实向言情游戏封面，主角聚焦。年轻王位继承人卡西安的半身特写：冷峻克制贵族气质，精致立体下颌线，深色短发后梳，冰蓝色眼眸，薄唇，神情内敛克制几乎不笑。白衬衫配深色王室礼服，领口纹丝不动。宫殿落地窗背景，暖金光线只照亮他半张脸，另一半沉入冷冽蓝调阴影——双面直接体现在表情与明暗上。冷冽皇家蓝与暖金交织，克制华丽、暧昧又疏离。成人向、体面克制，不露骨。"
+      },
+      {
+        "id": "v2",
+        "title": "台阶远望全身",
+        "prompt": "写实向言情游戏封面。年轻王位继承人卡西安站在宫殿大理石台阶顶端，深色短发，冷峻克制，白衬衫深色王室礼服，领口纹丝不动，身形挺拔疏离。他微微低头望向画面下方，神情内敛、近乎不笑。身后是虚化的金碧辉煌王宫，一道暖光从他身后射来，勾勒出他挺拔的轮廓，其余沉入冷冽蓝调阴影。冷冽皇家蓝与暖金对比，克制华丽。成人向、体面克制，不露骨。"
+      }
+    ],
+    "created_at": "2026-09-01T12:33:36.381Z",
+    "updated_at": "2026-09-01T12:33:40.179Z",
+    "artifacts": [],
+    "error": null
+  },
+  {
+    "id": "image_task_b010b4d6-a4ff-4cf5-87de-e153ebaf8e99",
+    "session_id": "session_84ed2d3e-18fa-4d29-ba2f-f62f0381029e",
+    "turn_id": "turn_d40a875b-c420-4630-a486-0e328cf979b1",
+    "after_message_id": "msg_b6f92a64-0766-4ba7-84f3-bb661944354e",
+    "status": "completed",
+    "title": "轮回传承·十选三 封面候选（3款）",
+    "purpose": "cover",
+    "variants": [
+      {
+        "id": "cover_a",
+        "title": "方向1 冷清道观·扫地弟子",
+        "prompt": "低机位仰视的冷清道观清晨：青石阶、斑驳山门、香炉边蹲着一只灰猫，一个拎着扫帚的年轻扫地弟子背影立在晨雾与落叶中。灰青主色调，点缀一缕晨光，留白多，氛围清冷、宿命感、安静。中国古风数字插画，质感细腻。"
+      },
+      {
+        "id": "cover_b",
+        "title": "方向2 十张天赋卡的抉择",
+        "prompt": "俯视构图：十张泛着微光的天赋卡悬浮在人物摊开的掌心之上，排成半圆，卡片质感像残旧符纸，边缘有细碎荧光与流转光泽，三张被微微点亮悬起。暗色背景衬托光线，氛围神秘、抉择感。中国古风数字插画。"
+      },
+      {
+        "id": "cover_c",
+        "title": "方向3 轮回传承·水墨长卷",
+        "prompt": "水墨长卷式构图：同一个模糊身影在山水之间几次层叠的转世剪影（各处于不同季节与景致），象征短局人生与跨世积累，落款印章感。大量留白，水墨晕染，宿命与传承气息浓厚。中国水墨风数字插画。"
+      }
+    ],
+    "created_at": "2026-09-01T12:49:12.092Z",
+    "updated_at": "2026-09-01T12:49:15.923Z",
+    "artifacts": [
+      {
+        "id": "artifact_044d565a-4d4e-4288-a5d5-edc49ce19fe7",
+        "type": "image_library",
+        "title": "图片资源",
+        "description": "已收录 1 组图片生成结果。",
+        "data": {
+          "batches": [
+            {
+              "id": "image_task_b010b4d6-a4ff-4cf5-87de-e153ebaf8e99",
+              "title": "轮回传承·十选三 封面候选（3款）",
+              "created_at": "2026-09-01T12:49:15.922Z",
+              "images": [
+                {
+                  "id": "artifact_cefc0aa5-ba5c-4a49-a47d-da386c0d394b",
+                  "title": "方向1 冷清道观·扫地弟子",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/TfNIoCfMPgGbriOmUVTfuzIVcPBXQj.webp"
+                },
+                {
+                  "id": "artifact_fd7f7135-3f9a-44ff-b347-2d0e6c7c6d82",
+                  "title": "方向2 十张天赋卡的抉择",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/UMlIYmvyjOXvdIzseclAUOSgoUcRjd.webp"
+                },
+                {
+                  "id": "artifact_a9fb1fd0-6d6b-446b-8f19-f606220529c2",
+                  "title": "方向3 轮回传承·水墨长卷",
+                  "url": "https://image-cdn.flowgpt.com/image-generation/oLXBgJbMelOYlDLFqXgEQzgokdhcyq.webp"
+                }
+              ]
+            }
+          ]
+        },
+        "bot_ref": null,
+        "created_at": "2026-09-01T12:49:15.922Z",
+        "updated_at": "2026-09-01T12:49:15.922Z"
+      }
+    ],
+    "error": null
+  }
+]

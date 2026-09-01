@@ -1,0 +1,2 @@
+import {FolderOpen} from 'lucide-react';
+export function WorkspaceHeader({bot,onOpenWorkspace}){return <header className="workspace-header"><div className="header-title"><span>{bot?'正在创作':'新的对话'}</span><h1>{bot?bot.name:'自由探索'}</h1></div><div className="workspace-header-actions"><button type="button" className="workspace-entry" onClick={onOpenWorkspace} title="打开本次对话的资源区"><FolderOpen size={15}/><span>资源区</span></button></div></header>}

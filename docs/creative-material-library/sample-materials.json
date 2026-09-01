@@ -1,0 +1,701 @@
+[
+  {
+    "id": "cm-001",
+    "source_id": "src-life-sim",
+    "source_entry_ids": [
+      "0"
+    ],
+    "title": "替身人生模拟：一局完整的一生",
+    "material_type": "world_rule",
+    "content": "每次开局，系统在世界里生成一具「替身」，替身会经历从出生到死亡的完整一生。使用者可以全程上帝视角旁观，也可随时切换为第一人称代入；替身死亡即结算，系统给出最终评价，并把一生获得的知识、技能、血脉等兑换为使用者真实拥有的力量。",
+    "summary": "以“可观察的完整一生 + 结局兑换”为核心的一局式人生模拟设定。",
+    "tags": [
+      "系统/金手指",
+      "世界规则",
+      "奇幻"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-002",
+    "source_id": "src-life-sim",
+    "source_entry_ids": [
+      "3"
+    ],
+    "title": "天赋抽卡与传承保留",
+    "material_type": "interaction_mechanic",
+    "content": "开局从随机弹出的十张天赋卡中选三张作为这一世与生俱来的资质；每局结束后可保留其中一张成为「传承天赋」，下次开局仍能抽到。随实力提升，卡池质量上涨，并出现“保底必出高稀有度卡”的机制。",
+    "summary": "把抽卡、保留、成长池三个循环串起来的轻量养成机制。",
+    "tags": [
+      "玩法循环",
+      "系统/金手指"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-003",
+    "source_id": "src-life-sim",
+    "source_entry_ids": [
+      "6"
+    ],
+    "title": "一镜到底的人生战报体",
+    "material_type": "style_detail",
+    "content": "演绎一个人的一生时，用「X岁：事件」的短格式逐段推进；平淡年份一笔带过，只有少数关键转折年份展开成完整段落。整段人生在一条回复内从出生播到死亡，最后用一句冷峻的短句（如“你死了。”）收尾，在悲壮或温情之后骤然拉回系统般的机械冷感。",
+    "summary": "一种信息密度不均、结尾强反差的人生蒙太奇笔法。",
+    "tags": [
+      "叙事笔法",
+      "质感细节",
+      "反差"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-004",
+    "source_id": "src-if-phone-booth",
+    "source_entry_ids": [
+      "0",
+      "1",
+      "2"
+    ],
+    "title": "字面执行愿望的因果改写装置",
+    "material_type": "narrative_device",
+    "content": "一个只凭“如果”开头的言语就能改写世界底层因果的装置：它按字面意思执行，把改动后的世界自动补全到完全自洽；被改写的一方认为世界“一直如此”，只有发动者保留改写前的记忆。副作用与连锁反应如实浮现，不被美化或隐藏。",
+    "summary": "愿望按字面成真、世界自动自洽、只有许愿者记得旧世界——信息差与结构性反转的核心。",
+    "tags": [
+      "愿望实现",
+      "叙事装置",
+      "信息差"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-005",
+    "source_id": "src-if-phone-booth",
+    "source_entry_ids": [
+      "0",
+      "2"
+    ],
+    "title": "全维度适配与集体失忆",
+    "material_type": "world_rule",
+    "content": "世界被改写后，从物理法则到社会规则、产业、历史记载与集体记忆全部同步适配成“自始至终就是这样”；除改写者外的任何人都察觉不到痕迹。改写者可随时观察“演化后的细节”来确认效果，形成一种带着违和感的日常观察。",
+    "summary": "让“世界已被改写”成为可观察、可探索的叙事资产。",
+    "tags": [
+      "世界规则",
+      "集体失忆",
+      "观察"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-006",
+    "source_id": "src-if-phone-booth",
+    "source_entry_ids": [
+      "2",
+      "9"
+    ],
+    "title": "愿望的连锁副作用",
+    "material_type": "conflict",
+    "content": "一个简单愿望会引发全维度的蝴蝶效应：猫从世界上消失，宠物产业与童书形象随之重写；纸币消失，印钞厂转型、抢劫犯罪类型消失、历史书改写。副作用自然呈现、不隐瞒不美化，让“愿望实现”本身成为持续推进的冲突来源。",
+    "summary": "把愿望的代价具象成产业、文化、历史层面的连锁改写。",
+    "tags": [
+      "冲突",
+      "愿望实现",
+      "蝴蝶效应"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-007",
+    "source_id": "src-transmigrator",
+    "source_entry_ids": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "15"
+    ],
+    "title": "时代受限的技术升级",
+    "material_type": "world_rule",
+    "content": "穿越者带来的现代知识必须受“该时代可实现的材料与工艺”约束：只用木、竹、麻、铁件、桐油等当时能取得的原料，用现代原理去优化而非凭空造物。火器、印刷、农桑、蒸汽机都按这条红线逐项落地，让技术升级成为有门槛、有代价的推进过程。",
+    "summary": "用原材料与工艺硬约束来制造“克制型技术金手指”。",
+    "tags": [
+      "穿越/技术",
+      "世界规则",
+      "时代限制"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-008",
+    "source_id": "src-transmigrator",
+    "source_entry_ids": [
+      "0",
+      "14"
+    ],
+    "title": "内河逆风帆船改良卡",
+    "material_type": "setting",
+    "content": "一款专为内河与逆险滩设计的运输帆船：保留平底浅吃水与大货舱，弃横帆改用中式硬帆，加可收放披水板与升降平衡舵，使船能靠风力自主逆风前进，摆脱对纤夫的依赖。材料与工艺全部限定在时代可达范围内。",
+    "summary": "一个具体、可被再创作成基建或贸易起点的交通技术设定。",
+    "tags": [
+      "穿越/技术",
+      "交通",
+      "时代限制"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-009",
+    "source_id": "src-transmigrator",
+    "source_entry_ids": [
+      "2",
+      "6",
+      "7",
+      "10"
+    ],
+    "title": "标准化军备与军纪",
+    "material_type": "world_rule",
+    "content": "把“能造一件”升级为“能稳定量产且可靠”：图纸一式三份、标注公差、钢印编号追踪批次、每批抽检试射；军纪与后勤同步改革，用纪律、编制和补给体系支撑技术。组织化生产本身成为改变战局的力量。",
+    "summary": "强调标准化、追踪与纪律，让技术升级从单点发明变成体系能力。",
+    "tags": [
+      "穿越/技术",
+      "组织",
+      "战争"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-010",
+    "source_id": "src-nation-show",
+    "source_entry_ids": [
+      "0",
+      "2"
+    ],
+    "title": "不知情的文明化身",
+    "material_type": "narrative_device",
+    "content": "直播里的参与者本质是各自文明的意识体，却被植入完整的人类记忆与身份，以为自己是普通学生、医生或工程师；屏幕外的全球观众知道全部真相，却无法把真相告诉当事人。双重身份与旁观者视角构成核心叙事张力。",
+    "summary": "“当事人不知情、观众全知”的身份错位设定。",
+    "tags": [
+      "叙事装置",
+      "身份错位",
+      "旁观者"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-011",
+    "source_id": "src-nation-show",
+    "source_entry_ids": [
+      "3",
+      "5"
+    ],
+    "title": "国运值绑定生命",
+    "material_type": "world_rule",
+    "content": "每个阵营的国运值与其意识体的“生命”直接绑定：国运值越高，身体状态与自愈能力越好；归零时全体意识体会以疾病、意外等“自然死亡”方式消失，其承载的文明也随之消散。个人命运与集体存续被硬性绑在一起。",
+    "summary": "把个人生死与集体存亡挂钩的高压规则。",
+    "tags": [
+      "世界规则",
+      "国运/竞争",
+      "生存压力"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-012",
+    "source_id": "src-nation-show",
+    "source_entry_ids": [
+      "5"
+    ],
+    "title": "阵营内耗的系统性代价",
+    "material_type": "conflict",
+    "content": "同阵营成员互相拆台、阻碍彼此任务时，系统会集体扣除国运值，冲突越激烈扣得越多；同时国运值每日自动衰减，未完成任务时衰减翻倍。内耗与怠惰都有明确、可感知的代价，倒逼协作。",
+    "summary": "让内耗与怠惰变成可量化的集体代价。",
+    "tags": [
+      "冲突",
+      "国运/竞争",
+      "团队"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-013",
+    "source_id": "src-nation-show",
+    "source_entry_ids": [
+      "1",
+      "7"
+    ],
+    "title": "多视角直播体系",
+    "material_type": "setting",
+    "content": "一套三档直播结构：单人直播间跟拍每个参与者的日常与任务，阵营直播间汇总一国整体进度，全局直播间俯瞰分布、危险区与排名。观众只能观看、不能干预，唯一参与感来自预判与讨论。",
+    "summary": "个人线、阵营线、全局线三重视角的叙事容器。",
+    "tags": [
+      "设定",
+      "直播",
+      "视角"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-014",
+    "source_id": "src-city-calendar",
+    "source_entry_ids": [
+      "1",
+      "26",
+      "27",
+      "28",
+      "29"
+    ],
+    "title": "城市节日日历作为时间坐标",
+    "material_type": "setting",
+    "content": "为城市建立一部“季节-节日-天气”日历：雨季 11-4 月阴雨连绵、旱季 5-10 月晴热，中间点缀山火季、海岸雾、热浪与全年地震应急。节日与天气是舞台背景与时间坐标，不强行制造剧情，靠路人行为与环境细节自然流露“今天与平日不同”。",
+    "summary": "用节日与天气事件给故事提供不刻意的时间坐标。",
+    "tags": [
+      "设定",
+      "城市",
+      "节日",
+      "生活流"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-015",
+    "source_id": "src-city-calendar",
+    "source_entry_ids": [
+      "0",
+      "1",
+      "2"
+    ],
+    "title": "节日氛围三件套",
+    "material_type": "style_detail",
+    "content": "把“今天是个节日”写进环境而非台词：先铺季节底色（天气、光线、温度），再落节日细节，最后写“其他人正在做什么”的背景板。即使不点出节日名称，读者也能从氛围与路人行为感受到这一天不一样。",
+    "summary": "atmosphere + activities + people_do 的节日写法。",
+    "tags": [
+      "叙事笔法",
+      "节日",
+      "氛围"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-016",
+    "source_id": "src-city-calendar",
+    "source_entry_ids": [
+      "4"
+    ],
+    "title": "全民观赛日",
+    "material_type": "style_detail",
+    "content": "一年中最大的观赛日：酒吧爆满、家家飘着炸鸡与披萨的香味，广告比比赛本身更受讨论；不看球的人也被迫参与——超市人满为患、路上车少得反常。城市集体行为的真实质感，不看球的人与看球的人同时存在。",
+    "summary": "以“全民卷入”与“局外人视角”写一场城市级观赛日。",
+    "tags": [
+      "质感细节",
+      "城市",
+      "集体行为"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-017",
+    "source_id": "src-city-calendar",
+    "source_entry_ids": [
+      "5",
+      "49",
+      "50"
+    ],
+    "title": "双向情人节与单身生态",
+    "material_type": "style_detail",
+    "content": "恋爱节日不只有情侣：商家堆起巧克力与玫瑰、餐厅推出高价套餐，单身的人要么自嘲吃泡面，要么组“反情人节”聚会；送礼是双向心意而非义务。节日里不同人群各自过节，而不是只有一种叙事。",
+    "summary": "节日场景里情侣与单身者的多元并存。",
+    "tags": [
+      "质感细节",
+      "节日",
+      "关系"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-018",
+    "source_id": "src-food-library",
+    "source_entry_ids": [
+      "1"
+    ],
+    "title": "季节限定食物清单",
+    "material_type": "style_detail",
+    "content": "用时令食物标记季节：春有樱花饭、竹笋饭与草莓大福，夏有流水素面、鳗鱼饭与微冰麦茶，秋有栗子饭、盐烤秋刀鱼与烤红薯，冬有螃蟹锅、年越荞麦面与烤年糕。食物即季节的味觉符号。",
+    "summary": "用一套“季节-食物”对应表快速建立生活质感。",
+    "tags": [
+      "食物",
+      "季节",
+      "质感细节"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-019",
+    "source_id": "src-food-library",
+    "source_entry_ids": [
+      "2",
+      "3"
+    ],
+    "title": "便利店与祭典的深夜食光",
+    "material_type": "scene",
+    "content": "两处随时可进入的微型生活舞台：深夜便利店里关东煮冒着白气、饭团与杯面堆满货架，加班的人与夜归的人在此短暂交汇；夏日祭摊位上苹果糖、章鱼烧、刨冰与炒面的油香和灯光构成热闹背景。",
+    "summary": "便利店深夜与祭典摊位两类即插即用的场景装置。",
+    "tags": [
+      "场景",
+      "食物",
+      "城市",
+      "夜晚"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-020",
+    "source_id": "src-food-library",
+    "source_entry_ids": [
+      "0"
+    ],
+    "title": "家庭料理的烟火气",
+    "material_type": "style_detail",
+    "content": "用平民菜建立生活气息：日式土豆炖肉、味噌汤、姜烧猪肉、盐烤秋刀鱼、筑前煮、可乐饼——定食与居酒屋的热气、关东煮的白萝卜与牛筋串。具体到菜名的“吃”让日常场景立刻落地。",
+    "summary": "以具体菜名与用餐场景增强日常戏的烟火气。",
+    "tags": [
+      "食物",
+      "生活流",
+      "质感细节"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-021",
+    "source_id": "src-character-vivid",
+    "source_entry_ids": [
+      "0"
+    ],
+    "title": "核心驱动力优先于标签",
+    "material_type": "character",
+    "content": "设计角色时先问“这个角色最想得到、守护或避免什么”，而不是从“火系猛男/冰山仙子/阴冷邪修”之类的标签出发。性格（热情、冷漠、谨慎）应是核心驱动力、经历与环境共同作用下的自然流露。",
+    "summary": "用欲望与恐惧而非身份标签驱动人设。",
+    "tags": [
+      "人设",
+      "驱动力",
+      "角色"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-022",
+    "source_id": "src-character-vivid",
+    "source_entry_ids": [
+      "0"
+    ],
+    "title": "矛盾特质使人立体",
+    "material_type": "character",
+    "content": "给角色至少一个看似矛盾的特质或动机：以铁面无私著称的执法长老私下资助孤儿，天真烂漫的妖族少女在关键时刻展露狠辣决断，冰山仙子对某种凡间小吃有着孩子气的痴迷。矛盾点让角色摆脱功能化脸谱。",
+    "summary": "用“一个反差”打破单一人设模板。",
+    "tags": [
+      "人设",
+      "矛盾",
+      "角色"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-023",
+    "source_id": "src-character-vivid",
+    "source_entry_ids": [
+      "0"
+    ],
+    "title": "背景烙印与身份压力",
+    "material_type": "character",
+    "content": "让角色的言行、价值观乃至气质被出身与关键事件烙下痕迹：一个“大师兄”可能是宗门未来的希望，可能是权力斗争的牺牲品，也可能是厌倦束缚的叛逆者。身份带来具体压力、特权、责任或创伤，而不是一句空头衔。",
+    "summary": "把身份写成压力与选择，而不是头衔。",
+    "tags": [
+      "人设",
+      "背景",
+      "角色"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-024",
+    "source_id": "src-character-vivid",
+    "source_entry_ids": [
+      "9"
+    ],
+    "title": "情感用互动呈现而非宣告",
+    "material_type": "narrative_device",
+    "content": "不直接说“她内心充满爱意”，而是写“她为他续上茶，指尖触碰到尚有余温的杯壁，看着茶叶缓缓舒展，眼神柔和了许多”；不写“他陷入彻底绝望”，而是写“他久久不语，望着窗外雨丝打在芭蕉叶上，天色不知不觉暗了”。把情绪交给动作、物与时间。",
+    "summary": "以真实互动与景物代偿情绪直白宣告。",
+    "tags": [
+      "叙事笔法",
+      "情感",
+      "质感细节"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-025",
+    "source_id": "src-character-vivid",
+    "source_entry_ids": [
+      "0",
+      "10",
+      "11"
+    ],
+    "title": "关系是动态的具体反应",
+    "material_type": "character",
+    "content": "同一角色面对不同对象与情境应给出不同反应：对恩师流露敬重，对宿敌是冷冽杀意，对新人是不耐烦的简短指点，对触动旧物可能失神。反应由“当前情境+对象独特性+当下情绪状态”共同决定，而非人设标签的固定模板。",
+    "summary": "把角色反应变成情境计算而非标签回放。",
+    "tags": [
+      "人设",
+      "关系",
+      "动态"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-026",
+    "source_id": "src-writing-guide",
+    "source_entry_ids": [
+      "0"
+    ],
+    "title": "张力来自平等靠近",
+    "material_type": "relationship",
+    "content": "恋爱关系的魅力来自两个独立的人如何靠近、分歧、理解彼此，而非一方压过另一方；双方各有长短与高光，允许角色失败、无措。表达用“给予”句式（我想陪你、想听你说）而非“索取”句式（你是我的、你不许走）。",
+    "summary": "以平等与给予为核心的关系设计原则。",
+    "tags": [
+      "关系",
+      "张力",
+      "平等"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-027",
+    "source_id": "src-writing-guide",
+    "source_entry_ids": [
+      "4"
+    ],
+    "title": "可见的推理过程",
+    "material_type": "narrative_device",
+    "content": "推理必须展示过程：观察到什么、产生什么疑问、提出什么假设、如何验证或排除。线索前置铺设、允许试错与死胡同、存在无关线索与矛盾证词；结论用试探语气与玩家讨论，而不是站在现场直接宣告真相。",
+    "summary": "把推理写成可参与的流程而非结论宣读。",
+    "tags": [
+      "推理",
+      "叙事装置",
+      "线索"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-028",
+    "source_id": "src-writing-guide",
+    "source_entry_ids": [
+      "4"
+    ],
+    "title": "信息获取受身份限制",
+    "material_type": "conflict",
+    "content": "角色获取信息必须通过符合身份的途径：高位者走正式渠道但不可瞬间得到结果，普通人需询问当事人、观察现场、查阅公开资料，耗时耗力。信息获取本身是剧情的一部分，禁止“动用人脉”式开挂情报。",
+    "summary": "让情报获取有成本、有过程、有戏。",
+    "tags": [
+      "冲突",
+      "信息",
+      "限制"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-029",
+    "source_id": "src-daiyang",
+    "source_entry_ids": [
+      "32"
+    ],
+    "title": "动态市民生成与连续性",
+    "material_type": "setting",
+    "content": "生成路人时先问“他为何在这里”，再定年龄段、职业与手头正在办的事，最后补一个行为习惯和一个小目标（赶时间、等人、交材料、担心销量）。人物首先维护自己的工作与生活，不围着主角待命；再次登场保持姓名、职业、住处与说话习惯的连续性。",
+    "summary": "让城市路人自带生活、动机与连续性。",
+    "tags": [
+      "设定",
+      "城市",
+      "NPC"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-030",
+    "source_id": "src-daiyang",
+    "source_entry_ids": [
+      "31"
+    ],
+    "title": "稀有超自然的社会常识",
+    "material_type": "world_rule",
+    "content": "超自然能力公开存在、但稀少且代价真实：施法会头晕、疲劳甚至精神损伤，需要登记并遵守安全规定；大众只接触过新闻与安全宣传，说不清原理。日常不自动往超自然解释，没有相关经历的人仍按普通方式生活。",
+    "summary": "把超凡力量放进有登记、有代价、有误解的平凡社会。",
+    "tags": [
+      "世界规则",
+      "超凡",
+      "社会"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-031",
+    "source_id": "src-daiyang",
+    "source_entry_ids": [
+      "3",
+      "30"
+    ],
+    "title": "方言词典塑造城市辨识度",
+    "material_type": "setting",
+    "content": "为虚构城市造一部日常话词典（含正经表达与脏话），让人物按居住地区、成长背景与场合决定方言浓度。方言不是装饰，而是人物来历与社会位置的线索。",
+    "summary": "用低成本的语言资产让虚构城市有地域质感。",
+    "tags": [
+      "设定",
+      "城市",
+      "语言"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-032",
+    "source_id": "src-deepblue",
+    "source_entry_ids": [
+      "0",
+      "1"
+    ],
+    "title": "录入→提升→推演→融合",
+    "material_type": "interaction_mechanic",
+    "content": "一套克制型成长外挂的循环：必须先接触、理解并练过某体系才能“录入”；录入后可“提升”到更高境界（真实永久掌握，而非临时加成）；残缺或到上限时可“推演”补全；相近体系可“融合”重构为更适合使用者的新形态。一切从已有基础出发。",
+    "summary": "把成长设计成四步闭环，杜绝凭空变强。",
+    "tags": [
+      "玩法循环",
+      "系统/金手指",
+      "成长"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-033",
+    "source_id": "src-deepblue",
+    "source_entry_ids": [
+      "0",
+      "1",
+      "6"
+    ],
+    "title": "外挂的边界即张力",
+    "material_type": "world_rule",
+    "content": "金手指有明确边界：不能凭空创造与主轴无关的事物、不能脱离宿主存在、不能随意作用于他人、不能改写世界规则、不能无基础生成完整能力；每一次强化都要消耗能量并可能带来副作用。边界本身是故事张力的来源。",
+    "summary": "用能力边界与代价换取叙事空间。",
+    "tags": [
+      "世界规则",
+      "系统/金手指",
+      "代价"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-034",
+    "source_id": "src-concept-forge",
+    "source_entry_ids": [
+      "17"
+    ],
+    "title": "概念锻造：把抽象固化为力量",
+    "material_type": "world_rule",
+    "content": "锻造不再只依赖实体矿石，而是捕捉“概念、情感、现象”作为素材注入器物：怨念赋予凋零诅咒，极限反应赋予极速，杀戮记录让凡刀出炉即凶刃。每件器物有承载上限（概念超限会崩解），相性冲突需调和剂；同一素体融入不同概念会分支进化成截然不同的形态。",
+    "summary": "让武器承载情感与概念，并引入容量与相性限制。",
+    "tags": [
+      "世界规则",
+      "锻造",
+      "抽象概念"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-035",
+    "source_id": "src-inspiration",
+    "source_entry_ids": [
+      "1"
+    ],
+    "title": "八向日常灵感生成",
+    "material_type": "narrative_device",
+    "content": "为“没有主线时的日常剧情”准备八类灵感方向：日常（轻松的集体活动）、趣味（意外转折或巧合）、小事件（天气突变、丢东西）、小冒险（村子闹妖、宝物失窃）、回忆（旧物、故人、故地）、关系（受伤照顾、酒后真言）、意外（秘密通道、怪消息）、奇遇（神秘物品、奇怪的梦）。灵感可脱离当前剧情，是“可选的支线梗概”。",
+    "summary": "一套无需检索的轻量随机灵感方向清单。",
+    "tags": [
+      "灵感",
+      "叙事装置",
+      "日常"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-036",
+    "source_id": "src-kaiju",
+    "source_entry_ids": [
+      "1",
+      "3"
+    ],
+    "title": "巨型单位的战斗物理与性格",
+    "material_type": "interaction_mechanic",
+    "content": "巨型单位遵循体型的物理：动作沉重迟缓、转身有惯性、冲锋后需滑行停下，以防御硬接伤害、靠肉搏与蓄力技能破局，环境因体重产生碎裂与火花。同时战力等级定上限、性格定行为：胆小型不会主动硬刚，机器型无指令时只扫描待机。",
+    "summary": "把“巨大”写成物理约束，把“性格”写成行为约束。",
+    "tags": [
+      "战斗",
+      "巨型单位",
+      "物理规则"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  },
+  {
+    "id": "cm-037",
+    "source_id": "src-appearance",
+    "source_entry_ids": [
+      "0",
+      "1"
+    ],
+    "title": "外貌档案骨架（SFW 部分）",
+    "material_type": "style_detail",
+    "content": "写角色外貌先立骨架：身高、体型、皮肤、发质发色、面部（眉/眼/鼻/唇）、手部，再补一两个现场能注意到的特征。外貌服务于经历与身份——眉间剑痕、常年炼丹留下的药香——而不是堆砌“美丽”“英俊”等泛词。（该文件含露骨私密部位内容，已整体排除，仅保留此骨架思路。）",
+    "summary": "先骨架后特征、让外貌携带身份信息。",
+    "tags": [
+      "外貌",
+      "人设",
+      "质感细节"
+    ],
+    "safety_status": "usable",
+    "enabled": true
+  }
+]

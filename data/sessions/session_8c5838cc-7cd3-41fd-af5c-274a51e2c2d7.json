@@ -1,0 +1,14 @@
+{
+  "messages": [],
+  "artifactIds": [],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": null,
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 0,
+  "id": "session_8c5838cc-7cd3-41fd-af5c-274a51e2c2d7",
+  "title": "Per-query Langfuse definitive verification",
+  "workObjectId": null,
+  "created_at": "2026-08-31T06:46:51.502Z",
+  "updated_at": "2026-08-31T06:46:51.565Z"
+}

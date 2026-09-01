@@ -1,0 +1,15 @@
+{
+  "messages": [],
+  "artifactIds": [],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": null,
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 0,
+  "id": "session_cbe42e50-11ed-4dfe-83a4-2337ad9b51c2",
+  "title": "Live observability flush test",
+  "workObjectId": null,
+  "created_at": "2026-08-31T06:40:00.096Z",
+  "updated_at": "2026-08-31T06:41:00.817Z",
+  "langfuse_trace_id": "c273a946-8a73-4910-8a8c-7016148c73b0"
+}

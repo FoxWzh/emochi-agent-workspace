@@ -1,0 +1,42 @@
+{
+  "messages": [
+    {
+      "id": "msg_3f52786c-685a-4a46-8f33-90e0bfee8d8d",
+      "role": "user",
+      "content": "请仔细描述我上传的图片里有什么；只根据图片回答。",
+      "attachments": [
+        {
+          "id": "attachment_21ef9aef-f968-4b2e-8124-ee5c5f86551d",
+          "kind": "image",
+          "name": "read-tool-verify.png",
+          "mime_type": "image/png",
+          "size": 91,
+          "url": "/api/uploads/image_5098013f-04b8-4754-9d7e-0a4f6bbfb60b.png",
+          "file_path": "uploads/image_5098013f-04b8-4754-9d7e-0a4f6bbfb60b.png"
+        }
+      ],
+      "created_at": "2026-09-01T08:21:15.727Z",
+      "trace_id": "fde70896e2ec216a7ef612c345e02db3"
+    },
+    {
+      "id": "msg_f5077343-3de7-4798-9fb6-c5acb58dd13a",
+      "role": "assistant",
+      "content": "我无法看到您上传的这张图片——它在当前会话中显示为「不支持的图片格式」，内容没有成功加载给我。\n\n我**不会**凭猜测编造图片内容，以免误导您。\n\n您可以尝试以下任一方式，我好继续帮您：\n1. **换一种格式**重新上传（常见支持的格式：PNG、JPG/JPEG、WebP）。\n2. 上传后如果仍提示不支持，可以**简要告诉我图片里大致是什么**（比如人物、场景、文字截图），我再基于您的描述帮您分析或创作。\n\n您看用哪种方式比较方便？",
+      "trace_id": "fde70896e2ec216a7ef612c345e02db3",
+      "created_at": "2026-09-01T08:21:19.931Z"
+    }
+  ],
+  "artifactIds": [
+    "artifact_b868275d-ef54-431e-bcaf-42102ae1a027"
+  ],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": "c2d2b029-c104-4a00-8c13-48e345bfaaa0",
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 2,
+  "id": "session_2663b968-0cde-44b9-88eb-16809e9d3ea4",
+  "title": "[验证] 读图",
+  "workObjectId": null,
+  "created_at": "2026-09-01T08:21:15.693Z",
+  "updated_at": "2026-09-01T08:21:19.931Z"
+}

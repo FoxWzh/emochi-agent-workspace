@@ -1,0 +1,15 @@
+{
+  "messages": [],
+  "artifactIds": [],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": null,
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 0,
+  "id": "session_1d2a9a3c-f0e4-42e7-9355-049f507a9164",
+  "title": "Langfuse flush timing verification",
+  "workObjectId": null,
+  "created_at": "2026-08-31T06:10:46.085Z",
+  "updated_at": "2026-08-31T06:10:50.047Z",
+  "langfuse_trace_id": "0c2259c9-632f-4f0d-a601-2d5f6418ae25"
+}

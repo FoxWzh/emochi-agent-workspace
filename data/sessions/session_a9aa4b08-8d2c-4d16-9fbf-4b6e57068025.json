@@ -1,0 +1,19 @@
+{
+  "messages": [],
+  "artifactIds": [
+    "artifact_3046a7f6-74a1-4e2e-89cb-6c0f9922300c",
+    "artifact_d293eb1c-ea5f-4be0-8bef-d5d484df8815",
+    "artifact_c1ea5e75-4572-43be-aa40-e3db67a18432"
+  ],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": null,
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 0,
+  "id": "session_a9aa4b08-8d2c-4d16-9fbf-4b6e57068025",
+  "title": "Langfuse one trace per session verification",
+  "workObjectId": "bot_sample_01",
+  "created_at": "2026-08-31T06:03:01.623Z",
+  "updated_at": "2026-08-31T06:08:41.875Z",
+  "langfuse_trace_id": "35114d4d-3cd3-4450-8e7b-0bb9b7989f3c"
+}

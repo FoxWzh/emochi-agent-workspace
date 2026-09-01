@@ -1,0 +1,14 @@
+{
+  "messages": [],
+  "artifactIds": [],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": "ba34f8b2-f165-4e39-9c0b-5ff9f7b3290d",
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 2,
+  "id": "session_23495940-669b-4dcf-a151-4a033bab0af9",
+  "title": "Token observability smoke",
+  "workObjectId": null,
+  "created_at": "2026-08-31T13:05:42.250Z",
+  "updated_at": "2026-08-31T13:05:52.522Z"
+}

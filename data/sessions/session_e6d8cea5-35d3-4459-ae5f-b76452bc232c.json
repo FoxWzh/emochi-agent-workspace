@@ -1,0 +1,14 @@
+{
+  "messages": [],
+  "artifactIds": [],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": null,
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 0,
+  "id": "session_e6d8cea5-35d3-4459-ae5f-b76452bc232c",
+  "title": "Instruction observability validation",
+  "workObjectId": null,
+  "created_at": "2026-08-31T07:26:06.406Z",
+  "updated_at": "2026-08-31T07:26:09.273Z"
+}

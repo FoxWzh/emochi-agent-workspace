@@ -1,0 +1,14 @@
+{
+  "messages": [],
+  "artifactIds": [],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": "80bd6112-8c9e-48e5-8d0a-1f79f8902339",
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 2,
+  "id": "session_5dc20601-0117-45f0-9e7f-c5a4eb05d931",
+  "title": "Prompt source smoke",
+  "workObjectId": null,
+  "created_at": "2026-08-31T08:43:39.512Z",
+  "updated_at": "2026-08-31T08:43:44.776Z"
+}

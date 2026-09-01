@@ -1,0 +1,14 @@
+{
+  "messages": [],
+  "artifactIds": [],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": "c48aabe2-aa56-47e4-bdc3-5923d2ebe0de",
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 2,
+  "id": "session_e6f04d05-8c0d-4e37-a661-b5883a7db676",
+  "title": "Native Read tool final verification",
+  "workObjectId": null,
+  "created_at": "2026-08-31T08:21:16.565Z",
+  "updated_at": "2026-08-31T08:21:22.737Z"
+}

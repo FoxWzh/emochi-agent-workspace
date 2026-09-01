@@ -1,0 +1,20 @@
+{
+  "messages": [],
+  "artifactIds": [
+    "artifact_28858dac-f6b8-49f7-9c3c-b0fc81d3f4f1",
+    "artifact_dcbcb5e9-ce8e-4297-9ef4-3fcb6f9d47ef",
+    "artifact_6ae5121a-060c-47ee-84f9-cc4f3e4eb723",
+    "artifact_13cc92b2-f710-4fd2-a59e-383744eb032c",
+    "artifact_b4204904-0705-43d6-bdf0-f2310e72456d"
+  ],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": "f652a596-0ef3-44af-aac9-5c80fac4d22a",
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 14,
+  "id": "session_e0452778-b769-4a16-a071-3d8e3131a0ef",
+  "title": "Filtered event log verification",
+  "workObjectId": "bot_sample_01",
+  "created_at": "2026-08-31T07:50:31.975Z",
+  "updated_at": "2026-08-31T08:04:46.691Z"
+}

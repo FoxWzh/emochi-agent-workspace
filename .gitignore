@@ -1,0 +1,23 @@
+# Secrets and provider-local state
+.env*
+.vercel/
+
+# Dependency/build/runtime by-products
+node_modules/
+dist/
+.tmp/
+artifacts/
+*.sse
+*.ndjson
+*.manifest.json
+repro-langfuse*.mjs
+
+# Local operator notes and superseded project copies (not deployment inputs)
+BACKGROUND.md
+BRIEF-*.md
+TODO.md
+protocol.md
+agent-runtime/CLAUDE.md.bak-*
+agent-spec/legacy-skill-artifacts/
+agent-spec/skills/
+vendor/

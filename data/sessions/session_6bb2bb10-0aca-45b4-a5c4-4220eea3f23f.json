@@ -1,0 +1,39 @@
+{
+  "messages": [
+    {
+      "id": "msg_ad6b3f94-021a-40e0-bcc5-373112698f65",
+      "role": "user",
+      "content": "输入发送回归测试",
+      "created_at": "2026-08-28T11:54:14.065Z"
+    },
+    {
+      "id": "msg_a38b50ae-d7af-4d3e-ad68-e5de18a05e0c",
+      "role": "assistant",
+      "content": "收到，输入发送正常，回归测试通过。✅\n\n当前状态：\n- 消息已成功接收并解析\n- 对话无绑定 Bot，工作对象为空\n- 工具调用与创作能力就绪\n\n如果这只是验证输入通道，那一切正常。如果你接下来有真实的创作任务，我可以随时开始，比如：\n\n- **新建 Bot**：给我一个灵感、题材或一句话想法\n- **完善已有 Bot**：搜索并读取某个 Bot 后提出修改建议\n- **审查/发散**：围绕某个角色、世界或玩法继续讨论\n\n需要我做什么？",
+      "created_at": "2026-08-28T11:54:21.011Z"
+    },
+    {
+      "id": "msg_17fc2bf0-56e8-4411-92d3-145e0b58c743",
+      "role": "user",
+      "content": "普通回车发送验证",
+      "created_at": "2026-08-28T11:54:53.675Z"
+    },
+    {
+      "id": "msg_b2d0717f-f5e8-4017-9763-d1869463e730",
+      "role": "assistant",
+      "content": "收到，普通回车可以正常发送 ✅\n\n有什么想做的 Bot 创作、完善或审查任务，随时告诉我。",
+      "created_at": "2026-08-28T11:54:57.816Z"
+    }
+  ],
+  "artifactIds": [],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": null,
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 0,
+  "id": "session_6bb2bb10-0aca-45b4-a5c4-4220eea3f23f",
+  "title": "新的创作对话",
+  "workObjectId": null,
+  "created_at": "2026-08-28T11:52:51.451Z",
+  "updated_at": "2026-08-28T11:54:57.816Z"
+}

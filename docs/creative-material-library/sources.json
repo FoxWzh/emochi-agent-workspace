@@ -1,0 +1,305 @@
+[
+  {
+    "source_id": "src-life-sim",
+    "title": "外挂金手指设定/人生模拟系统",
+    "source_file": "1533189274898272377__2_0_.json",
+    "source_url": "https://discord.com/channels/1134557553011998840/1533189274898272377",
+    "source_type": "lorebook",
+    "category": "玩法/系统机制",
+    "nsfw_level": "low",
+    "nsfw_entry_counts": {
+      "none": 4,
+      "low": 1
+    }
+  },
+  {
+    "source_id": "src-if-phone-booth",
+    "title": "如果电话亭",
+    "source_file": "1490955285806714890__3e17e056ef1c7c54.json",
+    "source_url": "https://discord.com/channels/1134557553011998840/1490955285806714890",
+    "source_type": "lorebook",
+    "category": "世界观/设定资料",
+    "nsfw_level": "low",
+    "nsfw_entry_counts": {
+      "none": 6,
+      "low": 5
+    }
+  },
+  {
+    "source_id": "src-transmigrator",
+    "title": "穿越者手册",
+    "source_file": "1541320470836813874__1.json",
+    "source_url": "https://discord.com/channels/1134557553011998840/1541320470836813874",
+    "source_type": "lorebook",
+    "category": "玩法/系统机制",
+    "nsfw_level": "high",
+    "nsfw_entry_counts": {
+      "none": 9,
+      "low": 6,
+      "medium": 1,
+      "high": 1
+    },
+    "note": "个别条目（医学科普含生育章节）被启发式标记，素材仅采用技术卡改写版。"
+  },
+  {
+    "source_id": "src-nation-show",
+    "title": "国运综艺直播世界观全解析",
+    "source_file": "1505488282019037266__1bd6e81ad51c33b0.json",
+    "source_url": "https://discord.com/channels/1134557553011998840/1505488282019037266",
+    "source_type": "lorebook",
+    "category": "世界观/设定资料",
+    "nsfw_level": "low",
+    "nsfw_entry_counts": {
+      "low": 2,
+      "none": 6
+    }
+  },
+  {
+    "source_id": "src-city-calendar",
+    "title": "【现代日本】节日·生活仪式·日常场景世界书",
+    "source_file": "1531278057548021934__-.json",
+    "source_url": "https://discord.com/channels/1134557553011998840/1531278057548021934",
+    "source_type": "lorebook",
+    "category": "世界观/设定资料",
+    "nsfw_level": "low",
+    "nsfw_entry_counts": {
+      "none": 50,
+      "low": 8
+    }
+  },
+  {
+    "source_id": "src-food-library",
+    "title": "现代食物大全",
+    "source_file": "1510860841887731772__63831d6191314c7c.json",
+    "source_url": "https://discord.com/channels/1134557553011998840/1510860841887731772",
+    "source_type": "lorebook",
+    "category": "世界观/设定资料",
+    "nsfw_level": "low",
+    "nsfw_entry_counts": {
+      "none": 7,
+      "low": 1
+    }
+  },
+  {
+    "source_id": "src-character-vivid",
+    "title": "全性角色鲜活化世界书",
+    "source_file": "1397853670233604146__eb244eb16fe57bd8.json",
+    "source_url": "https://discord.com/channels/1134557553011998840/1397853670233604146",
+    "source_type": "lorebook",
+    "category": "世界观/设定资料",
+    "nsfw_level": "medium",
+    "nsfw_entry_counts": {
+      "low": 3,
+      "none": 9,
+      "medium": 1
+    }
+  },
+  {
+    "source_id": "src-writing-guide",
+    "title": "杀剧情行文八股/对话行为优化/推理特化",
+    "source_file": "1517385345086263416__0711_.json",
+    "source_url": "https://discord.com/channels/1134557553011998840/1517385345086263416",
+    "source_type": "lorebook",
+    "category": "功能修正/优化",
+    "nsfw_level": "high",
+    "nsfw_entry_counts": {
+      "low": 6,
+      "high": 1,
+      "medium": 1,
+      "none": 1
+    },
+    "note": "文件级启发式标为 high 的条目是「亲密自愿与安全边界」守卫性措辞（禁止性），素材仅采用其叙事立场/推理规范改写版。"
+  },
+  {
+    "source_id": "src-daiyang",
+    "title": "【世界书｜架空现代城市】黛阳市 v0.5.1",
+    "source_file": "1541191929109282877__d5690e21eda6b142.json",
+    "source_url": "https://discord.com/channels/1134557553011998840/1541191929109282877",
+    "source_type": "lorebook",
+    "category": "世界观/设定资料",
+    "nsfw_level": "high",
+    "nsfw_entry_counts": {
+      "none": 29,
+      "low": 6,
+      "high": 1
+    },
+    "note": "个别条目被启发式标记，素材仅采用动态市民/灵能社会/方言等改写版。"
+  },
+  {
+    "source_id": "src-deepblue",
+    "title": "外挂/金手指/深蓝修改器",
+    "source_file": "1498623655750668338__V0_4.json",
+    "source_url": "https://discord.com/channels/1134557553011998840/1498623655750668338",
+    "source_type": "lorebook",
+    "category": "玩法/系统机制",
+    "nsfw_level": "low",
+    "nsfw_entry_counts": {
+      "none": 13,
+      "low": 3
+    }
+  },
+  {
+    "source_id": "src-concept-forge",
+    "title": "我的世界拔刀剑世界书（核心体系-概念锻造）",
+    "source_file": "1444215098129252382__-_1.5.json",
+    "source_url": "https://discord.com/channels/1134557553011998840/1444215098129252382",
+    "source_type": "lorebook",
+    "category": "玩法/系统机制",
+    "nsfw_level": "high",
+    "nsfw_entry_counts": {
+      "none": 129,
+      "low": 34,
+      "high": 4
+    },
+    "note": "文件含 IP 名刀图鉴等大量条目，本库仅采用「概念锻造」机制改写版。"
+  },
+  {
+    "source_id": "src-inspiration",
+    "title": "剧情灵感_为玩家提供日常剧情的灵感",
+    "source_file": "1505869295622815804__f0008eb2385e4935.json",
+    "source_url": "https://discord.com/channels/1134557553011998840/1505869295622815804",
+    "source_type": "lorebook",
+    "category": "玩法/系统机制",
+    "nsfw_level": "none",
+    "nsfw_entry_counts": {
+      "none": 3
+    }
+  },
+  {
+    "source_id": "src-kaiju",
+    "title": "大怪兽格斗（巨大化/缩小规则、怪兽思考链）",
+    "source_file": "1424639446040707102__2.61.json",
+    "source_url": "https://discord.com/channels/1134557553011998840/1424639446040707102",
+    "source_type": "lorebook",
+    "category": "玩法/系统机制",
+    "nsfw_level": "high",
+    "nsfw_entry_counts": {
+      "low": 53,
+      "none": 64,
+      "high": 11,
+      "medium": 2
+    },
+    "note": "文件为 IP 怪兽图鉴+通用规则混合；素材仅采用剥离 IP 外壳的巨大化/思考链规则改写版。"
+  },
+  {
+    "source_id": "src-appearance",
+    "title": "外貌特征格式参考（仅采用其 SFW 骨架部分）",
+    "source_file": "1542041394561028196__d37fa06ecc88066e.json",
+    "source_url": "https://discord.com/channels/1134557553011998840/1542041394561028196",
+    "source_type": "lorebook",
+    "category": "描写素材库",
+    "nsfw_level": "high",
+    "nsfw_entry_counts": {
+      "high": 2
+    },
+    "note": "文件含露骨私密部位描写（2 条均 high），素材仅采用其 SFW 骨架部分。"
+  },
+  {
+    "source_id": "src-urban-legend",
+    "title": "全球都市传说（档案体）",
+    "source_file": "1517170084756590653__e2aa073bf4fefb45.json",
+    "source_type": "lorebook",
+    "category": "玩法/系统机制",
+    "source_url": "https://discord.com/channels/1134557553011998840/1517170084756590653",
+    "nsfw_level": "low"
+  },
+  {
+    "source_id": "src-trick-handbook",
+    "title": "推理小说常见手法汇总与案件构建指南",
+    "source_file": "1412680113182605323__f79f63d7e202bf7d.json",
+    "source_type": "lorebook",
+    "category": "玩法/系统机制",
+    "source_url": "https://discord.com/channels/1134557553011998840/1412680113182605323",
+    "nsfw_level": "low"
+  },
+  {
+    "source_id": "src-golden-dawn",
+    "title": "黄金黎明：西方神秘学流派",
+    "source_file": "1515720117034553354__Golden_Dawn_.json",
+    "source_type": "lorebook",
+    "category": "玩法/系统机制",
+    "source_url": "https://discord.com/channels/1134557553011998840/1515720117034553354",
+    "nsfw_level": "low"
+  },
+  {
+    "source_id": "src-summon-system",
+    "title": "召唤系统 3.0",
+    "source_file": "1401565917942386728__3.0_.json",
+    "source_type": "lorebook",
+    "category": "玩法/系统机制",
+    "source_url": "https://discord.com/channels/1134557553011998840/1401565917942386728",
+    "nsfw_level": "low"
+  },
+  {
+    "source_id": "src-divine-magic",
+    "title": "技能书：神明级魔法",
+    "source_file": "1322971653667557476__28sep25-hotfix01.json",
+    "source_type": "lorebook",
+    "category": "角色/人设库",
+    "source_url": "https://discord.com/channels/1134557553011998840/1322971653667557476",
+    "nsfw_level": "low"
+  },
+  {
+    "source_id": "src-xuancang",
+    "title": "类修仙题材世界观「玄沧六界」",
+    "source_file": "1457032634709446695__629e6efd85a27754.json",
+    "source_type": "lorebook",
+    "category": "世界观/设定资料",
+    "source_url": "https://discord.com/channels/1134557553011998840/1457032634709446695",
+    "nsfw_level": "low"
+  },
+  {
+    "source_id": "src-trench-crusade",
+    "title": "战壕十字军世界书",
+    "source_file": "1449968468542881822__TC_World_Info.json",
+    "source_type": "lorebook",
+    "category": "世界观/设定资料",
+    "source_url": "https://discord.com/channels/1134557553011998840/1449968468542881822",
+    "nsfw_level": "low"
+  },
+  {
+    "source_id": "src-lightsail",
+    "title": "逐光：启航科技世界书",
+    "source_file": "1498746061886456199__--.json",
+    "source_type": "lorebook",
+    "category": "玩法/系统机制",
+    "source_url": "https://discord.com/channels/1134557553011998840/1498746061886456199",
+    "nsfw_level": "low"
+  },
+  {
+    "source_id": "src-spirit-bureau",
+    "title": "灵视异闻世界观相关设定",
+    "source_file": "1489401245960769756__-_.json",
+    "source_type": "lorebook",
+    "category": "世界观/设定资料",
+    "source_url": "https://discord.com/channels/1134557553011998840/1489401245960769756",
+    "nsfw_level": "low"
+  },
+  {
+    "source_id": "src-medieval-reason",
+    "title": "中世纪至近代西幻真实向推理重链条",
+    "source_file": "1505330393950453771__-2.0.json",
+    "source_type": "lorebook",
+    "category": "世界观/设定资料",
+    "source_url": "https://discord.com/channels/1134557553011998840/1505330393950453771",
+    "nsfw_level": "low"
+  },
+  {
+    "source_id": "src-ming-late",
+    "title": "明代末年资料世界书",
+    "source_file": "1471597995043848323__1.json",
+    "source_type": "lorebook",
+    "category": "世界观/设定资料",
+    "source_url": "https://discord.com/channels/1134557553011998840/1471597995043848323",
+    "nsfw_level": "low"
+  },
+  {
+    "source_id": "src-sengoku",
+    "title": "日本战国 1550~1600 世界书（原创）",
+    "source_file": "1291769900175720509__main__15501600_world_info.json",
+    "source_type": "lorebook",
+    "category": "世界观/设定资料",
+    "source_url": "https://discord.com/channels/1134557553011998840/1291769900175720509",
+    "nsfw_level": "low"
+  }
+]

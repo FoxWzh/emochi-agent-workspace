@@ -1,0 +1,16 @@
+{
+  "messages": [],
+  "artifactIds": [
+    "artifact_d3e7439c-dc52-41c3-8ffd-b969cef3b454"
+  ],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": null,
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 0,
+  "id": "session_4154a8b3-6e01-4fee-9249-234e59817734",
+  "title": "Current OTel Langfuse verification",
+  "workObjectId": null,
+  "created_at": "2026-08-31T07:03:50.273Z",
+  "updated_at": "2026-08-31T07:04:07.999Z"
+}

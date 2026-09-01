@@ -1,0 +1,18 @@
+{
+  "messages": [],
+  "artifactIds": [
+    "artifact_3791cdc0-5784-4b7d-9726-dac84214d76d",
+    "artifact_45721b09-248e-4ee4-934d-908163d86a40",
+    "artifact_3841f04e-56a4-43b6-8575-9a1baf4107b1"
+  ],
+  "timeline": [],
+  "interactions": [],
+  "sdk_session_id": null,
+  "sdk_seen_tool_use_ids": [],
+  "business_revision": 0,
+  "id": "session_219511e3-61b9-49d9-a61d-d4bcac776332",
+  "title": "候选优先验证",
+  "workObjectId": "bot_sample_02",
+  "created_at": "2026-08-31T03:59:06.535Z",
+  "updated_at": "2026-08-31T04:05:29.526Z"
+}
