@@ -7,9 +7,9 @@ const required=['package.json','package-lock.json','.env.example','README.md','D
 const forbidden=[/sk-[A-Za-z0-9_-]{12,}/, /gh[pousr]_[A-Za-z0-9_]{20,}/, /-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/, /AKIA[0-9A-Z]{16}/];
 const failures=[];
 for(const item of required){try{await access(path.join(root,item));}catch{failures.push(`Missing required delivery file: ${item}`);}}
-for(const item of ['.env.local','.vercel']){try{await access(path.join(root,item)); console.log(`Ignored local-only path present: ${item}`);}catch{}}
+for(const item of ['.env.local']){try{await access(path.join(root,item)); console.log(`Ignored local-only path present: ${item}`);}catch{}}
 const ignored=await readFile(path.join(root,'.gitignore'),'utf8');
-for(const pattern of ['.env*','.vercel/','node_modules/','dist/'])if(!ignored.includes(pattern))failures.push(`.gitignore must exclude ${pattern}`);
+for(const pattern of ['.env*','node_modules/','dist/'])if(!ignored.includes(pattern))failures.push(`.gitignore must exclude ${pattern}`);
 const textExtensions=new Set(['.js','.mjs','.jsx','.json','.md','.yaml','.yml','.txt','.html','.css','.env','.example']);
 async function walk(dir){const entries=await (await import('node:fs/promises')).readdir(dir,{withFileTypes:true});const all=[];for(const entry of entries){if(['.git','node_modules','vendor','dist','.tmp'].includes(entry.name))continue;const absolute=path.join(dir,entry.name);if(entry.isDirectory())all.push(...await walk(absolute));else if(textExtensions.has(path.extname(entry.name))||entry.name==='.env.example')all.push(absolute);}return all;}
 for(const absolute of await walk(root)){const content=await readFile(absolute,'utf8');if(forbidden.some(pattern=>pattern.test(content)))failures.push(`Possible credential found in ${path.relative(root,absolute)}`);}

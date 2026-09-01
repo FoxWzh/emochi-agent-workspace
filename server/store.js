@@ -4,7 +4,7 @@ import { randomUUID } from 'node:crypto';
 
 // The local demo keeps JSON in ./data. On Vercel, Function source is read-only,
 // so demo state is isolated in the writable but intentionally ephemeral /tmp.
-export const dataDir=()=>process.env.EMOCHI_DATA_DIR||(process.env.VERCEL?'/tmp/emochi-agent-workspace-data':path.join(process.cwd(),'data'));
+export const dataDir=()=>process.env.EMOCHI_DATA_DIR||path.join(process.cwd(),'data');
 const projectRoot=()=>process.cwd();
 const workspaceFile=()=>path.join(dataDir(),'workspace.json');
 const sessionFile=id=>path.join(dataDir(),'sessions',`${id}.json`);

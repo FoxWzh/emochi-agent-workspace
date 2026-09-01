@@ -1,22 +1,27 @@
 # Emochi Agent Workspace
 
-A full-stack creative-agent workspace for developing Bots, characters, worlds, interactive scenarios and image directions. It includes the React workspace, Node/SSE agent service, local MCP tools, skill runtime, creative-material library, JSON data snapshot, Langfuse observability, and repeatable multi-turn evaluations.
+> A **Claude Agent SDK** creative-agent application for creating and editing Bots, characters, worlds, interactive stories and image directions.
 
-## Quick start
+The repository contains the full delivery: React/Vite UI, Node/SSE API, Claude Agent SDK orchestration, in-process MCP tools, runtime Skills/References, portable JSON data, creative-material library, Langfuse observability, and multi-turn evaluation scripts/evidence.
+
+## Deployment handoff
+
+Read **[`DEPLOYMENT.md`](DEPLOYMENT.md)** first. It explains the Claude Agent SDK gateway requirement, runtime execution flow, secrets, durable JSON storage, reverse-proxy/SSE setup, Langfuse, evaluation, and the current release changes.
+
+- Environment template: [`.env.example`](.env.example)
+- Evaluation runbook: [`evals/AGENT-RUNBOOK.md`](evals/AGENT-RUNBOOK.md)
+
+## Local verification
 
 ```bash
 cp .env.example .env.local
-# Add your own gateway / optional Langfuse / optional image credentials.
+# Populate with your own secrets; never commit .env.local.
 npm ci
+node scripts/verify-delivery.mjs
 npm test
+npm run build
 npm run dev:full
 ```
 
 - UI: `http://127.0.0.1:5175`
-- API: `http://127.0.0.1:8789/api/health`
-
-Full deployment, persistence, Langfuse, and evaluation instructions are in [DEPLOYMENT.md](DEPLOYMENT.md). The evaluation runbook is [evals/AGENT-RUNBOOK.md](evals/AGENT-RUNBOOK.md).
-
-## Security
-
-`.env.local` and all `.env*` files are ignored. Commit only `.env.example`; set real credentials in the deployment provider's encrypted environment-variable settings.
+- API health: `http://127.0.0.1:8789/api/health`
