@@ -1,6 +1,5 @@
 # Secrets and provider-local state
 .env*
-.vercel/
 
 # Dependency/build/runtime by-products
 node_modules/

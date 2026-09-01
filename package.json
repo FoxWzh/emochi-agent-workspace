@@ -9,7 +9,8 @@
     "dev:full": "concurrently \"npm run server\" \"npm run dev\"",
     "build": "vite build",
     "test": "node --test server/*.test.mjs",
-    "eval:agent": "node scripts/eval-agent.mjs"
+    "eval:agent": "node scripts/eval-agent.mjs",
+    "start": "node server/index.js"
   },
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.3.250",

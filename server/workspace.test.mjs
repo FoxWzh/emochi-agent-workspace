@@ -554,3 +554,12 @@ test('Both Bot library entry points are wired to open the drawer', async () => {
   assert.match(app, /BotContextBar[\s\S]*onOpenBots=\{\(\)=>setBotLibraryOpen\(true\)\}/);
   assert.match(app, /botLibraryOpen\?'with-bot-library':''/);
 });
+
+test('Production server serves the built SPA and API from one same-origin process', async () => {
+  const source = await (await import('node:fs/promises')).readFile(new URL('./app.js', import.meta.url), 'utf8');
+  assert.match(source, /async function serveStatic/);
+  assert.match(source, /if\(!url\.pathname\.startsWith\('\/api\/'\)\)/);
+  assert.match(source, /path\.join\(staticRoot\(\),'index\.html'\)/);
+  const pkg = JSON.parse(await (await import('node:fs/promises')).readFile(new URL('../package.json', import.meta.url), 'utf8'));
+  assert.equal(pkg.scripts.start, 'node server/index.js');
+});

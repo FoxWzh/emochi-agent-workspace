@@ -1,5 +1,5 @@
 import http from 'node:http';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { URL } from 'node:url';
 import { dataDir, load, transact, id, makeSession, summary, prompt, deleteSessionRecord, publicState, readImageTasks, writeImageTasks } from './store.js';
@@ -14,6 +14,25 @@ const find=(items,key)=>items.find(item=>item.id===key);
 const uploadDir=()=>path.join(dataDir(),'uploads');
 const imageMimes=new Set(['image/png','image/jpeg','image/webp','image/gif']);
 const imageExt=mime=>({'image/png':'png','image/jpeg':'jpg','image/webp':'webp','image/gif':'gif'}[mime]||'png');
+const staticRoot=()=>path.join(process.cwd(),'dist');
+const staticMime=file=>file.endsWith('.html')?'text/html; charset=utf-8':file.endsWith('.js')?'text/javascript; charset=utf-8':file.endsWith('.css')?'text/css; charset=utf-8':file.endsWith('.svg')?'image/svg+xml':file.endsWith('.png')?'image/png':file.endsWith('.jpg')||file.endsWith('.jpeg')?'image/jpeg':file.endsWith('.webp')?'image/webp':file.endsWith('.ico')?'image/x-icon':'application/octet-stream';
+async function serveStatic(req,res,pathname){
+  if(req.method!=='GET'&&req.method!=='HEAD')return false;
+  const requested=pathname==='/'?'index.html':pathname.replace(/^\/+/, '');
+  if(requested.includes('..')||requested.startsWith('api/'))return false;
+  const candidate=path.join(staticRoot(),requested);
+  let file=candidate;
+  try{if(!(await stat(file)).isFile())return false;}catch{
+    // SPA client routes should still resolve to the Vite entry point.
+    if(path.extname(requested))return false;
+    file=path.join(staticRoot(),'index.html');
+    try{if(!(await stat(file)).isFile())return false;}catch{return false;}
+  }
+  const bytes=await readFile(file);
+  res.writeHead(200,{'content-type':staticMime(file),'cache-control':file.endsWith('index.html')?'no-cache':'public, max-age=31536000, immutable'});
+  if(req.method==='GET')res.end(bytes);else res.end();
+  return true;
+}
 const runningSessions=new Set();
 // Every Session begins with a small, persistent orientation Artifact. It is a
 // real first tab (rather than an empty-state hint), so the resource panel has
@@ -171,6 +190,7 @@ export function createServer(){return http.createServer(async(req,res)=>{try{
   await loadImageTasks();
   await backfillImageTaskAnchors();
   const url=new URL(req.url,'http://local');const parts=url.pathname.split('/');
+  if(!url.pathname.startsWith('/api/')){if(await serveStatic(req,res,url.pathname))return;return json(res,404,{error:'not_found'});}
   if(req.method==='GET'&&url.pathname==='/api/health')return json(res,200,{
     status:'ok',
     agent_gateway:process.env.KAON_GATEWAY_BASE_URL&&process.env.KAON_GATEWAY_API_KEY?'configured':'missing_configuration',

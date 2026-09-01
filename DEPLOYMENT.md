@@ -121,9 +121,27 @@ Without Langfuse the app still works but no traces are exported. Without image v
 
 ## 5. Deployment procedure
 
-This repository has **no Vercel-specific deployment configuration**. Deploy the API as a persistent Node service and the Vite build as static assets behind the same origin.
+This repository has **no Vercel-specific deployment configuration**. It includes a provider-neutral `Dockerfile`: one Node 22 container serves the built Vite SPA and `/api/*` on the same origin. Attach a persistent volume at `EMOCHI_DATA_DIR`.
 
-### A. Install and validate
+### A. Preferred online deployment: container
+
+Use the committed `Dockerfile` with any online service that supports a persistent volume and encrypted environment variables:
+
+```bash
+docker build -t emochi-agent-workspace .
+docker run --rm -p 8789:8789 \
+  -v <durable-volume>:/var/lib/emochi \
+  -e EMOCHI_DATA_DIR=/var/lib/emochi \
+  -e AGENT_PORT=8789 \
+  -e KAON_GATEWAY_BASE_URL -e KAON_GATEWAY_MODEL -e KAON_GATEWAY_API_KEY \
+  -e LANGFUSE_PUBLIC_KEY -e LANGFUSE_SECRET_KEY -e LANGFUSE_BASE_URL -e LANGFUSE_TRACING_ENVIRONMENT \
+  -e IMAGE_GATEWAY_BASE_URL -e IMAGE_GATEWAY_MODEL -e IMAGE_GATEWAY_API_KEY \
+  emochi-agent-workspace
+```
+
+Before the first container run, initialize `<durable-volume>` with the repository `data/` directory. The container serves the UI at `/` and the API at `/api/*`; no separate frontend service or proxy is required. If the platform terminates TLS itself, expose container port `8789` through its normal HTTPS ingress.
+
+### B. Source install and validate
 
 ```bash
 git clone https://github.com/FoxWzh/emochi-agent-workspace.git
@@ -134,18 +152,18 @@ npm test
 npm run build
 ```
 
-### B. Configure storage and secrets
+### C. Configure storage and secrets
 
 1. Prepare/mount the persistent data volume, copy `data/` as shown above.
 2. Set `EMOCHI_DATA_DIR`, `AGENT_PORT`, Agent SDK gateway variables, and optional Langfuse/image gateway values as encrypted runtime configuration.
 
-### C. Start and route
+### D. Start and route
 
 ```bash
 npm run server
 ```
 
-Serve `dist/` as the public web root. Reverse proxy `/api/*` from that same public hostname to the Node service on `AGENT_PORT`. The proxy must support Server-Sent Events and must **not buffer** `POST /api/sessions/:id/messages`.
+The Node service serves `dist/` as the public SPA root and `/api/*` itself, so a standalone host needs no separate static server. If you place a proxy in front, preserve same-origin `/api/*`, support Server-Sent Events, and **do not buffer** `POST /api/sessions/:id/messages`.
 
 ```bash
 curl -sS http://127.0.0.1:8789/api/health
