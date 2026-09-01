@@ -97,6 +97,59 @@ cp -a data/. /persistent/emochi-agent-data/
 
 Do not use an ephemeral filesystem when the demo's edits must survive. For a real production rollout, replace `server/store.js` with a durable database/blob adapter (and move uploads to object storage) before enabling multi-user or multi-instance usage. Perform an explicit migration from this demo JSON snapshot; do not assume it is a production database.
 
+## 3.1 If replacing the JSON database: required implementation contract
+
+Do **not** do a mechanical “JSON files → tables” replacement. The current code mixes data shape normalization, attachment path hydration, atomic mutation ordering, public-response redaction, session/SDK continuity and image-task recovery in `server/store.js` and `server/app.js`. A database replacement must preserve these observable behaviors before changing schemas or scaling topology.
+
+### Current logical model and ownership
+
+| Logical record | Current location | Important fields / relationship |
+| --- | --- | --- |
+| Workspace | `data/workspace.json` | Global `bots[]`, `artifacts[]`, `sessions[]` **metadata only** and `bot_samples_imported`. |
+| Session | `data/sessions/<sessionId>.json` | Full `messages[]`, `interactions[]`, `timeline[]`, `artifactIds[]`, `workObjectId`, `business_revision`, SDK resume fields. Workspace contains a matching lightweight metadata record. |
+| Bot | Workspace `bots[]` | `id`, `basic`, `content`, `advanced`, timestamps; `init_prompt` is derived from these fields. A Session's `workObjectId` references it. |
+| Artifact | Workspace `artifacts[]` | `id`, type/title/data, optional `bot_ref`; Session `artifactIds[]` owns/links artifacts. `timeline[]` references artifacts for message anchoring. |
+| Interaction | Session `interactions[]` | `id`, pending/resolved status, option/response, `turn_id`, `after_message_id`. Exactly-once response behavior is enforced by status. |
+| Image task | `data/image-tasks.json` | `session_id`, `turn_id`, `after_message_id`, task lifecycle and image result references. It must be recoverable after process restart. |
+| Upload | `data/uploads/*` | Attachment metadata stores public relative URL `/api/uploads/<file>` plus a data-relative `file_path` (`uploads/<file>`). Bytes must move to durable object/blob storage when replacing local disk. |
+
+### Non-negotiable invariants
+
+The deployment/migration Agent must retain and test all of these:
+
+1. **Atomicity / concurrency:** today `transact()` serializes all mutations in a single process. A database adapter must use database transactions and appropriate optimistic locking/row locking. In particular, a Session must reject a second overlapping Agent turn, and concurrent updates must not overwrite another Session/Bot/Artifact change.
+2. **Session split model:** the workspace index has only session navigation metadata; full conversation state lives per Session. Do not accidentally return full private session/SDK state in the list endpoint.
+3. **Private SDK fields:** `sdk_session_id` and `sdk_seen_tool_use_ids` are persisted to resume Claude Agent SDK and suppress replayed tool events, but are stripped by `publicState()` before reaching the browser. Preserve this redaction boundary.
+4. **Agent resume correctness:** persist the SDK session ID immediately when first received; persist seen tool-use IDs; preserve `business_revision`. Losing them changes context/resume behavior and can replay old tools or increase token usage.
+5. **Message/event anchoring:** interactions, image tasks and timeline artifacts start with `turn_id` and receive `after_message_id` only when the final assistant message is saved. Keep this order or cards can attach above the wrong user turn.
+6. **Bot canonicalization:** preserve current canonical fields (`basic.name`, `basic.intro`, `basic.welcome`, `basic.cover_url`, `basic.visibility`, `basic.tags`, `advanced.voice`, `advanced.examples`). `normaliseBot()` reads legacy aliases only for compatibility; do not write legacy aliases in the new database.
+7. **Derived prompt:** `init_prompt` is derived from Bot fields by `prompt(bot)`. Recompute it on create/update or derive it at read time; do not let it become stale or treat it as an unrelated source of truth.
+8. **Artifact ownership / cleanup:** deleting a Bot unbinds Sessions that reference it and removes its linked artifacts. Deleting a Session removes its session record but must not indiscriminately delete shared/global Bot data. Preserve the single `image_library`-per-Session consolidation behavior.
+9. **Uploads:** never persist machine-absolute paths. Preserve public attachment URLs and store an opaque object key / data-relative key. The Agent runtime still needs a secure readable local stream/path when it turns an uploaded image into a Claude SDK image block.
+10. **Data isolation:** the demo is currently effectively one workspace. If adding authentication/multi-tenancy, add `workspace_id` / tenant ownership to **every** Session, Bot, Artifact, Interaction, ImageTask and upload query before exposing the service; do not rely on client-supplied IDs alone.
+
+### Recommended migration sequence
+
+1. Make a **read-only backup** of the mounted `EMOCHI_DATA_DIR`, including `workspace.json`, `sessions/`, `image-tasks.json` and `uploads/`; record file hashes and counts.
+2. Define an explicit relational/document schema from the logical model above. Keep JSON-shaped Bot `content`/`advanced` only where it is intentional; do not flatten without preserving semantics.
+3. Build a storage adapter behind the existing `load`, `transact`, `save`, `publicState`, `readImageTasks`, `writeImageTasks` contract. Avoid changing UI/API/Agent behavior in the same PR as data migration.
+4. Import in dependency order: uploads/object keys → Bots → Artifacts → Session metadata/full records → interactions/timeline/message anchors → image tasks. Validate every foreign reference (`workObjectId`, `artifactIds`, `bot_ref`, `after_message_id`, `session_id`, `turn_id`).
+5. Run dual-read or a staging import, compare logical counts and sampled full records, then run the automated tests and black-box evaluation suite against the new adapter.
+6. Only after functional parity, switch writes atomically to the new store. Retain the JSON backup and a tested rollback path until post-deploy evaluation and Langfuse traces are accepted.
+
+### Required database-migration acceptance tests
+
+At minimum run:
+
+```bash
+npm test
+npm run build
+npm run eval:agent -- --scenario alba-review-choice
+npm run eval:agent -- --scenario alba-confirmed-content-write
+```
+
+Additionally verify: a restart retains data; public `/api/state` never returns `sdk_session_id`, `sdk_seen_tool_use_ids` or absolute upload paths; an uploaded image can still be supplied to the Agent; a resolved interaction cannot be resolved twice; a Bot delete repairs references; and Langfuse still records one trace per Agent query with tool/input/output evidence.
+
 ## 4. Secrets configuration
 
 ```bash
