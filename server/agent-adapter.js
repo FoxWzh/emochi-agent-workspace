@@ -6,48 +6,31 @@ import { fileURLToPath } from 'node:url';
 import { createWorkspaceTools } from './agent-tools.js';
 
 const rawText = (message) => (message.message?.content || []).filter((item) => item.type === 'text').map((item) => item.text).join('');
-// Execution narration is transient SDK chatter, not a user-facing assistant reply.
-// Keep this as a final defensive scrub for old persisted turns and gateway quirks;
-// new streamed turns are structurally gated below instead of relying on wording.
-const internalNarrationPatterns = [
-  /\bI(?:'m| am) (?:creating|updating|reading)[^.\n]*[.。]?\s*/gi,
-  /\b(?:Let me|Now I(?:'ll| will)|I(?:'ll| will)) (?:read|create|update|retry)[^.\n]*[.。]?\s*/gi,
-  /\bI need to (?:omit|remove|fix|correct|change|use)[^.\n]*(?:null|field|schema|tool|argument|payload|parameter|format|retry|subject)[^.\n]*[.。]?\s*/gi,
-  /\bI(?:'ll| will) (?:omit|remove|fix|correct|retry|use)[^.\n]*(?:null|field|schema|tool|argument|payload|parameter|format|subject)[^.\n]*[.。]?\s*/gi,
-  /(?:参数格式有误|校验(?:失败|有误)?|工具调用失败)[^。\n]*[。]?\s*/g,
-  /用户已明确授权[^。\n]*(?:创建|更新|修改|执行)[^。\n]*[。]?\s*/g,
-  /(?:我(?:先|会|将|来|正在|现在)|正在)[^。\n]*(?:调用|读取|创建|更新|重试|校验|调整|设计|落地)[^。\n]*[。]?\s*/g,
-];
-export const visibleAssistantText = message => internalNarrationPatterns
-  .reduce((value, pattern) => value.replace(pattern, ''), rawText(message))
-  .replace(/(?:The )?(?:changes field expects an array|change object needs[^.]*|(?:let me|I will) retry(?:[^.]*)|schema(?: validation)? (?:error|failed))[^.]*\.?\s*/gi,'')
-  .trim();
+// New replies obey the prompt-level output-channel rule: tool calls and
+// user-facing prose never share an assistant turn. The adapter therefore uses
+// only the SDK message structure—never language-specific wording—to gate text.
+export const visibleAssistantText = message => rawText(message).trim();
 const text = visibleAssistantText;
 const toolBlock = (message) => (message.message?.content || []).filter((item) => item.type === 'tool_use');
 
-// The SDK can emit natural-language planning beside (or shortly before) a tool
-// call. Do not commit any assistant text to the UI/history until the run ends:
-// a later tool call invalidates the staged text. This is intentionally based on
-// message structure rather than fragile English/Chinese phrasing.
 export const createVisibleReplyGate = () => {
   let staged = '';
   let discardedForToolUse = 0;
   return {
     observe(message) {
-      if (toolBlock(message).length) {
-        staged = '';
-        discardedForToolUse += 1;
+      const candidate=text(message);
+      if(toolBlock(message).length){
+        // A tool turn is an execution channel. Its text is never user-facing.
+        if(candidate)discardedForToolUse+=1;
         return;
       }
-      const candidate = text(message);
       if (!candidate) return;
       // Partial SDK snapshots generally contain the accumulated response.
-      // Keep the latest full candidate; if a gateway emits deltas, append them.
       staged = candidate.startsWith(staged) ? candidate : staged && !staged.includes(candidate) ? `${staged}${candidate}` : candidate;
     },
     finish(result = '') {
-      const fallback = visibleAssistantText({ message: { content: [{ type: 'text', text: String(result || '') }] } });
-      return staged || fallback;
+      const fallback=String(result||'').trim();
+      return staged||fallback;
     },
     get discardedForToolUse() { return discardedForToolUse; },
   };
