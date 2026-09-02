@@ -171,6 +171,7 @@ export default function App(){
   const [imageTasksBySession,setImageTasksBySession]=useState({});
   const [previewImage,setPreviewImage]=useState(null);
   const [serviceHealth,setServiceHealth]=useState(null);
+  const [initialLoad,setInitialLoad]=useState('loading');
   const typewritersRef=useRef(new Map());
   const submittingSessionsRef=useRef(new Set());
   const threadRef=useRef(null);
@@ -193,7 +194,13 @@ export default function App(){
     });
     return next;
   };
-  useEffect(()=>{reload().catch(e=>setErrorBySession({workspace:e.message}));api.health().then(setServiceHealth).catch(()=>setServiceHealth({status:'error'}));},[]);
+  const loadWorkspace=async()=>{
+    setInitialLoad('loading');
+    try{await reload();setErrorBySession(current=>{const {workspace,...rest}=current;return rest});setInitialLoad('ready');}
+    catch(error){setErrorBySession(current=>({...current,workspace:error.message}));setInitialLoad('error');}
+    try{setServiceHealth(await api.health());}catch{setServiceHealth({status:'error'});}
+  };
+  useEffect(()=>{void loadWorkspace();},[]);
   useEffect(()=>()=>{for(const writer of typewritersRef.current.values())window.clearInterval(writer.timer)},[]);
   useEffect(()=>{
     if(!resizingArtifact)return;
@@ -454,6 +461,8 @@ export default function App(){
     return interactionTime<=messageTime&&interactionTime>=previousTime;
   });
   const sessions=state.sessions.map(s=>({...s,updatedAt:new Date(s.updated_at).toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'})}));
+
+  if(initialLoad!=='ready')return <main className="workspace-connection" role={initialLoad==='error'?'alert':'status'} aria-live="polite"><div className="workspace-connection-mark"><Sparkles size={20}/></div><span>EMOCHI CREATIVE AGENT</span><h1>{initialLoad==='error'?'暂时无法连接服务':'正在加载你的创作空间'}</h1><p>{initialLoad==='error'?'无法读取对话和 Bot 数据。请检查线上 Agent 服务、同源 /api 路由和持久数据卷后重试。':'正在读取你的对话、Bot 和创作资源…'}</p>{initialLoad==='error'&&<button type="button" onClick={()=>void loadWorkspace()}>重新连接</button>}</main>;
 
   return <div style={{'--artifact-rail-width':`${artifactWidth}px`}} className={`workspace ${botLibraryOpen?'with-bot-library':''} ${artifactBrowserOpen?'with-artifact-browser':''} ${artifactBrowserExpanded?'artifact-browser-expanded':''} ${resizingArtifact?'is-resizing-artifact':''}`}>
     <ConversationSidebar sessions={sessions} activeId={activeId} onSelect={id=>{followThreadRef.current=true;setShowJumpToLatest(false);setActiveId(id);setActiveArtifact(null);setArtifactBrowserOpen(false)}} onCreate={createSession} onRename={beginRename} onDelete={setDeleteTarget} onOpenBots={()=>setBotLibraryOpen(true)}/>

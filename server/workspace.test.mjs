@@ -563,3 +563,13 @@ test('Production server serves the built SPA and API from one same-origin proces
   const pkg = JSON.parse(await (await import('node:fs/promises')).readFile(new URL('../package.json', import.meta.url), 'utf8'));
   assert.equal(pkg.scripts.start, 'node server/index.js');
 });
+
+test('App distinguishes failed initial API load from a truly empty conversation workspace', async () => {
+  const app = await (await import('node:fs/promises')).readFile(new URL('../src/app/App.jsx', import.meta.url), 'utf8');
+  assert.match(app, /const \[initialLoad,setInitialLoad\]=useState\('loading'\)/);
+  assert.match(app, /const loadWorkspace=async\(\)=>/);
+  assert.match(app, /if\(initialLoad!==\'ready\'\)return <main className=\"workspace-connection\"/);
+  assert.match(app, /暂时无法连接服务/);
+  assert.match(app, /重新连接/);
+  assert.match(app, /check线上 Agent 服务|线上 Agent 服务/);
+});
