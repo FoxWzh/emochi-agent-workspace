@@ -1,0 +1,2 @@
+import {X} from 'lucide-react';
+export function SideDrawer({open,title,onClose,children,actions}){if(!open)return null;return <div className="drawer-layer" role="dialog" aria-modal="true" aria-label={title}><button className="drawer-scrim" aria-label={`关闭${title}`} onClick={onClose}/><aside className="side-drawer"><header><h2>{title}</h2><div>{actions}<button className="drawer-close" aria-label={`关闭${title}`} onClick={onClose}><X size={19}/></button></div></header><div className="drawer-content">{children}</div></aside></div>}

@@ -14,11 +14,7 @@ test('empty workspace supports session, bot, artifact, bot update, and persisted
   const call = (url, options = {}) => fetch(base + url, { headers: { 'content-type': 'application/json' }, ...options }).then((response) => response.json());
   try {
     let state = await call('/api/state');
-    // Reading state must not create a Session on the caller's behalf.
-    assert.equal(state.sessions.length, 0); assert.deepEqual(state.bots, []); assert.equal(state.artifacts.length, 0); assert.deepEqual(state.running_session_ids, []);
-    const created = (await call('/api/sessions', { method: 'POST', body: '{}' })).session;
-    state = await call('/api/state');
-    assert.equal(state.sessions.length, 1); assert.equal(state.sessions[0].id, created.id); assert.equal(state.sessions[0].title, '新的创作对话'); assert.deepEqual(state.sessions[0].messages, []); assert.equal(state.artifacts.length, 1); assert.equal(state.artifacts[0].type, 'text'); assert.equal(state.artifacts[0].system_kind, 'resource_guide'); assert.equal(state.sessions[0].artifactIds[0], state.artifacts[0].id);
+    assert.equal(state.sessions.length, 1); assert.equal(state.sessions[0].title, '新的创作对话'); assert.deepEqual(state.sessions[0].messages, []); assert.deepEqual(state.bots, []); assert.equal(state.artifacts.length, 1); assert.equal(state.artifacts[0].type, 'text'); assert.equal(state.artifacts[0].system_kind, 'resource_guide'); assert.equal(state.sessions[0].artifactIds[0], state.artifacts[0].id); assert.deepEqual(state.running_session_ids, []);
     const session = state.sessions[0];
     const reused = await call('/api/sessions', { method: 'POST', body: JSON.stringify({ reuse_if_empty_session_id: session.id }) });
     assert.equal(reused.session.id, session.id); assert.equal(reused.reused, true);
@@ -485,6 +481,19 @@ test('Bot tool projection excludes derived init_prompt and keeps write acknowled
   assert.match(source,/agentBotSummary\(bot\)/);
 });
 
+test('State bootstrap always provides exactly one blank Session in a new workspace', async () => {
+  const dir = await mkdtemp(path.join(os.tmpdir(), 'emochi-bootstrap-'));
+  process.env.EMOCHI_DATA_DIR = path.join(dir, 'data');
+  const server = createServer(); await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  try {
+    const base = `http://127.0.0.1:${server.address().port}`;
+    const [left, right] = await Promise.all([fetch(`${base}/api/state`).then(r => r.json()), fetch(`${base}/api/state`).then(r => r.json())]);
+    assert.equal(left.sessions.length, 1); assert.equal(right.sessions.length, 1);
+    assert.equal(left.sessions[0].id, right.sessions[0].id);
+    assert.deepEqual(left.sessions[0].messages, []);
+  } finally { await new Promise(resolve => server.close(resolve)); delete process.env.EMOCHI_DATA_DIR; await rm(dir, { recursive: true, force: true }); }
+});
+
 test('Creative material search unlocks bounded records from the real creative-material library', async () => {
   const { queryCreativeMaterials } = await import('./creative-material-search.js');
   const filtered = await queryCreativeMaterials({ mode: 'filter', genres: ['mystery'], material_types: ['narrative_device'], tier: 'any', limit: 2 });
@@ -576,24 +585,20 @@ test('App distinguishes failed initial API load from a truly empty conversation 
   assert.match(app, /check线上 Agent 服务|线上 Agent 服务/);
 });
 
-test('two clients loading the workspace do not share an implicit Session', async () => {
-  const dir = await mkdtemp(path.join(os.tmpdir(), 'emochi-workspace-'));
-  process.env.EMOCHI_DATA_DIR = path.join(dir, 'data');
-  const server = createServer();
-  await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
-  const base = `http://127.0.0.1:${server.address().port}`;
-  const call = (url, options = {}) => fetch(base + url, { headers: { 'content-type': 'application/json' }, ...options }).then((response) => response.json());
-  try {
-    // Two browsers open the workspace at the same time: neither read may create a Session.
-    const [first, second] = await Promise.all([call('/api/state'), call('/api/state')]);
-    assert.equal(first.sessions.length, 0); assert.equal(second.sessions.length, 0);
-    // Each starts its own conversation and gets a distinct Session.
-    const a = (await call('/api/sessions', { method: 'POST', body: '{}' })).session;
-    const b = (await call('/api/sessions', { method: 'POST', body: '{}' })).session;
-    assert.notEqual(a.id, b.id);
-    const state = await call('/api/state');
-    assert.deepEqual(state.sessions.map((session) => session.id).sort(), [a.id, b.id].sort());
-    // A later read still does not add anything.
-    assert.equal((await call('/api/state')).sessions.length, 2);
-  } finally { await new Promise((resolve) => server.close(resolve)); delete process.env.EMOCHI_DATA_DIR; await rm(dir, { recursive: true, force: true }); }
+test('Mobile client keeps the blank new-conversation state local and creates a fresh Session only on first send', async () => {
+  const client = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/main.jsx', import.meta.url), 'utf8');
+  const api = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/lib/api.js', import.meta.url), 'utf8');
+  assert.match(client, /const session=state\?\.sessions\?\.find\(item=>item\.id===activeSessionId\)\|\|null/);
+  assert.doesNotMatch(client, /sessions\?\.\[0\]/);
+  assert.match(client, /const startNewConversation=\(\)=>\{setActiveSessionId\(null\)/);
+  assert.match(client, /const ensureSession=async\(\)=>\{\s*if\(session\)return session;\s*const \{session:created\}=await api\.createSession\(\)/);
+  assert.match(client, /const target=await ensureSession\(\);/);
+  assert.match(api, /createSession:\(\)=>request\('\/api\/sessions',\{method:'POST',body:'\{\}'\}\)/);
+});
+
+test('Mobile history opens from the same right side as its header trigger', async () => {
+  const styles = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/styles/mobile.css', import.meta.url), 'utf8');
+  assert.match(styles, /right:0;bottom:0;left:0;.*bottom-sheet/s);
+  assert.match(styles, /\.side-drawer\{position:absolute;top:0;right:0;bottom:0;/);
+  assert.match(styles, /transform:translateX\(28px\)/);
 });
