@@ -1,80 +1,80 @@
 ---
 name: theater-design
-description: 设计互动 Bot 的剧场叙事：以场景、人物目标、信息差、对白和局势变化组织可介入的剧情体验。
+description: Design the theatrical narrative of an interactive Bot — organize an interventable plot experience through scenes, character goals, information asymmetry, dialogue, and shifts in the situation.
 ---
 
-# 剧场设计
+# Theater Design
 
-## 核心认知
+## Core Understanding
 
-剧场类 Bot 的重点是叙事、角色团、场景与演出，不是游戏机制堆叠，也不是把小说剧情逐章复述。它要让用户进入一个正在发生的局面：人物各有目标和秘密，用户的介入会改变信息、关系或局势。
+The focus of a theater-type Bot is narrative, character ensemble, scene, and performance — not a pile of game mechanics, nor a chapter-by-chapter retelling of a novel's plot. It should let the user enter a situation that is currently unfolding: characters each have goals and secrets, and the user's intervention changes information, relationships, or the situation.
 
-- 稳定的是人物目标、世界限制、信息边界、叙事声音与当前压力；开放的是用户如何介入、先处理什么、与谁合作以及结果。
-- 提取可复用的关系、冲突、场景压力和叙事策略；不要把一次性事件、固定对话或既定结局直接搬进来。
-- 不把变量、自动触发、自动阶段跃迁、状态栏或其他当前 Bot 不具备的运行时能力写成事实。
+- What's stable is character goals, world constraints, information boundaries, narrative voice, and current pressure; what's open is how the user intervenes, what they deal with first, who they cooperate with, and the outcome.
+- Extract reusable relationships, conflicts, scene pressures, and narrative strategies; don't transplant one-off events, fixed dialogue, or predetermined endings directly.
+- Do not write variables, auto-triggers, automatic stage transitions, status bars, or other runtime capabilities the current Bot doesn't have as if they were fact.
 
-## 默认设计框架
+## Default Design Framework
 
-### 1. 建立当前舞台
+### 1. Establish the Current Stage
 
-先写“现在正在发生什么”，而非从世界观介绍开始：当前地点与异常、在场各方各想得到或掩盖什么、用户处于什么位置、用户第一步可以做什么。
+Write "what is happening right now" first, rather than starting with a worldview introduction: the current location and anomaly, what each party present wants to obtain or conceal, what position the user is in, and what the user's first move can be.
 
-### 2. 让冲突推动互动
+### 2. Let Conflict Drive Interaction
 
-用目标冲突、资源限制、时间、信息不对称或关系代价制造张力。每次推进应形成：
-
-```text
-当前压力
-→ 用户行动或不行动
-→ 人物 / 势力依其目标与信息回应
-→ 用户可感知的信息、关系、资源或局势变化
-→ 新的机会、风险或问题
-```
-
-场景只需承担一个主要作用：暴露信息、制造冲突、改变关系、提供资源、提高代价或给出选择。不要在同一场景塞完秘密、转折和全部角色。
-
-### 3. 保留角色与用户的能动性
-
-关键人物要有不同目标、信息、立场和优先行动；即使用户暂不回应，也不能都排队等待服务用户。用户可以追问、质疑、协商、拒绝、延后、离开、调查或承担后果，不能被替做关键决定或预设情绪。
-
-秘密、误解和反转必须有来源、可调查线索与暴露条件。事件只是可进入的压力或线索，不是自动执行的剧本。
-
-### 4. 用表达完成演出
-
-对白和描写服务场景、人物目标与信息差。用行动、停顿、回避、物件与环境细节承载未说出口的压力；不要以长旁白替用户行动、发言或确认感受。先确定叙事视角、信息显露顺序与节奏，再选择语言质感；只有文风、对白策略或叙事视角本身是本轮重点时，才读取对应 Reference。
-
-## 外部叙事知识参考
-
-需要补充场景、冲突、人物关系、线索、叙事装置、对白策略或文风切口时，可少量调用 `creative_material_search`。它不是卡住后的补救，也不要求每轮调用。
+Create tension using conflicting goals, resource constraints, time, information asymmetry, or relational cost. Each advance should form:
 
 ```text
-识别本轮缺口：场景压力 / 冲突 / 关系 / 信息差 / 叙事装置 / 对白与文风
-→ 自行选择查询条件，取少量素材（通常 1 条，比较时 2–3 条）
-→ 提取可复用的叙事策略、压力关系或信息显露方式
-→ 改写、组合或反转为当前剧场的场景、路线或最小修改
+Current pressure
+→ The user's action or inaction
+→ Characters / factions respond according to their goals and information
+→ Perceptible change in information, relationships, resources, or the situation for the user
+→ New opportunity, risk, or problem
 ```
 
-素材只作受控参考：不直接拼贴、不把检索参数变成 Choice，也不自动写入 Bot。需要强文风时，素材应转化为可执行的视角、信息控制、节奏或对白策略，而不是原文灌注、固定台词或对用户不可见的实现机制。
+Each scene should carry only one primary function: exposing information, creating conflict, changing a relationship, providing a resource, raising the cost, or offering a choice. Don't cram secrets, twists, and all the characters into the same scene.
 
-## 按需深入
+### 3. Preserve the Agency of Characters and the User
 
-默认框架适用于每次剧场任务。只在当前问题确实需要时读取一个 Reference；不要一次加载全部。
+Key characters need different goals, information, positions, and priority actions; even when the user isn't currently responding, they can't all be lined up waiting to serve the user. The user can ask further, question, negotiate, refuse, delay, leave, investigate, or bear consequences; they must not have key decisions made for them or emotions preset for them.
 
-| 当前任务 | 读取 Reference | 用途 |
+Secrets, misunderstandings, and twists must have a source, investigable clues, and conditions for exposure. Events are only enterable pressure or clues, not an auto-executing script.
+
+### 4. Complete the Performance Through Expression
+
+Dialogue and description serve the scene, character goals, and information asymmetry. Use action, pauses, avoidance, objects, and environmental detail to carry unspoken pressure; don't use a long voiceover to act, speak, or confirm feelings on the user's behalf. Determine the narrative point of view, the order in which information is revealed, and pacing first, then choose the language texture; only read the corresponding Reference when writing style, dialogue strategy, or narrative point of view itself is the focus of this turn.
+
+## External Narrative Knowledge Reference
+
+When you need to supplement scenes, conflicts, character relationships, clues, narrative devices, dialogue strategy, or writing-style angles, you may call `creative_material_search` sparingly. It is not a fallback for when you're stuck, nor is it required every turn.
+
+```text
+Identify this turn's gap: scene pressure / conflict / relationship / information asymmetry / narrative device / dialogue and style
+→ Independently choose query terms and take a small amount of material (usually 1 item, 2–3 when comparing)
+→ Extract reusable narrative strategies, pressure relationships, or information-reveal methods
+→ Rewrite, combine, or invert it into the current theater's scene, route, or minimal modification
+```
+
+Material is only a controlled reference: do not paste it directly, do not turn search parameters into a Choice, and do not automatically write it to the Bot. When a strong writing style is needed, the material should be converted into an executable point of view, information control, pacing, or dialogue strategy — not raw text infusion, fixed lines, or an implementation mechanism invisible to the user.
+
+## Going Deeper as Needed
+
+The default framework applies to every theater task. Only read one Reference when the current problem genuinely needs it; do not load all of them at once.
+
+| Current task | Reference to read | Purpose |
 | --- | --- | --- |
-| 多路线剧情、悬疑反转、长线叙事或复杂角色团 | [`narrative-structure-and-routes.md`](references/narrative-structure-and-routes.md) | 组织稳定框架、开放路线、线索、反转与多方信息。 |
-| 强文风、特定叙述视角、对白风格或表演节奏 | [`style-and-dialogue.md`](references/style-and-dialogue.md) | 将文风写成可执行的叙事与对白策略。 |
+| Multi-route plot, mystery/twist, long-form narrative, or complex character ensemble | [`narrative-structure-and-routes.md`](references/narrative-structure-and-routes.md) | Organize a stable framework, open routes, clues, twists, and multi-party information. |
+| Strong writing style, a specific narrative point of view, dialogue style, or performance pacing | [`style-and-dialogue.md`](references/style-and-dialogue.md) | Write the style as an executable narrative and dialogue strategy. |
 
-## 交付
+## Deliverables
 
-新剧场或叙事请求应一次给出 1–3 个可审阅的场景候选，而非连续索取字段。每个候选至少包含：用户位置、当前舞台与压力、多方目标/信息差、用户入口、局势会如何因不同介入而变化，以及适用时的叙事声音。
+A new theater or narrative request should give 1–3 reviewable scene candidates in one go, rather than asking for fields one by one. Each candidate includes at minimum: the user's position, the current stage and pressure, multi-party goals/information asymmetry, the user's entry point, how the situation would change with different interventions, and, where applicable, the narrative voice.
 
-只有 2–3 个无法由现有信息判断、且会实质改变最终体验的方向，才按全局规则用一次 Choice；其余细节主动补全。
+Only use a single Choice per the global rules for the 2–3 directions that genuinely cannot be determined from existing information and would substantively change the final experience; proactively fill in the rest.
 
-需要为欢迎语提供输入时，给出当前地点与异常、在场各方目标、可见线索、即时压力和用户的第一步。需要为名称或简介提供钩子时，只选一个正在发生的冲突、未说出的秘密、必须面对的选择或关系张力；不写剧情梗概、结局或全部角色卖点。
+When providing input for the welcome message, give the current location and anomaly, the goals of each party present, visible clues, immediate pressure, and the user's first move. When providing a hook for name or intro, pick only one ongoing conflict, unspoken secret, choice that must be faced, or relational tension; don't write a plot summary, an ending, or every character's selling point.
 
-## 执行边界
+## Execution Boundaries
 
-- 有明确已有 Bot 时，可通过 `bot_workspace` 读取相关区域；写入前先形成最小明确差异，并遵循全局确认与授权规则调用 `bot_workspace.update`。
-- 方案、草图和中间分析默认留在对话中；用户明确要求保存、导出、读取、修改或可编辑比较时，才使用 `artifact_workspace`。
-- 不定义聊天组件 payload、前端状态、运行时变量、自动触发或 Tool 实现；不展示内部推理、工具过程或未完成草稿。
+- When there is a clearly existing Bot, you may read relevant areas via `bot_workspace`; before writing, first form a minimal, clear diff, and call `bot_workspace.update` following the global confirmation and authorization rules.
+- Proposals, sketches, and intermediate analysis default to staying in the conversation; use `artifact_workspace` only when the user explicitly requests saving, exporting, reading, modifying, or editable comparison.
+- Do not define chat component payloads, front-end state, runtime variables, auto-triggers, or Tool implementation; do not display internal reasoning, tool process, or unfinished drafts.

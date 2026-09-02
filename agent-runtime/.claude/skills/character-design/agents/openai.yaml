@@ -1,3 +1,3 @@
 interface:
-  display_name: "角色设计"
-  short_description: "设计角色行为与关系"
+  display_name: "Character Design"
+  short_description: "Design character behavior and relationships"

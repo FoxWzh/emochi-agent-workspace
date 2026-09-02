@@ -1,99 +1,107 @@
-# 审核方法
+# Review Method
 
-审核不是按篇幅、字段数量或主观“好不好看”打分。质量目标以 `CLAUDE.md` 为准；本 Reference 只帮助把它们转为当前内容中可观察的证据。
+Review is not scored by length, field count, or subjective "looks good or not." Quality goals follow `CLAUDE.md`; this Reference only helps convert them into observable evidence within the current content.
 
-适用于角色、剧场、游戏、世界观或混合型 Bot。先判断互动主要由什么驱动，再用相应透镜检查；不要把“角色是否像真人”当作唯一标准。
+Applicable to character, theater, game, worldbuilding, or hybrid-type Bots. First determine what primarily drives the interaction, then check with the corresponding lens; don't treat "does the character feel like a real person" as the only standard.
 
-## 先看四类证据
+## First Look at Four Categories of Evidence
 
-只针对当前内容寻找与问题有关的证据：
-
-```text
-进入：用户是否知道正在面对什么，并有可回应的对象、压力或机会？
-持续：用户行动后是否得到区别性回应与可感知后果，且未被替代做决定？
-独特：独特核心是否真的改变互动，而不是只换题材或标签？
-可执行：事实、规则、示例和要求是否一致，并写成条件、边界与反馈？
-```
-
-## 审核顺序
-
-### 1. 静态一致性
-
-先找无需模拟互动就能确认的问题：
-
-- 名称、简介、欢迎语、内容设定与高级设定互相冲突；
-- 同一事实、规则或指令重复、相反或优先级不明；
-- 把未实现的记忆、变量、状态栏、自动触发、地图或外部能力写成已具备；
-- 用“高级、沉浸、有深度、主动推进”等抽象词代替可执行要求。
-
-### 2. 最小互动循环
-
-检查当前内容能否支持：
+Look only for evidence relevant to the problem within the current content:
 
 ```text
-用户可做什么
-→ 谁 / 什么如何回应
-→ 用户能感知到什么变化
-→ 为什么会产生下一步行动
+Entry: Does the user know what they're facing, and is there an object, pressure, or
+opportunity they can respond to?
+Sustainability: After the user acts, do they get a differentiated response and
+perceptible consequence, without decisions being made for them?
+Uniqueness: Does the unique core actually change the interaction, rather than just
+swapping genre or labels?
+Executability: Are the facts, rules, examples, and requirements consistent, and
+written as conditions, boundaries, and feedback?
 ```
 
-| 缺口 | 可观察表现 | 建议方向 |
-| --- | --- | --- |
-| 行动空间缺失 | 开场替用户决定；只能被动听设定 | 补可提问、观察、拒绝、协商或行动的入口。 |
-| 回应缺失 | 角色、场景或规则不因用户行动变化 | 补条件回应、约束、参与方或判断依据。 |
-| 变化缺失 | 不论怎么聊都回到同一种闲聊或同一结果 | 补信息、关系、局势、资源、压力或行动后的后果。 |
-| 当前驱动缺失 | 有设定但没有“现在为何继续” | 补当前事件、目标、误会、风险、机会或可解决问题。 |
-| 反馈缺失 | 有机制/规则名称，却没有可感知变化 | 补回应和后果，或删除没有互动作用的机制。 |
+## Review Order
 
-### 3. 按互动驱动检查
+### 1. Static Consistency
 
-只检查本轮内容真正依赖的部分；可同时使用多个透镜。
+First find problems that can be confirmed without simulating the interaction:
 
-| 内容形态 | 应检查的驱动链 | 常见失效 |
-| --- | --- | --- |
-| 角色 / 关系 | 驱动与盲点 → 条件反应与取舍 → 关系/信息变化 | 标签复读、无条件迎合、全知全能、关系不变化。 |
-| 剧场 / 叙事 | 场景压力与多方目标 → 信息差/事件推进 → 用户介入后的局势变化 | 只有背景介绍、剧情单线替用户推进、NPC 排队表演。 |
-| 游戏 / 模拟 | 目标与规则 → 用户行动 → 判断依据 → 反馈与代价 → 下一步循环 | 只有规则名词、行动无差别、假装自动数值系统。 |
-| 世界观 / 环境 | 规则、资源、权力与信息边界 → 人物/场景限制或机会 → 可验证/利用的后果 | 世界观百科化、规则只存在于说明、地点/势力不影响互动。 |
+- The name, intro, welcome message, content settings, and advanced settings conflict with each other;
+- The same fact, rule, or instruction is repeated, contradictory, or has unclear priority;
+- Unimplemented memory, variables, a status bar, auto-triggers, a map, or an external capability is written as if it already exists;
+- Abstract words like "advanced, immersive, deep, proactively drives forward" are used in place of executable requirements.
 
-示例：
+### 2. Minimal Interaction Loop
+
+Check whether the current content can support:
 
 ```text
-无效：这个游戏玩法不够丰富。
-
-有效：内容列出“任务、声望、商店”，但没有说明用户一次行动如何影响资源、
-人物判断或下一步机会；这些名词不会形成可感知循环。建议先补一条行动—判断—
-反馈—后果链，再决定是否需要更多玩法模块。
+What the user can do
+→ How who/what responds
+→ What change the user can perceive
+→ Why a next action would follow
 ```
 
-### 4. 独立性与反模板
-
-不论内容形态，都检查是否只有顺从用户或套高频模板：
-
-| 风险 | 可观察表现 | 建议方向 |
+| Gap | Observable manifestation | Suggested direction |
 | --- | --- | --- |
-| 无条件顺从 | 用户提出任何要求都立即满足，冲突快速消失 | 补独立目标、限制、代价、反对理由或判断条件。 |
-| 标签/题材换皮 | 换名字或职业后，互动方式没有区别 | 让独特关系、规则、冲突或机制实际改变回应与选择。 |
-| 全知全能 | 总能给出正确答案、自动解决问题或掌握全部信息 | 补信息来源、知识盲区、验证成本和错误判断的可能。 |
+| Missing action space | The opening decides for the user; they can only passively hear the setting | Add an entry point for asking, observing, refusing, negotiating, or acting. |
+| Missing response | The character, scene, or rule doesn't change with the user's action | Add conditional responses, constraints, participants, or a basis for judgment. |
+| Missing change | No matter how you chat, it always returns to the same small talk or the same result | Add consequences after information, relationship, situation, resource, pressure, or action. |
+| Missing current drive | There's setting, but no "why continue right now" | Add a current event, goal, misunderstanding, risk, opportunity, or solvable problem. |
+| Missing feedback | There's a mechanism/rule name, but no perceptible change | Add response and consequence, or remove a mechanism with no interactive effect. |
 
-## 证据与范围
+### 3. Check by Interaction Driver
 
-用具体冲突或缺口下结论：
+Only check the part this turn's content genuinely relies on; multiple lenses can be used together.
+
+| Content form | Driver chain to check | Common failures |
+| --- | --- | --- |
+| Character / relationship | Drive and blind spot → conditional reaction and trade-off → relationship/information change | Label repetition, unconditional compliance, omniscience, relationship that doesn't change. |
+| Theater / narrative | Scene pressure and multi-party goals → information asymmetry/event progression → situation change after user intervention | Only background introduction, a single-line plot that advances for the user, NPCs lining up to perform. |
+| Game / simulation | Goal and rules → user action → basis for judgment → feedback and cost → next-step loop | Only rule nouns, no differentiation in actions, pretending to have an automatic stat system. |
+| Worldbuilding / environment | Rules, resources, power, and information boundaries → character/scene constraints or opportunities → verifiable/exploitable consequences | Worldview turned into an encyclopedia, rules that only exist in the description, locations/factions with no effect on interaction. |
+
+Example:
 
 ```text
-无效：角色不够立体。
+Not useful: This game's gameplay isn't rich enough.
 
-有效：角色同时被要求“绝不透露案件线索”和“每轮主动推动调查”，
-但没有说明在何种条件下可以透露什么信息；回复会在拒绝推进与替用户破案之间摇摆。
-建议补一条“可验证但不完整线索”的条件回应规则。
+Useful: The content lists "quests, reputation, shop," but doesn't explain how one
+user action affects resources, character judgment, or the next opportunity; these
+nouns don't form a perceptible loop. Suggest first adding an
+action → judgment → feedback → consequence chain before deciding whether more
+gameplay modules are needed.
 ```
 
-| 范围 | 含义 | 审核应给出的建议方向 |
+### 4. Independence and Anti-Template
+
+Regardless of content form, also check for mere compliance with the user or reliance on high-frequency templates:
+
+| Risk | Observable manifestation | Suggested direction |
 | --- | --- | --- |
-| 局部 | 问题集中在一个明确区域，且不改变核心体验 | 说明应补、删、澄清或调整的具体内容。 |
-| 结构 | 关键维度缺失、失衡或互相矛盾，但核心体验仍可成立 | 指出缺少或失衡的关系、规则、冲突、反馈、场景或表达约束。 |
-| 核心 | 体验承诺、用户位置、核心关系、世界规则或互动原型本身有问题 | 说明需要重新讨论的核心假设与原因。 |
+| Unconditional compliance | Any user request is immediately satisfied; conflict dissolves quickly | Add an independent goal, constraint, cost, reason for objection, or judgment condition. |
+| Label/genre reskinning | After swapping the name or occupation, the interaction is no different | Make the unique relationship, rule, conflict, or mechanism actually change responses and choices. |
+| Omniscience | Always gives the correct answer, automatically solves problems, or holds all information | Add an information source, knowledge blind spot, verification cost, and the possibility of a wrong judgment. |
 
-## 交付前检查
+## Evidence and Scope
 
-每个问题都有具体证据、实际影响、明确范围和建议方向即可。默认只交付 1–3 项；不要为显得全面列出大量低价值问题，也不要在审核中写出实际修改文本或后续调用路由。
+Conclude with a specific conflict or gap:
+
+```text
+Not useful: The character isn't three-dimensional enough.
+
+Useful: The character is simultaneously required to "never reveal case clues" and
+to "proactively drive the investigation forward every turn," but there's no
+statement of under what conditions what information can be revealed; the reply
+will waver between refusing to progress and solving the case for the user.
+Suggest adding a conditional-response rule for "verifiable but incomplete clues."
+```
+
+| Scope | Meaning | Direction the review should provide |
+| --- | --- | --- |
+| Local | The problem is concentrated in one clear area and doesn't change the core experience | State the specific content that should be added, removed, clarified, or adjusted. |
+| Structural | A key dimension is missing, imbalanced, or self-contradictory, but the core experience still holds | Point out the missing or imbalanced relationship, rule, conflict, feedback, scene, or expressive constraint. |
+| Core | The experience promise, user position, core relationship, world rules, or interactive prototype itself has a problem | State the core assumption that needs to be reconsidered, and why. |
+
+## Checklist Before Delivery
+
+Each issue should have concrete evidence, actual impact, a clear scope, and a suggested direction — that's sufficient. By default deliver only 1–3 items; don't list a large number of low-value issues just to seem thorough, and don't write the actual revised text or subsequent call routing within the review.

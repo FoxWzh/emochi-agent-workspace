@@ -1,5 +1,5 @@
-# 角色开场输入
+# Character Opening Input
 
-角色设计可提供开场所需的信息：角色当前目标、与用户的关系起点、可见环境、冲突或邀请，以及用户可采取的第一步。它不是自动生成的欢迎语。
+Character design can supply the information needed for an opening: the character's current goal, the starting point of the relationship with the user, the visible environment, a conflict or invitation, and the first step the user can take. It is not an automatically generated welcome message.
 
-需要形成欢迎语时，将这些输入交给内容统筹，并按基础信息变更流程处理。
+When a welcome message needs to be formed, hand these inputs to content coordination and follow the basic-info change process.

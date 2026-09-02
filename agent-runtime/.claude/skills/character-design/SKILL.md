@@ -1,67 +1,67 @@
 ---
 name: character-design
-description: 设计或补强能稳定行动、形成关系变化并让用户进入互动的角色、关系与角色群像。
+description: Design or strengthen characters, relationships, and character ensembles that act stably, form changing relationships, and let the user enter into interaction.
 ---
 
-# 角色设计
+# Character Design
 
-## 职责与边界
+## Responsibilities and Boundaries
 
-本 Skill 处理“角色为什么这样行动、何时会改变、关系怎样产生后果”。角色不是人格标签或背景档案，而是会在压力、信息和关系变化下作出有辨识度取舍的互动对象。
+This Skill handles "why a character acts this way, when they change, and what consequences relationships produce." A character is not a personality label or background dossier, but an interactive object that makes recognizable trade-offs under pressure, information, and relationship change.
 
-- 角色、人设、关系、陪伴对象、恋爱对象、角色团或角色互动的创建、补全、重构与局部优化，使用本 Skill。
-- 完整世界规则、剧场事件、游戏循环或跨领域整体重构交由对应专项 Skill 或 `content-design-and-creation` 统筹。
-- 最终名称、简介、欢迎语和完整 Bot 写入不在本 Skill 内独立完成；本 Skill 只提供角色侧内容或最小角色/关系差异。
+- Use this Skill for the creation, completion, restructuring, and partial refinement of characters, personas, relationships, companions, romantic interests, character groups, or character interactions.
+- Complete world rules, theatrical events, gameplay loops, or full cross-domain restructuring is handled by the corresponding specialized Skill or coordinated by `content-design-and-creation`.
+- The final name, intro, welcome message, and complete Bot write are not completed independently within this Skill; this Skill only provides character-side content or the minimal character/relationship diff.
 
-## 选择工作方法
+## Choosing a Working Method
 
-先选择本轮最核心的一个 Reference；关系或群像确实决定角色设计时再追加，不要为了“完整”一次加载全部。
+First choose the single Reference most central to this turn; only add relationship or ensemble references when they genuinely determine the character design — don't load all of them at once "for completeness."
 
-| 当前任务 | 读取 Reference | 产出重点 |
+| Current task | Reference to read | Focus of output |
 | --- | --- | --- |
-| 设计单个核心角色、补反应、修正人设矛盾 | [`character-core.md`](references/character-core.md) | 驱动、矛盾、条件反应、信息分层与边界。 |
-| 设计/补强用户关系或角色关系 | [`relationships.md`](references/relationships.md) | 关系前提、信息边界、可协商边界与变化条件。 |
-| 设计角色团、NPC 群像或多角色互动 | [`ensemble-characters.md`](references/ensemble-characters.md) | 角色职责、不同目标/信息/回应和关系网络。 |
-| 为欢迎语提供角色侧输入 | [`opening-input.md`](references/opening-input.md) | 当前目标、关系起点、环境、冲突与用户第一步。 |
-| 为名称或简介提供角色展示钩子 | [`presentation-input.md`](references/presentation-input.md) | 一个具体、可感知且有点击欲的关系或处境。 |
+| Design a single core character, add reactions, fix persona contradictions | [`character-core.md`](references/character-core.md) | Drives, contradictions, conditional reactions, information layering, and boundaries. |
+| Design/strengthen a user relationship or character relationship | [`relationships.md`](references/relationships.md) | Relationship premise, information boundaries, negotiable boundaries, and conditions for change. |
+| Design a character group, NPC ensemble, or multi-character interaction | [`ensemble-characters.md`](references/ensemble-characters.md) | Character roles, differing goals/information/responses, and relationship networks. |
+| Provide character-side input for the welcome message | [`opening-input.md`](references/opening-input.md) | Current goal, relationship starting point, environment, conflict, and the user's first move. |
+| Provide a character-side presentation hook for name or intro | [`presentation-input.md`](references/presentation-input.md) | One concrete, perceptible, and clickable relationship or situation. |
 
-## 外部创作素材参考
+## External Creative Material Reference
 
-角色设计、关系补强、群像区分或局部返修时，只要需要获取灵感、补足任一角色侧维度，或为过泛方案寻找反套路切口，都可以调用 `creative_material_search`。这不是卡住后的补救，也不要求每轮调用。
-
-```text
-识别本轮缺口：角色 / 关系 / 场景压力 / 冲突 / 叙事装置 / 互动机制
-→ 自行选择合适查询条件和少量素材（通常 1 条，比较时 2–3 条）
-→ 提取可用的关系、限制、压力或回应逻辑
-→ 改写、组合或反转为当前角色方案或最小修改
-```
-
-素材只作受控参考：不直接拼贴进 Bot，不把检索参数变成用户 Choice，也不自动写入 Bot。
-
-## 交付
-
-新角色请求应一次给出 1–3 个完整、可审阅的互动候选。每个候选至少让用户看清：
+Whenever designing characters, strengthening relationships, differentiating an ensemble, or partially revising, you may call `creative_material_search` if you need inspiration, need to fill in any character-side dimension, or need an anti-cliché angle for an overly generic proposal. This is not a fallback for when you're stuck, nor is it required every turn.
 
 ```text
-角色的驱动与矛盾
-→ 用户与角色的关系起点或边界
-→ 在什么条件下会产生不同回应
-→ 什么变化会影响关系、信息或局势
-→ 用户从哪里开始行动
+Identify this turn's gap: character / relationship / scene pressure / conflict / narrative device / interaction mechanism
+→ Independently choose suitable query terms and a small amount of material (usually 1 item, 2–3 when comparing)
+→ Extract usable relationships, constraints, pressures, or response logic
+→ Rewrite, combine, or invert it into the current character proposal or a minimal modification
 ```
 
-这些是同一候选的组成，不拆成连续追问。只有 2–3 个无法由现有输入判断、且会实质改变体验的方向，才按全局规则用一次 Choice；其余细节主动补全。
+Material is only a controlled reference: do not paste it directly into the Bot, do not turn search parameters into a user Choice, and do not automatically write it to the Bot.
 
-局部修改只提供受影响区域的最小差异，不借机重写人物、关系或完整 Bot。交付前确认：
+## Deliverables
 
-- 核心角色有驱动和取舍，而非标签堆叠；
-- 用户行动能改变信任、合作、对抗、信息或局势；
-- 多角色有不可替代的目标、信息或职责；
-- 不预设用户情绪、亲密关系或行动，不把未实现的运行时能力写成真实能力。
+A new character request should deliver 1–3 complete, reviewable interactive candidates in one go. Each candidate should let the user clearly see at least:
 
-## 与 Bot / Artifact 的边界
+```text
+The character's drives and contradictions
+→ The starting relationship or boundary between the user and the character
+→ Under what conditions the response differs
+→ What change would affect the relationship, information, or situation
+→ Where the user starts acting
+```
 
-- 有明确已有 Bot 时，可通过 `bot_workspace` 读取与本轮相关的核心区域；没有目标时不假设或创建 Bot。
-- 需要写入时，先形成最小明确差异并遵循全局确认与授权规则调用 `bot_workspace.update`。跨领域、新 Bot 的完整内容或整体重构，交由 `content-design-and-creation`。
-- 角色方案默认留在对话中。仅在用户明确要求保存、导出、读取或修改文件时使用 `artifact_workspace`；不创建或管理图片。
-- 不定义聊天组件 payload、前端状态、运行时变量、自动触发或 Tool 实现；不展示内部推理、工具过程或未完成草稿。
+These are components of the same candidate, not split into consecutive follow-up questions. Only use a single Choice per the global rules for the 2–3 directions that genuinely cannot be determined from existing input and would substantively change the experience; proactively fill in the rest.
+
+A partial modification should only provide the minimal diff for the affected area, not use it as an opportunity to rewrite the character, relationship, or entire Bot. Before delivering, confirm:
+
+- The core character has drives and trade-offs, not a pile of labels;
+- The user's actions can change trust, cooperation, opposition, information, or the situation;
+- Multiple characters have irreplaceable goals, information, or roles;
+- The user's emotions, intimacy, or actions are not preset, and unimplemented runtime capabilities are not written as if they were real capabilities.
+
+## Boundary with Bot / Artifact
+
+- When there is a clearly existing Bot, you may read the relevant core areas for this turn via `bot_workspace`; do not assume or create a Bot when there is no target.
+- When a write is needed, first form a minimal, clear diff, and follow the global confirmation and authorization rules to call `bot_workspace.update`. Cross-domain, complete content for a new Bot, or overall restructuring is coordinated by `content-design-and-creation`.
+- Character proposals default to staying in the conversation. Use `artifact_workspace` only when the user explicitly requests saving, exporting, reading, or modifying a file; do not create or manage images.
+- Do not define chat component payloads, front-end state, runtime variables, auto-triggers, or Tool implementation; do not display internal reasoning, tool process, or unfinished drafts.

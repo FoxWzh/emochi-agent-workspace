@@ -1,71 +1,75 @@
-# 详细内容写作
+# Detailed Content Writing
 
-用于将已确定的蓝图写成可持续互动、可被模型执行的 Bot 核心内容。内容设定是自由长文本，不是旧平台字段树或自动触发系统。
+Used to turn a determined blueprint into Bot core content that supports sustained interaction and can be executed by the model. Content settings are free-form long text, not an old-platform field tree or an auto-trigger system.
 
-## 按依赖展开
+## Expand by Dependency
 
-先写会约束其他内容的部分，再写被它们约束的部分：
+Write the parts that constrain other content first, then write what's constrained by them:
 
 ```text
-世界 / 规则主导：边界与代价 → 当前情境 → 对象反应 → 冲突与入口
-人物 / 关系主导：用户位置与关系前提 → 对象驱动 → 环境压力 → 当前情境
-玩法主导：目标 → 用户可行动作 → 判断依据 → 可感知反馈 → 下一步压力
+World / rule-led: boundaries and cost → current situation → object reaction → conflict and entry point
+Character / relationship-led: user position and relationship premise → object drive → environmental pressure → current situation
+Gameplay-led: goal → actions the user can take → basis for judgment → perceptible feedback → next-step pressure
 ```
 
-局部任务只展开受影响的必要部分；不要借机重写整个 Bot。
+A partial task should only expand the necessary affected part; don't use it as an opportunity to rewrite the entire Bot.
 
-## 把抽象要求写成可执行内容
+## Turn Abstract Requirements into Executable Content
 
-| 抽象表达 | 应转换为 |
+| Abstract phrasing | Should be converted to |
 | --- | --- |
-| “角色很复杂” | 在什么压力下坚持/回避/误解/让步，以及这些反应如何改变关系。 |
-| “世界很有沉浸感” | 什么能发生、谁知道什么、资源/规则有什么代价、用户如何验证或利用。 |
-| “玩法丰富” | 用户能做什么、对象如何判断、用户看到什么反馈、下一步如何变化。 |
-| “慢热感情” | 关系的可协商边界、信任如何建立/受损、哪些事件才改变关系，而非只写“不要进展太快”。 |
+| "The character is complex" | Under what pressure they persist/avoid/misunderstand/concede, and how these reactions change the relationship. |
+| "The world feels immersive" | What can happen, who knows what, what cost the resources/rules carry, how the user verifies or exploits it. |
+| "Rich gameplay" | What the user can do, how the object judges, what feedback the user sees, how the next step changes. |
+| "Slow-burn romance" | The relationship's negotiable boundaries, how trust is built/damaged, which events actually change the relationship — rather than only writing "don't progress too fast." |
 
-示例：
-
-```text
-不可执行：角色有深度，主动带领用户体验精彩剧情。
-
-可执行：角色会主动提出一个可调查的线索、未说完的矛盾信息或需要共同决定的风险；
-但不得替用户选择行动、得出调查结论或预设用户情绪。每次推进后保留至少一个可追问、
-质疑、拒绝或绕开的入口。
-```
-
-## 内容组织原则
-
-### 角色与关系
-
-写清核心驱动、信息边界、条件反应和可协商边界。长期影响互动的角色才需要完整驱动与变化关系；次要角色只写稳定辨识与剧情功能。
-
-### 世界、场景与规则
-
-世界规则必须影响选择：说明什么可能/不可能、信息如何获得、资源或权力如何分配、行动有什么代价。地点/组织要提供资源、限制、风险或机会，而不是名称列表。
-
-### 当前互动与持续性
-
-给出当前正在生效的压力、机会或未解问题；让用户可以调查、谈判、拒绝、离开、承担或利用规则。不要锁死单线结局，也不要把未来转折提前写成事实。
-
-### 表达与示例
-
-语气、叙述视角、对话与动作比例、可使用的信息范围、应避免的表达应清楚且与角色/世界事实一致。示例只用于说明稳定回应方式，不得和核心规则冲突。
-
-## 稳定设定与当前信息
-
-区分：
+Example:
 
 ```text
-稳定设定：跨场景有效的角色驱动、关系前提、世界边界与回应规则。
-当前信息：此刻地点、事件压力、可见线索和即时目标。
+Not executable: The character has depth and proactively leads the user through a great plot.
+
+Executable: The character will proactively raise an investigable clue, an unfinished
+contradictory piece of information, or a risk requiring a joint decision; but must not
+choose the action, draw the investigative conclusion, or preset the user's emotion on
+the user's behalf. After each advance, preserve at least one entry point that can be
+questioned, doubted, refused, or bypassed.
 ```
 
-这是内容组织，不代表系统拥有条件注入、自动状态栏、变量、地图或随机触发能力。
+## Content Organization Principles
 
-## 写完时检查
+### Characters and Relationships
 
-- 用户是否有可选择的行动，而不是被安排剧情；
-- 关键反应是否能追溯到角色驱动、规则或当前信息；
-- 是否有只增加名词、却没有读取者、后果或互动作用的设定；
-- 是否重复事实、无条件迎合或全知全能；
-- 是否把未实现的运行时能力写成真实能力。
+Clearly write the core drive, information boundaries, conditional reactions, and negotiable boundaries. Only characters that have a long-term impact on the interaction need a complete drive and changing relationship; secondary characters only need stable identification and plot function.
+
+### World, Scene, and Rules
+
+World rules must affect choices: state what's possible/impossible, how information is obtained, how resources or power are distributed, and what cost an action carries. Locations/organizations should provide resources, constraints, risk, or opportunity — not just a list of names.
+
+### Current Interaction and Sustainability
+
+Give the pressure, opportunity, or unresolved problem currently in effect; let the user investigate, negotiate, refuse, leave, bear consequences, or exploit the rules. Don't lock in a single-line ending, and don't write future twists as fact ahead of time.
+
+### Expression and Examples
+
+Tone, narrative point of view, the ratio of dialogue to action, the range of information that can be used, and expressions to avoid should be clear and consistent with the character/world facts. Examples should only illustrate stable response patterns, and must not conflict with the core rules.
+
+## Stable Setting vs. Current Information
+
+Distinguish between:
+
+```text
+Stable setting: Character drives, relationship premises, world boundaries, and response
+rules that hold across scenes.
+Current information: The current location, event pressure, visible clues, and immediate
+goal right now.
+```
+
+This is content organization — it does not mean the system has conditional injection, an automatic status bar, variables, a map, or random-trigger capability.
+
+## Checklist When Finished Writing
+
+- Whether the user has choices to make, rather than having the plot arranged for them;
+- Whether key reactions can be traced back to a character drive, rule, or current information;
+- Whether there's setting that only adds nouns without a reader, consequence, or interactive effect;
+- Whether it repeats facts, shows unconditional compliance, or omniscience;
+- Whether unimplemented runtime capabilities are written as if they were real capabilities.

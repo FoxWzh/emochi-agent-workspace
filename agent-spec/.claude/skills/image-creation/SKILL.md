@@ -1,60 +1,60 @@
 ---
 name: image-creation
-description: 为 Bot 规划并在确认后发起封面、角色视觉、场景图或视觉参考的文生图、图生图任务。
+description: Plan, and after confirmation initiate, text-to-image and image-to-image tasks for a Bot's cover, character visuals, scene images, or visual references.
 ---
 
-# 图片创作
+# Image Creation
 
-## 职责与边界
+## Responsibilities and Boundaries
 
-本 Skill 把用户的视觉目标变成可确认、可独立生成的图片方案，并在用户明确确认后通过 `image_task` 创建真实生成任务。
+This Skill turns the user's visual goal into a confirmable, independently generatable image proposal, and creates a real generation task via `image_task` only after the user explicitly confirms.
 
-- 用户要求生成、重绘、扩展或修改图片，或要为 Bot 设计封面、角色视觉、场景图或视觉参考时使用。
-- 图片不是装饰性风格词堆砌；每张图应表达明确主体、画面瞬间和视觉叙事。
-- 不创建或修改 Bot、Artifact、前端状态，也不替用户选择生成结果。用户明确点击“设为封面”等前端操作时，由对应业务流程处理。
+- Use it when the user asks to generate, redraw, extend, or modify an image, or wants to design a cover, character visual, scene image, or visual reference for a Bot.
+- An image is not a pile of decorative style words; each image should express a clear subject, a moment in the frame, and a visual narrative.
+- Does not create or modify Bots, Artifacts, or front-end state, and does not choose the generation result for the user. When the user explicitly clicks something like "set as cover" in the front end, that is handled by the corresponding business flow.
 
-## 默认工作方式
+## Default Working Method
 
-### 1. 确定来源与目标
+### 1. Determine Source and Goal
 
-- 有有效输入图，且用户要求编辑、重绘、扩展或修改它：读取 [`image-to-image.md`](references/image-to-image.md)。
-- 没有有效输入图：读取 [`text-to-image.md`](references/text-to-image.md)。
+- If there is a valid input image and the user asks to edit, redraw, extend, or modify it: read [`image-to-image.md`](references/image-to-image.md).
+- If there is no valid input image: read [`text-to-image.md`](references/text-to-image.md).
 
-从用户要求和当前 Bot 已确认内容中确定用途、主体、场景瞬间、关系或动作、构图、视觉重点和硬约束。普通构图、光影或风格细节可主动补全；只有主体身份、关系或重大视觉叙事分歧无法判断时，才做一次最小澄清或给完整候选比较。
+Determine the purpose, subject, scene moment, relationship or action, composition, visual focus, and hard constraints from the user's request and the current Bot's confirmed content. Ordinary composition, lighting, or style details can be filled in proactively; only when the subject's identity, relationship, or a major visual-narrative disagreement cannot be determined should you do a single minimal clarification or offer complete candidates for comparison.
 
-### 2. 形成可比较方案
+### 2. Form a Comparable Proposal
 
-用户没有明确指定图片数量或视觉方向时，默认给出 **4 个**完整方案并在 `image_task` 中使用 `count: 4`；用户明确指定数量时按其要求，并把该数量写入 `count`。每条方案都应独立成立，共享用户明确的主体与硬约束；多方案至少在两个真正影响画面的维度上不同：镜头、构图、空间比例、光影/时间、动作、视线、关系张力或故事瞬间。
+When the user hasn't specified the number of images or a visual direction, default to giving **4** complete proposals and use `count: 4` in `image_task`; when the user specifies a number, follow it and put that number into `count`. Each proposal should stand independently while sharing the user's explicit subject and hard constraints; multiple proposals must differ on at least two dimensions that actually affect the image: camera, composition, spatial proportion, lighting/time, action, gaze, relational tension, or story moment.
 
-4 个方案应覆盖不同的画面叙事或传播切口，不能只替换“复古、写实、电影感”、质量词或其他后缀。只有用户明确要比较，或候选之间存在重大的视觉叙事分歧时，才用 Choice。
+The 4 proposals should cover different visual narratives or communication angles, not just swap "vintage, realistic, cinematic," quality words, or other suffixes. Use a Choice only when the user explicitly wants to compare, or when there's a major visual-narrative disagreement among the candidates.
 
-人物为主要卖点或用户要求人像时，主体必须是清晰可辨的人像：人物在画面中占据主要视觉权重，脸部或上半身优先可读；环境、道具和氛围服务于人物，而不反客为主。非阴暗题材下，避免堆叠阴影、恐怖、废墟、压迫、血腥或悲剧性元素；优先以清晰主体、可读动作、健康留白和符合题材的明快/中性光线保证首眼识别与点击意愿。
+When a character is the main selling point or the user asks for a portrait, the subject must be a clearly recognizable human figure: the character occupies the primary visual weight in the frame, with the face or upper body prioritized for readability; environment, props, and mood serve the character rather than overshadowing it. For non-dark subject matter, avoid piling on shadow, horror, ruins, oppression, gore, or tragic elements; prioritize a clear subject, readable action, healthy negative space, and genre-appropriate bright/neutral lighting to ensure first-glance recognizability and click appeal.
 
-### 3. 确认后创建任务
+### 3. Create the Task After Confirmation
 
-用户明确确认视觉方案后，调用 `image_task`，为每个 variant 提供自包含 Prompt。仅在 Tool 返回 `job_id` 后，才能说明任务已经创建；随后由前端展示进度与生成结果。
+After the user explicitly confirms the visual proposal, call `image_task`, providing a self-contained Prompt for each variant. Only after the Tool returns a `job_id` may you state that the task has been created; the front end then displays progress and generation results.
 
-- 基于输入图时，必须把可访问的 HTTP(S) 图片作为 `images` 传入；不要编造输入图地址。
-- 用户明确锁定视觉风格或硬约束时，可设置 `style_locked`；这不允许候选重复构图。
-- 不在回复中展示图片 URL、编造生成结果，或要求用户去资源区查找结果。
+- When based on an input image, you must pass an accessible HTTP(S) image URL as `images`; do not fabricate an input image address.
+- When the user explicitly locks the visual style or a hard constraint, you may set `style_locked`; this does not allow candidates to repeat the same composition.
+- Do not display image URLs in the reply, fabricate generation results, or ask the user to go find the result in the resource area.
 
-## 交付检查
+## Delivery Checklist
 
-在创建任务前确认：
+Before creating the task, confirm:
 
 ```text
-主体、用途与画面瞬间清楚；
-人物为主要卖点时，人物是清晰可辨的主视觉；
-非阴暗题材没有被无依据的阴暗元素压低可读性或点击意愿；
-与当前 Bot 已确认的外观、关系和世界设定不冲突；
-Prompt 包含主体、画面、关键约束与必要风格；
-不确定特征没有被写成事实；
-避免文字、Logo、水印和未要求的可识别品牌元素；
-每个 variant 均可脱离其他方案独立生成。
+Subject, purpose, and image moment are clear;
+When a character is the main selling point, the character is a clearly recognizable primary visual;
+For non-dark subject matter, no unwarranted dark elements are dragging down readability or click appeal;
+Does not conflict with the current Bot's confirmed appearance, relationships, and world setting;
+The Prompt includes the subject, scene, key constraints, and necessary style;
+Uncertain features are not written as fact;
+Avoid text, logos, watermarks, and unrequested identifiable brand elements;
+Each variant can be generated independently of the other proposals.
 ```
 
-## 执行边界
+## Execution Boundaries
 
-- 当前 Bot 只是视觉参考，不表示图片自动归属、自动成为封面或自动写入 Bot；需要参考时按需读取 `basic`、`content` 或 `advanced`。
-- 图片任务状态、轮询、候选展示和选中态由前端/执行层处理；图片生成失败时不伪造完成状态。
-- 不展示内部推理、工具执行过程或未完成草稿。
+- The current Bot is only a visual reference; it does not mean the image automatically belongs to it, automatically becomes the cover, or is automatically written to the Bot; read `basic`, `content`, or `advanced` as needed for reference.
+- Image task status, polling, candidate display, and selection state are handled by the front end/execution layer; do not fake a completed state when image generation fails.
+- Do not display internal reasoning, tool execution process, or unfinished drafts.

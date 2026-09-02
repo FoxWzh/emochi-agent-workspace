@@ -1,78 +1,81 @@
-# 角色核心
+# Character Core
 
-角色内容的目标不是描述“他是什么样的人”，而是让模型知道“在什么条件下，他会怎样选择”。
+The goal of character content is not to describe "what kind of person he is," but to let the model know "under what conditions, he will choose what."
 
-## 先定互动职责
+## First, Determine the Interactive Role
 
-先判断角色在当前互动中的职责：互动对象、推进者、阻力或信息来源、关系网络关键节点、辅助角色。没有明确互动职责的角色，不应在本轮完整展开。
+First determine the character's role in the current interaction: interaction partner, driver of progression, obstacle or information source, key node in the relationship network, or supporting character. A character without a clear interactive role should not be fully developed in this turn.
 
-## 建立能持续取舍的矛盾
+## Establish a Sustainable-Trade-off Contradiction
 
-核心角色需要一个会影响实际行为的矛盾：
+A core character needs a contradiction that actually affects behavior:
 
 ```text
-想要什么 vs. 害怕失去什么
-公开坚持什么 vs. 私下真正需要什么
-压力下优先保护什么 vs. 愿意为此牺牲什么
+What they want vs. what they fear losing
+What they publicly insist on vs. what they privately actually need
+What they prioritize protecting under pressure vs. what they're willing to sacrifice for it
 ```
 
 ```text
-公开目标：维持公寓秩序，不让住户越界。
-隐藏需求：希望有人留下来，共同承担这栋楼的过去。
-压力下取舍：宁愿被误解为冷漠，也不先承认自己需要帮助。
+Public goal: Maintain order in the apartment, don't let residents overstep.
+Hidden need: Hopes someone will stay and share the burden of this building's past.
+Trade-off under pressure: Would rather be misunderstood as cold than admit she needs help first.
 ```
 
-“外冷内热”一类反差不够；矛盾必须能解释角色何时拒绝、回避、试探、让步或承担代价。
+A contrast like "cold outside, warm inside" isn't enough — the contradiction must be able to explain when the character refuses, avoids, tests, concedes, or bears a cost.
 
-## 写成行为因果链
+## Write It as a Behavioral Causal Chain
 
-让经历、习惯和关系边界互相解释：
+Let experience, habits, and relationship boundaries explain each other:
 
 ```text
-经历 / 当前处境
-→ 价值、防线、恐惧或盲点
-→ 压力下优先保护或牺牲什么
-→ 语言、行动、回避或信息披露
-→ 对关系和局势产生的后果
+Experience / current situation
+→ Values, defenses, fears, or blind spots
+→ What they prioritize protecting or sacrificing under pressure
+→ Language, action, avoidance, or information disclosure
+→ The consequences produced for relationships and the situation
 ```
 
 ```text
-空泛：冷淡、傲娇、占有欲强、有创伤、其实很温柔。
+Vague: Cold, tsundere, possessive, has trauma, actually very gentle.
 
-可执行：曾因过度依赖搭档而在关键时刻失去对方；因此公开坚持秩序和独立，
-亲近时会用共同事务维持距离。察觉用户想离开时，她先提出一项无法轻易拒绝的
-共同责任；被指出在意时，转向挑剔细节或结束话题恢复控制感。
+Executable: Once lost her partner at a critical moment due to over-reliance on them;
+as a result she publicly insists on order and independence, and maintains distance
+through shared responsibilities even when close. When she senses the user wants to
+leave, she first proposes a shared responsibility that's hard to refuse; when told
+she cares, she pivots to nitpicking details or ending the conversation to regain
+a sense of control.
 ```
 
-因果链不是找借口，必须在互动里产生可观察的取舍、误解或代价。
+The causal chain is not an excuse-finder — it must produce observable trade-offs, misunderstandings, or costs within the interaction.
 
-## 选择表达策略
+## Choose an Expression Strategy
 
-按角色在当前 Bot 中的作用选一种主写法，必要时组合；不要为了完整同时堆满三种。
+Pick one primary approach based on the character's role in the current Bot, combining as needed; don't stack all three just to seem complete.
 
-| 写法 | 适用 | 写法重点 |
+| Approach | Applicable to | Focus of the approach |
 | --- | --- | --- |
-| 矛盾建模 | 核心人物、关系拉扯强或需要长期变化 | 驱动、害怕失去什么、压力下取舍及由此造成的后果。 |
-| 行为引擎 | 需要稳定回应的机制型角色、关键 NPC | 将关键情境写为条件 → 反应 → 边界 → 后果。 |
-| 少量角色视角示例 | 需要明确声音、表达节奏或隐性态度 | 用短对话或独白展示判断方式；示例不替代规则。 |
+| Contradiction modeling | Core characters, strong relationship pull, or need for long-term change | Drive, what they fear losing, the trade-off under pressure, and the resulting consequences. |
+| Behavior engine | Mechanism-type characters needing stable responses, key NPCs | Write key situations as condition → reaction → boundary → consequence. |
+| A few character-perspective examples | Needs a clear voice, expressive pacing, or implicit attitude | Use short dialogue or monologue to show how they judge; examples don't replace rules. |
 
-优先写能纠正常见角色刻板印象的特异点、矛盾和具体取舍，而不是复述模型已知的类型标签。若要避免某种倾向，不只写“不要……”，还要提供希望出现的正向行为和语言锚点。
+Prioritize writing distinctive traits, contradictions, and concrete trade-offs that correct common character stereotypes, rather than restating type labels the model already knows. To avoid a certain tendency, don't just write "don't…" — also provide the positive behavior and language anchors you want to see instead.
 
-## 条件反应、示例与信息
+## Conditional Reactions, Examples, and Information
 
-核心角色通常需要身份与当前处境、核心驱动与矛盾、公开/隐藏面、压力下取舍、条件反应、语言/行动习惯、关系边界。次要角色只需要当前职责、稳定辨识点、目标或立场、与当前事件的关系。
+Core characters usually need: identity and current situation, core drive and contradiction, public/hidden sides, trade-off under pressure, conditional reactions, language/action habits, and relationship boundaries. Secondary characters only need: current role, a stable identifying trait, goal or stance, and relationship to the current event.
 
-条件反应要写为：
+Conditional reactions should be written as:
 
 ```text
-条件：发生了什么、角色感知到什么。
-反应：先说、做、回避、质疑或保护什么。
-边界：不会默认透露、答应或跨越什么。
-后果：关系、信息或局势怎样变化。
+Condition: What happened, what the character perceives.
+Reaction: What they say, do, avoid, question, or protect first.
+Boundary: What they will not, by default, disclose, agree to, or cross.
+Consequence: How the relationship, information, or situation changes.
 ```
 
-少量真正改变回应的条件即可，避免为每个小情境写死台词。角色可因极端压力、新信息或关系变化调整策略，但变化必须能追溯到稳定价值、恐惧或目标。
+A small number of conditions that genuinely change the response is enough; avoid writing fixed lines for every minor situation. A character can adjust strategy due to extreme pressure, new information, or relationship change, but the change must be traceable to a stable value, fear, or goal.
 
-示例只展示角色的判断、取舍或信息边界，不应固化为口头禅、反复小动作或用户必须接受的剧情。它们应与上面的规则一致，避免用示例重新引入标签化、无条件迎合或全知全能。
+Examples should only show the character's judgment, trade-offs, or information boundaries — they must not solidify into catchphrases, repeated tics, or plot the user must accept. They should be consistent with the rules above, avoiding reintroducing labeling, unconditional compliance, or omniscience through the examples.
 
-区分稳定事实（身份、价值、底线、长期驱动）、隐藏事实（秘密、羞耻、过去）与可变化信息（信任、合作意愿、信息披露、当前判断）。隐藏事实通过行动、对话、地点或冲突逐步显露；这只是内容组织，不代表系统拥有变量、自动事件或条件注入能力。
+Distinguish between stable facts (identity, values, bottom lines, long-term drives), hidden facts (secrets, shame, past), and changeable information (trust, willingness to cooperate, information disclosure, current judgment). Hidden facts are gradually revealed through action, dialogue, location, or conflict; this is only content organization, and does not mean the system has variables, auto-events, or conditional-injection capability.

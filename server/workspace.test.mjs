@@ -389,8 +389,8 @@ test('Bot update rejects non-canonical compatibility shapes before writing', asy
 test('Agent instruction prohibits user-visible tool narration and Bot roleplay invitations', async () => {
   for(const relativePath of ['../agent-runtime/CLAUDE.md','../agent-spec/CLAUDE.md']){
     const source = await (await import('node:fs/promises')).readFile(new URL(relativePath, import.meta.url), 'utf8');
-    assert.match(source, /严禁在用户可见回复中输出任何 Tool 调用前后的执行旁白/);
-    assert.match(source, /严禁邀请、引导或让用户体验、试玩、运行、扮演任何 Bot/);
+    assert.match(source, /strictly forbidden to output, in user-visible replies, any execution narration/i);
+    assert.match(source, /strictly forbidden to invite, guide, or let the user experience, try out, run, or role-play any Bot/i);
   }
 });
 

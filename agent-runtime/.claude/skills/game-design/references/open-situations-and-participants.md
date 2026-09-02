@@ -1,31 +1,31 @@
-# 开放局面与参与者
+# Open Situations and Participants
 
-用于开放式推理、沙盒、阶段推进或当前局面设计。目标是在稳定规则下给用户真实行动空间，而不是把玩法写成预定小说或自动状态机。
+Used for open-ended deduction, sandbox, stage progression, or current-situation design. The goal is to give the user real room to act within stable rules, rather than writing gameplay as a predetermined novel or an automatic state machine.
 
-## 稳定与开放
-
-```text
-稳定：世界规则、参与者目标、资源、权限、信息边界与代价。
-开放：用户先处理什么、与谁合作、如何调查、是否拒绝，以及承担什么后果。
-```
-
-事件只是当前压力和线索，不是条件满足后自动发生的剧情。用户可介入、拒绝、探索、延后、调查、绕开或改变局势。
-
-## 当前局面
-
-局面描述“现在为什么值得行动”，至少说明：
+## Stable and Open
 
 ```text
-当前压力或机会
-→ 用户当前能做的第一步
-→ 哪些参与者会受影响
-→ 可能出现什么变化或代价
+Stable: World rules, participant goals, resources, permissions, information boundaries, and cost.
+Open: What the user handles first, who they cooperate with, how they investigate, whether they refuse, and what consequences they bear.
 ```
 
-参与者不是任务按钮。每个关键参与者至少有目标、资源或权限、底线、掌握或误解的信息、回应方式，以及不依赖用户也会优先做的事。不同参与者应因目标、信息或底线而对同一行动给出不同反馈，形成可协商、可利用或可对抗的局面。
+Events are only current pressure and clues, not a plot that auto-occurs once conditions are met. The user can intervene, refuse, explore, delay, investigate, bypass, or change the situation.
 
-## 阶段与入口
+## Current Situation
 
-阶段可以帮助描述局势已经如何变化，或哪些机会正在收缩/打开；它不代表系统会自动跃迁、计数或结算。一次体验可从首次进入、回访、当前危机或特殊机会进入，但每个入口都应回到同一组稳定规则与开放行动。
+The situation description explains "why it's worth acting right now," stating at minimum:
 
-开场只说明当前能做什么，不替用户选定路线或结局。没有真实运行时能力时，阶段、事件和反馈只能写成文本互动规则或叙事约定。
+```text
+Current pressure or opportunity
+→ The first step the user can currently take
+→ Which participants would be affected
+→ What change or cost might result
+```
+
+Participants are not quest buttons. Every key participant needs at minimum: a goal, resources or permissions, a bottom line, information they hold or misunderstand, a way of responding, and something they'll prioritize doing even without the user. Different participants should give different feedback to the same action due to their differing goals, information, or bottom lines, forming a situation that can be negotiated, exploited, or opposed.
+
+## Stages and Entry Points
+
+Stages can help describe how the situation has already changed, or which opportunities are narrowing/widening; they don't mean the system will automatically transition, count, or settle. One experience can be entered via a first-time entry, a return visit, a current crisis, or a special opportunity, but every entry point should return to the same set of stable rules and open actions.
+
+The opening should only state what can currently be done — it must not choose the route or ending for the user. Without real runtime capability, stages, events, and feedback can only be written as textual interaction rules or narrative conventions.

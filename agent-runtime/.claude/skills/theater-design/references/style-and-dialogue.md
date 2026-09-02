@@ -1,35 +1,40 @@
-# 对白与叙事表达
+# Dialogue and Narrative Expression
 
-用于文风、叙述视角、对白策略或表演节奏是当前重点的剧场任务。文风不是“细腻、电影感、古风”等形容词，而是信息由谁说出、如何隐藏、用户如何听见和回应的叙事策略。
+Used for theater tasks where writing style, narrative point of view, dialogue strategy, or performance pacing is the current focus. Writing style is not adjectives like "delicate, cinematic, ancient-style" — it's the narrative strategy of who says the information, how it's hidden, and how the user hears and responds to it.
 
-## 先明确表达决策
+## First Clarify Expressive Decisions
 
-根据当前剧场选择必要的部分：叙事视角与距离、信息讲述顺序、描写聚焦、句式与节奏、关键人物的说话和回避方式。将抽象要求落到可观察的表达行为。
-
-```text
-不是：写得有电影感、压抑、细腻。
-而是：关键线索先由环境或人物动作显露；人物回避问题时转而处理具体事务；
-危险临近时缩短句子并提高可验证信息密度；谈判时保留停顿、误解与可协商的空白。
-```
-
-## 文风作为叙事策略
-
-强文风需要拆成可执行选择，而不是只给形容词或堆入大量模仿原文：
+Choose the necessary parts based on the current theater piece: narrative point of view and distance, the order in which information is told, descriptive focus, sentence structure and pacing, and how key characters speak and avoid. Bring abstract requirements down to observable expressive behaviors.
 
 ```text
-谁在看 / 谁在说
-→ 先让用户看到或听到什么
-→ 什么信息被延后、暗示或回避
-→ 句式与节奏怎样随危险、谈判、亲近或揭露改变
-→ 用户仍能如何回应
+Not: Write it with a cinematic feel, oppressive, delicate.
+
+But: Key clues are first revealed through the environment or a character's action;
+when a character avoids a question, they turn to handling a concrete matter
+instead; as danger approaches, shorten sentences and raise the density of
+verifiable information; during negotiation, preserve pauses, misunderstandings,
+and negotiable gaps.
 ```
 
-若用户提供文本，只提炼这些可迁移的策略；不要原文灌注，也不要把一两句示例扩大为全程固定台词。
+## Writing Style as Narrative Strategy
 
-## 对白与描写检查
+A strong writing style needs to be broken down into executable choices, rather than just given as adjectives or infused with large amounts of imitated original text:
 
-- 每个关键角色有不同的观察重点、措辞、节奏或回避方式，且能追溯到其目标、关系或信息；
-- 用行动、停顿、物件和环境细节承载压力，不用大段旁白解释人物已经感觉到什么；
-- 不替用户发言、行动或确认感受；
-- 文风示例只用于展示稳定的叙事策略，不固定成可机械复读的口头禅、动作或台词；
-- 强风格不应遮蔽行动入口：无论语言多特殊，用户仍应知道当前可问、可做或可拒绝什么。
+```text
+Who is watching / who is speaking
+→ What the user sees or hears first
+→ What information is delayed, implied, or avoided
+→ How sentence structure and pacing change with danger, negotiation, closeness,
+  or revelation
+→ How the user can still respond
+```
+
+If the user provides text, only extract these transferable strategies; don't infuse the raw text, and don't expand one or two example sentences into fixed lines used throughout.
+
+## Dialogue and Description Checklist
+
+- Every key character has a different observational focus, phrasing, pacing, or avoidance style, traceable to their goal, relationship, or information;
+- Action, pauses, objects, and environmental detail carry pressure, rather than a long voiceover explaining what the character already feels;
+- Doesn't speak, act, or confirm feelings on the user's behalf;
+- Style examples are only used to show a stable narrative strategy, not fixed into mechanically repeatable catchphrases, tics, or lines;
+- A strong style should not obscure the action entry point: no matter how unusual the language, the user should still know what they can currently ask, do, or refuse.

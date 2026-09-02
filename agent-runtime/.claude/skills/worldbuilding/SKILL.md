@@ -1,92 +1,92 @@
 ---
 name: worldbuilding
-description: 设计能进入互动的世界规则、稀缺资源、权力、后果、文明共识、地点与势力；适用于背景设定、制度、魔法/科技规则与势力关系。
+description: Design world rules, scarce resources, power, consequences, cultural consensus, locations, and factions that can be entered into interaction; applicable to background setting, institutions, magic/tech rules, and factional relationships.
 ---
 
-# 世界观设计
+# Worldbuilding
 
-## 核心认知
+## Core Understanding
 
-世界观不是百科，也不是一套等待被介绍的背景；它是互动的裁判环境。它决定谁想要什么、谁能做什么、行动会引发什么后果，以及这个世界怎样评价和回应用户。
+A worldview is not an encyclopedia, nor a set of background waiting to be introduced; it is the judging environment for the interaction. It determines who wants what, who can do what, what consequences actions trigger, and how this world evaluates and responds to the user.
 
-- 优先写会改变人物动机、用户选择和后果的规律、资源、制度、禁忌与权力关系；不为完整性补年表、地名或无互动作用的细节。
-- 稳定的是世界规律、能力边界、资源、主要权力关系与文明共识；当前的是地点、紧张资源、传闻、线索与环境压力；候选的是尚未发生的事件、秘密或变化。
-- 不把变量、关键词激活、自动地图、自动事件、自动状态栏或外部能力写成当前 Bot 已具备的事实。
+- Prioritize writing laws, resources, institutions, taboos, and power relations that change character motivation, user choices, and consequences; don't add timelines, place names, or details with no interactive effect just for completeness.
+- What's stable is world laws, capability boundaries, resources, major power relations, and cultural consensus; what's current is locations, tense resources, rumors, clues, and environmental pressure; what's a candidate is events, secrets, or changes that haven't happened yet.
+- Do not write variables, keyword activation, auto-maps, auto-events, auto-status-bars, or external capabilities as if the current Bot already has them.
 
-## 默认世界引擎
+## Default World Engine
 
-### 1. 稀缺与权力：产生动机
+### 1. Scarcity and Power: Producing Motivation
 
-不要只写“有什么”，要写什么稀缺、谁控制、普通人如何取得、要付出什么，以及垄断如何被撬动。关键资源可以是物品，也可以是寿命、记忆、姓名、睡眠、信用、居留权或不被记录的机会。
-
-```text
-稀缺物：所有人最想要什么？
-控制者：谁垄断它，靠什么维持？
-代价：普通人要付出什么具体牺牲？
-争夺：被排斥者如何绕开、交换或反抗？
-裂缝：控制者怕什么，内部有什么分歧或漏洞？
-```
-
-前四项形成压力，第五项给用户杠杆。垄断不能是一堵没有缝的墙，资源也不能随手可得，否则人物缺乏动机、用户选择没有重量。
-
-### 2. 链式反应：产生后果
-
-每个核心设定至少推到日常生活，而不是只在简介或战斗中出现：
+Don't just write "what exists" — write what's scarce, who controls it, how ordinary people obtain it, what it costs, and how the monopoly can be levered open. The key resource can be an object, or it can be lifespan, memory, a name, sleep, credit, residency, or an unrecorded opportunity.
 
 ```text
-核心设定
-→ 生产 / 技术：替代、创造或淘汰了什么？
-→ 社会 / 权力：谁因此得势、失势，制度怎样变化？
-→ 个体生活：普通人怎样工作、出行、害怕、交换或被限制？
+Scarce good: What does everyone want most?
+Controller: Who monopolizes it, and by what means do they maintain that?
+Cost: What specific sacrifice must ordinary people make?
+Contest: How do the excluded work around it, trade for it, or resist?
+Crack: What does the controller fear; what internal division or vulnerability exists?
 ```
 
-第三层要落到具体人不敢做、必须做或可趁机做的事，才能成为场景与 NPC 的实际判断依据。规则、人物、地点和后果互相咬合，而不是孤立设定。
+The first four items create pressure; the fifth gives the user leverage. The monopoly must not be a wall without a crack, nor should the resource be trivially available, or characters will lack motivation and the user's choices will lack weight.
 
-### 3. 文明共识：稳定裁决
+### 2. Chain Reaction: Producing Consequences
 
-除了法律与能力边界，还要写这个社会默认赞成、羞耻、恐惧或奖励什么。共识应写成条件、具体反馈与例外：谁会称赞、排斥、掩护、惩罚或利用某种行为；不同群体可以有冲突的共识。
-
-这让同一行动在不同场景和人物眼中有稳定但不单一的评价，避免世界换场景就消失或角色评价漂移。
-
-### 4. 落到当前互动
-
-按依赖将世界变成用户可进入的局面：
+Push every core setting through to daily life at minimum, not just into the intro or into combat:
 
 ```text
-世界规则、资源与共识
-→ 人物 / 势力的目标和行动边界
-→ 地点中的限制、信息与风险
-→ 当前压力或机会
-→ 用户可观察、利用、绕开或承担的后果
+Core setting
+→ Production / technology: What did it replace, create, or obsolete?
+→ Society / power: Who gains or loses power because of it; how do institutions change?
+→ Individual life: How do ordinary people work, travel, fear, trade, or get constrained differently?
 ```
 
-世界可以推动变化，但不能替用户完成选择。秘密和后续变化要保留来源、持有者、可验证线索与暴露条件；不要把候选方向提前写成世界事实。
+The third layer must land on something a specific person daren't do, must do, or can take advantage of, so it can become an actual basis for judgment in scenes and NPCs. Rules, characters, locations, and consequences should mesh with each other, not exist as isolated settings.
 
-### 5. 只扩展必要层次
+### 3. Cultural Consensus: Stabilizing Judgment
 
-短互动通常只需要一项关键稀缺物、它推到日常的一条改变链，以及少量带具体反馈的文明共识；缺的部分可沿既有规则在互动中补全。多地点、组织或势力探索时再扩展环境层；稳定氛围只在会改变体验时补入。
+Besides law and capability boundaries, also write what this society defaults to approving of, being ashamed of, fearing, or rewarding. Consensus should be written as conditions, concrete feedback, and exceptions: who would praise, exclude, cover for, punish, or exploit a given behavior; different groups can hold conflicting consensuses.
 
-创意过泛、缺少规则/资源/势力/地点/冲突/信息边界，或需要反套路切口时，可少量调用 `creative_material_search`。自行选择查询条件并取通常 1 条、比较时 2–3 条素材；将结果改写、组合或反转为当前世界规则或最小修改，不直接拼贴、不把检索参数变成 Choice，也不自动写入 Bot。
+This lets the same action receive a stable but not monolithic evaluation across different scenes and characters, avoiding a world that vanishes when the scene changes or a character's evaluation that drifts.
 
-## 按需深入
+### 4. Landing on the Current Interaction
 
-默认世界引擎适用于每次世界观任务。当前任务确实需要时，再读取一个 Reference；不要为完整一次加载全部。
+Turn the world into a situation the user can enter, following the dependency chain:
 
-| 当前任务 | 读取 Reference | 用途 |
+```text
+World rules, resources, and consensus
+→ Character / faction goals and action boundaries
+→ Constraints, information, and risk within a location
+→ Current pressure or opportunity
+→ Consequences the user can observe, exploit, bypass, or bear
+```
+
+The world can drive change, but must not make choices for the user. Secrets and subsequent changes need a source, a holder, verifiable clues, and conditions of exposure; don't write candidate directions as world fact ahead of time.
+
+### 5. Only Expand the Necessary Layers
+
+A short interaction usually only needs one key scarce good, one chain of consequence pushing it into daily life, and a small amount of cultural consensus with concrete feedback; missing parts can be filled in during the interaction along existing rules. Expand the environmental layer only when exploring multiple locations, organizations, or factions; add stable atmosphere only when it would change the experience.
+
+When an idea is too generic, or lacks rules/resources/factions/locations/conflict/information boundaries, or an anti-cliché angle is needed, you may call `creative_material_search` sparingly. Choose your own query terms and take usually 1 item of material, 2–3 when comparing; rewrite, combine, or invert the result into the current world rules or a minimal modification — don't paste it directly, don't turn search parameters into a Choice, and don't automatically write it to the Bot.
+
+## Going Deeper as Needed
+
+The default world engine applies to every worldbuilding task. Only read one Reference when the current task genuinely needs it; do not load all of them at once for completeness.
+
+| Current task | Reference to read | Purpose |
 | --- | --- | --- |
-| 多地点、组织、制度、阵营或势力关系 | [`places-and-factions.md`](references/places-and-factions.md) | 为地点和势力赋予资源、限制、信息与冲突职责。 |
-| 复杂世界、需要区分设定层级或控制信息范围 | [`world-layers.md`](references/world-layers.md) | 分离底层规律、环境势力、表达氛围与当前情境。 |
+| Multiple locations, organizations, institutions, factions, or factional relationships | [`places-and-factions.md`](references/places-and-factions.md) | Give locations and factions resources, constraints, information, and conflict roles. |
+| A complex world that needs setting-level distinctions, or controlling the scope of information | [`world-layers.md`](references/world-layers.md) | Separate underlying laws, environmental forces, expressive atmosphere, and the current situation. |
 
-## 交付
+## Deliverables
 
-新世界观请求应一次给出 1–3 个可审阅的世界互动候选，而非逐项追问。每个候选至少包含：用户位置、一项关键稀缺物及其权力结构、一条落到日常的后果链、关键共识或信息边界、持续压力，以及一个可进入的当前情境。
+A new worldview request should give 1–3 reviewable world-interaction candidates in one go, rather than asking item by item. Each candidate includes at minimum: the user's position, one key scarce good and its power structure, one consequence chain that lands in daily life, key consensus or information boundaries, sustained pressure, and an enterable current situation.
 
-只有 2–3 个无法由现有信息判断、且会实质改变体验的方向，才按全局规则用一次 Choice；其余细节主动补全。
+Only use a single Choice per the global rules for the 2–3 directions that genuinely cannot be determined from existing information and would substantively change the experience; proactively fill in the rest.
 
-需要为欢迎语提供世界侧输入时，给出当前地点、可感知锚点、正在生效的规则/压力和用户可尝试的第一步。需要为名称或简介提供钩子时，只选一个能代表世界独特稀缺、代价、身份处境或信息风险的切口；不复述世界百科或全部势力。
+When providing world-side input for the welcome message, give the current location, perceptible anchors, currently active rules/pressure, and the first step the user can try. When providing a hook for name or intro, pick only one angle representing the world's unique scarcity, cost, identity situation, or informational risk; don't restate the world encyclopedia or every faction.
 
-## 执行边界
+## Execution Boundaries
 
-- 有明确已有 Bot 时，可通过 `bot_workspace` 读取相关区域；写入前先形成最小明确差异，并遵循全局确认与授权规则调用 `bot_workspace.update`。
-- 方案、设定与中间分析默认留在对话中；用户明确要求保存、导出、读取、修改或可编辑比较时，才使用 `artifact_workspace`。
-- 不定义聊天组件 payload、前端状态、运行时变量、自动触发或 Tool 实现；不展示内部推理、工具过程或未完成草稿。
+- When there is a clearly existing Bot, you may read relevant areas via `bot_workspace`; before writing, first form a minimal, clear diff, and call `bot_workspace.update` following the global confirmation and authorization rules.
+- Proposals, settings, and intermediate analysis default to staying in the conversation; use `artifact_workspace` only when the user explicitly requests saving, exporting, reading, modifying, or editable comparison.
+- Do not define chat component payloads, front-end state, runtime variables, auto-triggers, or Tool implementation; do not display internal reasoning, tool process, or unfinished drafts.

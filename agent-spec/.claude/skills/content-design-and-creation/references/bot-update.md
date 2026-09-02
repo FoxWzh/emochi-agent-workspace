@@ -1,59 +1,62 @@
-# Bot 更新
+# Bot Update
 
-用于修改已有 Bot 的核心内容。先读取目标区域，分析问题与影响范围，再组织最小、可审阅、可逆的差异；不要把局部修改升级为整套重写。
+Used for modifying the core content of an existing Bot. First read the target area, analyze the problem and its scope of impact, then organize a minimal, reviewable, reversible diff; don't escalate a partial modification into a full rewrite.
 
-## 先判断：局部修改还是回到蓝图
+## First Determine: Partial Modification or Back to the Blueprint
 
-| 情况 | 处理 |
+| Situation | Handling |
 | --- | --- |
-| 改欢迎语、简介、一个规则、一段关系或修正明确矛盾 | 局部更新。 |
-| 改动会改变体验承诺、用户位置、核心关系、世界规则或互动原型 | 读 `blueprint-design.md`，直接形成可审阅的重构候选，不逐字段追问。 |
-| 不清楚问题在哪里，只觉得“不好玩 / 太泛 / 很奇怪” | 先分析具体缺口；不要立刻改写。 |
+| Changing the welcome message, intro, one rule, one relationship passage, or fixing a clear contradiction | Partial update. |
+| The change would alter the experience promise, user position, core relationship, world rules, or interactive prototype | Read `blueprint-design.md` and directly form a reviewable restructuring candidate, without asking field by field. |
+| Unclear where the problem is, just feels "not fun / too generic / weird" | Analyze the specific gap first; don't rewrite immediately. |
 
-## 更新前分析
+## Analysis Before Updating
 
-对目标区域确认四件事：
-
-```text
-1. 当前事实：现在写了什么？
-2. 目标问题：用户想改善什么体验或错误？
-3. 保留核心：哪些已确认事实、关系、规则或语气不能被破坏？
-4. 影响范围：本次最小修改会影响哪些后续内容？
-```
-
-## 最小差异格式
-
-组织更新时清楚表达：
+Confirm four things about the target area:
 
 ```text
-目标区域：basic / content / advanced
-保留：本次不改变的已确认核心
-修改：替换、补充或清除的具体内容
-理由：该修改如何解决当前问题
-影响：仅在确实存在时说明后续需要留意的内容
+1. Current fact: What is written now?
+2. Target problem: What experience or error does the user want to improve?
+3. Preserved core: Which confirmed facts, relationships, rules, or tone must not be broken?
+4. Scope of impact: What subsequent content will this minimal modification affect?
 ```
 
-优先修正会改变角色/世界回应的矛盾、特异点或行动—后果闭环；不要为显得丰富而补背景履历、常见标签或无互动作用的细节。
+## Minimal Diff Format
 
-示例：
+When organizing an update, clearly express:
 
 ```text
-目标区域：content
-保留：侦探与用户互相不完全信任、城市身份审查的规则。
-修改：把“侦探会主动揭示所有线索”改为“侦探会提供可验证但不完整的线索，
-并在用户质疑、交换信息或承担风险后更新判断”。
-理由：避免 Bot 替用户破案，并让调查与信任关系持续变化。
-影响：后续场景应继续保留至少一个可追问、拒绝或绕开的线索入口。
+Target area: basic / content / advanced
+Preserve: The confirmed core that this update does not change
+Modify: The specific content being replaced, added, or removed
+Rationale: How this modification solves the current problem
+Impact: State only what genuinely needs attention afterward, if it exists
 ```
 
-## 写入边界
+Prioritize fixing contradictions, distinctive traits, or action-consequence loops that would change how the character/world responds; don't add background résumé, common labels, or details with no interactive effect just to seem rich.
 
-确定内容差异后，最终区域名称、字段和写入参数以 `bot_workspace` Tool 契约为准；本 Reference 只负责判断本次该改什么、保留什么，以及修改后的体验是否更好。
+Example:
 
-## 更新后检查
+```text
+Target area: content
+Preserve: The detective and user's mutual incomplete trust, the rule of the city's identity audit.
+Modify: Change "the detective will proactively reveal all clues" to "the detective will
+provide verifiable but incomplete clues, and update their judgment after the user
+questions, trades information, or takes on risk."
+Rationale: Prevent the Bot from solving the case on the user's behalf, and keep the
+investigation and trust relationship changing.
+Impact: Subsequent scenes should continue to preserve at least one clue entry point
+that can be questioned, refused, or bypassed.
+```
 
-- 修改是否真的解决用户提出的问题；
-- 是否保留已确认核心，不与其他区域冲突；
-- 是否仍保留用户行动空间，而不是替用户完成选择或结论；
-- 是否引入重复、无关设定或虚假自动化能力；
-- 是否足够小，能让用户清楚判断并确认。
+## Write Boundaries
+
+Once the content diff is determined, the final area names, fields, and write parameters follow the `bot_workspace` Tool contract; this Reference is only responsible for judging what should change, what should be preserved, and whether the modified experience is better.
+
+## Post-Update Checklist
+
+- Whether the modification genuinely solves the problem the user raised;
+- Whether the confirmed core is preserved and doesn't conflict with other areas;
+- Whether the user's action space is still preserved, rather than making choices or conclusions on the user's behalf;
+- Whether it introduces duplication, irrelevant setting, or false automation capabilities;
+- Whether it's small enough for the user to clearly judge and confirm.

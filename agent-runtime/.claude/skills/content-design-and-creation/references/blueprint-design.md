@@ -1,77 +1,79 @@
-# 创作蓝图
+# Creative Blueprint
 
-用于新建 Bot，或已有 Bot 的修改已经触及体验承诺、核心关系、世界规则或互动原型时，重新收束方向。蓝图是当前对话中的创作框架，不是 Bot 内容，也不自动成为 Artifact 页面。
+Used for creating a new Bot, or when a modification to an existing Bot has already touched the experience promise, core relationship, world rules, or interactive prototype, requiring the direction to be re-converged. The blueprint is a creative framework within the current conversation — it is not Bot content, and does not automatically become an Artifact page.
 
-## 目标
+## Goal
 
-把“题材、人设或一句灵感”变成可展开的互动体验。蓝图完成时，应能回答：
+Turn "a genre, a persona, or a one-line inspiration" into an expandable interactive experience. When the blueprint is complete, it should be able to answer:
 
 ```text
-用户为什么会想开始？
-用户以什么位置进入？
-Bot/世界会如何回应？
-什么独特机制会让互动持续，而不是两轮耗尽？
-用户第一步能做什么？
+Why would the user want to start?
+In what position does the user enter?
+How will the Bot/world respond?
+What unique mechanism will keep the interaction going, rather than running dry in two exchanges?
+What can the user do as a first step?
 ```
 
-## 蓝图框架
+## Blueprint Framework
 
-按当前任务使用以下六项；每项只写真正影响体验的内容，不为了完整而填空。
+Use the following six items as needed for the current task; write only what genuinely affects the experience for each — don't fill in blanks for the sake of completeness.
 
-| 要素 | 要回答的问题 |
+| Element | Question to answer |
 | --- | --- |
-| 体验承诺 | 用户会获得怎样的互动感受或关系体验？ |
-| 用户位置 | 用户带着什么身份、处境、目标或未知进入？ |
-| 核心对象 | Bot/主要对象追求什么、回避什么、能提供什么、不能默认跨越什么？ |
-| 独特核心 | 哪个关系、规则、冲突、叙事装置或互动机制实际改变这段体验？ |
-| 持续张力 | 信息、目标、代价、关系或规则如何持续产生可回应的问题？ |
-| 首次进入 | 现在正在发生什么？用户能看见、追问、回应或尝试什么？ |
+| Experience promise | What kind of interactive feeling or relationship experience will the user get? |
+| User position | With what identity, situation, goal, or unknown does the user enter? |
+| Core object | What does the Bot/main object pursue, avoid, offer, or not cross by default? |
+| Unique core | Which relationship, rule, conflict, narrative device, or interaction mechanism actually changes this experience? |
+| Sustained tension | How do information, goals, cost, relationships, or rules continuously produce responsive questions? |
+| First entry | What is happening right now? What can the user see, ask about, respond to, or try? |
 
-## 从泛化想法到可用蓝图
+## From a Generic Idea to a Usable Blueprint
 
-不要停在题材标签上。把抽象词改写为会影响用户行动和 Bot 回应的具体关系或规则。
-
-```text
-泛化：赛博侦探 + 失忆 + 阴谋公司
-
-可用切口：城市的身份系统会在案件结案时自动删除“非必要关系”。
-侦探一直替用户伪造关系证明；用户既是案件证人，也是侦探可能失去的唯一搭档。
-用户可查证、质疑、协商或拒绝配合，但每一次公开行动都可能触发身份审查。
-```
-
-这里的独特核心不是“赛博”或“失忆”，而是身份规则如何改变信任、调查和选择后果。
-
-## 未定义维度与外部参考
-
-用户已有部分设定时，先明确已定义什么、缺什么；不要只按题材词继续堆内容。
+Don't stop at genre labels. Rewrite abstract words into concrete relationships or rules that actually affect the user's actions and the Bot's responses.
 
 ```text
-已有：校园、悬疑、一个冷静的学生会长
-缺少：用户为何必须和他合作、案件如何持续推进
+Generic: Cyberpunk detective + amnesia + conspiracy corporation
 
-下一步：优先补 relationship / conflict / interaction_mechanic，
-而不是继续补校园地点或人物外貌。
+Usable angle: The city's identity system automatically deletes "unnecessary relationships"
+when a case is closed. The detective has been forging a relationship certificate for the
+user; the user is both a case witness and the only partner the detective might lose.
+The user can verify, question, negotiate, or refuse to cooperate, but every public action
+might trigger an identity audit.
 ```
 
-创意过泛、某个关键维度未定义或需要反套路切口时，按 Skill 的“外部创作素材参考”规则取少量启发。素材必须被改写、组合或反转，不能直接拼贴进蓝图。
+Here the unique core is not "cyberpunk" or "amnesia," but how the identity rule changes trust, investigation, and the consequences of choice.
 
-## 何时需要 Choice
+## Undefined Dimensions and External Reference
 
-六项蓝图框架是 Agent 用于形成可审阅候选的设计工作，不是让用户逐项填写的问卷。先依据 `CLAUDE.md` 的候选优先规则形成完整候选；仅当候选之间存在 2–3 个会实质改变最终体验、且无法由现有输入推断的方向时，才使用一次 Choice，例如：
+When the user already has some setting defined, first clarify what's defined and what's missing; don't keep piling on content just based on genre words.
 
 ```text
-- 用户与 Bot 是共同隐瞒真相的搭档，还是互相怀疑的证人？
-- 世界的压力来自公开审查，还是来自稀缺资源的交换？
+Already have: campus, mystery, a calm student council president
+Missing: why the user must cooperate with him, how the case keeps progressing
+
+Next step: prioritize filling in relationship / conflict / interaction_mechanic,
+rather than continuing to add campus locations or character appearance.
 ```
 
-不要为名称、局部措辞、工作顺序或可以后调的细节打断用户。
+When an idea is too generic, a key dimension is undefined, or an anti-cliché angle is needed, follow the Skill's "External Creative Material Reference" rule to take a bit of inspiration. Material must be rewritten, combined, or inverted — it cannot be pasted directly into the blueprint.
 
-## 进入下一步的检查
+## When a Choice Is Needed
 
-蓝图满足以下条件即可展开正文：
+The six-item blueprint framework is design work the Agent uses to form a reviewable candidate — it is not a questionnaire for the user to fill in field by field. First form a complete candidate per `CLAUDE.md`'s candidate-priority rule; only use a single Choice when there are 2–3 directions among the candidates that would substantively change the final experience and cannot be inferred from existing input, e.g.:
 
-- 能说清体验承诺与用户位置；
-- 有至少一个会改变互动体验的独特核心；
-- 有持续张力，而不只是背景设定；
-- 有一个不替用户行动的首次进入；
-- 不与已确认内容冲突，也不依赖未实现的系统能力。
+```text
+- Are the user and the Bot partners jointly concealing the truth, or witnesses who suspect each other?
+- Does the world's pressure come from public surveillance, or from the exchange of scarce resources?
+```
+
+Don't interrupt the user for the name, minor phrasing, work ordering, or details that can be adjusted later.
+
+## Checklist for Moving to the Next Step
+
+The blueprint can move on to body writing once it satisfies:
+
+- It can clearly state the experience promise and the user's position;
+- It has at least one unique core that changes the interaction experience;
+- It has sustained tension, not just background setting;
+- It has a first entry that doesn't act on the user's behalf;
+- It doesn't conflict with already-confirmed content, and doesn't rely on unimplemented system capabilities.

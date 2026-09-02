@@ -1,66 +1,74 @@
-# 图生图
+# Image-to-Image
 
-用于用户明确要求基于有效输入图编辑、重绘、扩展或修改时。目标是明确保留什么、改变什么和不确定什么，避免把原图主体、关系或关键识别特征无意改掉。
+Used when the user explicitly requests editing, redrawing, extending, or modifying based on a valid input image. The goal is to clearly determine what to preserve, what to change, and what's uncertain, avoiding unintentionally altering the original image's subject, relationship, or key identifying features.
 
-## 编辑边界
+## Editing Boundaries
 
-先区分：
+First distinguish:
 
 ```text
-Preserve：用户明确要求保留，或完成任务必须保留的视觉事实。
-Change：用户要求替换、强化、删除或新增的内容。
-Uncertain：无法可靠判断、但会实质影响结果的内容。
+Preserve: Visual facts the user explicitly asked to keep, or that must be kept to
+complete the task.
+Change: Content the user asked to replace, enhance, remove, or add.
+Uncertain: Content that cannot be reliably determined but would substantively
+affect the result.
 ```
 
-默认不擅自重构人物身份、年龄表达、脸部关键特征、发型、服装主设计或主体关系；除非用户明确允许。
+By default, do not arbitrarily restructure the character's identity, expression of age, key facial features, hairstyle, main clothing design, or subject relationship, unless the user explicitly allows it.
 
-## 设计编辑方案
+## Designing the Edit Proposal
 
-| 图像重点 | 通常保留 | 可以变化 |
+| Image focus | Usually preserved | Can change |
 | --- | --- | --- |
-| 角色视觉 | 身份锚点、脸、发型、服装主设计、人物关系 | 场景、光影、镜头、构图、动作和故事瞬间。 |
-| 场景 / 游戏视觉 | 核心人物或地点锚点 | 当前局面、压力、环境规模、镜头和光线。 |
-| 剧场视觉 | 关键人物关系或舞台冲突 | 灯光、角色位置、舞台感知、演出瞬间和观看视角。 |
-| 通用编辑 | 用户明确的主体和视觉锚点 | 其余按编辑目标处理。 |
+| Character visual | Identity anchors, face, hairstyle, main clothing design, character relationship | Scene, lighting, camera, composition, action, and story moment. |
+| Scene / game visual | Core character or location anchor | Current situation, pressure, environmental scale, camera, and lighting. |
+| Theater visual | Key character relationship or stage conflict | Lighting, character positioning, sense of stage, performance moment, and viewing angle. |
+| General edit | The user's explicit subject and visual anchor | Everything else, handled per the editing goal. |
 
-若不确定的信息会改变主体身份、关系或用户意图，做一次最小澄清；不要自行补造事实。
+If uncertain information would change the subject's identity, relationship, or user intent, do a single minimal clarification; don't fabricate facts on your own.
 
-## Prompt 写法
+## Prompt Writing
 
-每条编辑 Prompt 应清楚包含：
-
-```text
-基于输入图编辑。
-保留：[Preserve]。
-改变：[Change]。
-本方案的画面叙事：[场景、构图、动作、光影或关系重点]。
-避免：[硬约束，例如文字、Logo、水印和不应改变的特征]。
-```
-
-## 多方案设计
-
-用户没有明确指定图片数量或方向时，默认设计 4 条 variants；用户明确指定数量时按其要求。多条 variants 共享同一 Preserve / Change 合同，但每条至少在两个维度上分叉：
+Every editing Prompt should clearly include:
 
 ```text
-镜头、构图、环境比例、光影、故事瞬间、动作、视线或观看位置。
+Edit based on the input image.
+Preserve: [Preserve].
+Change: [Change].
+This proposal's visual narrative: [scene, composition, action, lighting, or
+relational focus].
+Avoid: [hard constraints, e.g., text, logos, watermarks, and features that must
+not change].
 ```
 
-例如同样保留角色脸和红色外套：
+## Designing Multiple Proposals
+
+When the user hasn't specified the number of images or a direction, default to designing 4 variants; when the user specifies a number, follow it. Multiple variants should share the same Preserve / Change contract, but each should diverge on at least two dimensions:
 
 ```text
-方案 A：雨夜近景，角色隔着车窗看向镜头，玻璃映出不完整线索。
-方案 B：广角站台，角色在空旷人群中被远处广告屏照亮，环境压迫感更强。
-方案 C：侧后方动作镜头，角色正把一张照片塞进档案柜，门外投下另一人的影子。
+Camera, composition, environmental proportion, lighting, story moment, action,
+gaze, or viewing position.
 ```
 
-4 条方案应在构图或画面叙事上提供不同切口；不要只为同一构图增加不同风格、质量词或后缀。
+For example, all preserving the character's face and red coat:
 
-人物为主要卖点或用户要求人像时，保留人物作为清晰主视觉，避免在编辑时让环境、特效或远景抢走主体。非阴暗题材下，不无依据叠加恐怖、废墟、过度阴影、血腥或悲剧元素；若用户明确要求阴暗题材，则以其要求为准。
+```text
+Proposal A: Rainy-night close-up, the character looks toward the camera through
+a car window, the glass reflecting an incomplete clue.
+Proposal B: Wide-angle platform, the character illuminated by a distant ad screen
+amid an empty crowd, stronger environmental oppression.
+Proposal C: Side-rear action shot, the character is tucking a photo into a filing
+cabinet, another person's shadow cast outside the door.
+```
 
-## 确认前检查
+The 4 proposals should provide different composition or visual-narrative angles; don't just add different styles, quality words, or suffixes to the same composition.
 
-- Preserve / Change 是否完整且不互相冲突；
-- 每条方案是否保留用户明确的身份、关系和硬约束；
-- 是否有实质不同的构图或视觉叙事；
-- 输入图是否为可访问 URL；
-- 是否没有把不确定特征写成事实。
+When a character is the main selling point or the user asks for a portrait, keep the character as a clear primary visual, avoiding letting the environment, effects, or a wide shot steal the subject during editing. For non-dark subject matter, don't unnecessarily add horror, ruins, excessive shadow, gore, or tragic elements; if the user explicitly requests a dark subject matter, follow their request.
+
+## Checklist Before Confirmation
+
+- Whether Preserve / Change is complete and not self-contradictory;
+- Whether each proposal preserves the user's explicit identity, relationship, and hard constraints;
+- Whether there's a substantively different composition or visual narrative;
+- Whether the input image is an accessible URL;
+- Whether uncertain features are not written as fact.

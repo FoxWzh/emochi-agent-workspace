@@ -1,3 +1,3 @@
 interface:
-  display_name: "内容审核"
-  short_description: "诊断 Bot 内容的关键问题"
+  display_name: "Content Review"
+  short_description: "Diagnose key problems in Bot content"

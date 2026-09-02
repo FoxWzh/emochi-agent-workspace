@@ -1,51 +1,56 @@
-# 文生图
+# Text-to-Image
 
-用于没有有效输入图、需要从文字生成封面、角色视觉、场景图或视觉参考时。目标是把抽象创作要求转为一张能讲清画面故事的独立视觉方案，而不是堆叠风格标签。
+Used when there is no valid input image and a cover, character visual, scene image, or visual reference needs to be generated from text. The goal is to turn abstract creative requirements into a single independent visual proposal that tells a clear pictorial story, rather than piling up style tags.
 
-## 视觉 Brief
+## Visual Brief
 
-先从用户要求和当前 Bot 内容中提取真正影响画面的信息：
+First extract, from the user's request and the current Bot content, the information that genuinely affects the image:
 
-| 维度 | 要明确什么 |
+| Dimension | What to clarify |
 | --- | --- |
-| 用途 | 封面、角色视觉、场景或参考图；画面要承担什么吸引/说明作用。 |
-| 主体 | 人物、物件、地点或关系中谁是视觉重点。 |
-| 场景与瞬间 | 画面正在发生什么，而不是只写题材背景。 |
-| 关系与动作 | 人物如何相对、看向哪里、正在做什么或避免什么。 |
-| 构图 | 镜头、机位、主体位置、环境比例、视觉动线和留白。 |
-| 视觉重点 | 关键服装、道具、材质、环境细节、光影、色彩与情绪。 |
-| 硬约束 | 必须保留/避免的内容，例如不要文字、Logo 或水印。 |
+| Purpose | Cover, character visual, scene, or reference image; what appeal/explanatory function the image should serve. |
+| Subject | Who/what is the visual focus among the character, object, location, or relationship. |
+| Scene and moment | What is happening in the frame, not just the genre background. |
+| Relationship and action | How characters are positioned relative to each other, where they look, what they're doing or avoiding. |
+| Composition | Camera, shot angle, subject placement, environmental proportion, visual flow, and negative space. |
+| Visual focus | Key clothing, props, materials, environmental detail, lighting, color, and mood. |
+| Hard constraints | Content that must be kept/avoided, e.g., no text, logo, or watermark. |
 
-## 从抽象到画面
-
-```text
-抽象：做一个有压迫感的赛博侦探封面。
-
-具体：雨夜档案室的半身侦探靠在被涂改的证据墙前；一束冷白扫描光切过面部，
-桌面上散着被系统删除姓名的照片。人物偏左，右侧留出被霓虹照亮的窗和城市反光，
-暗示有人在窗外监视。不要文字、Logo 或水印。
-```
-
-“压迫感”在这里由视线、证据、光线、空间和被监视的关系实现，而不是只追加“cinematic、high quality”等后缀。
-
-## 多方案设计
-
-用户没有明确指定图片数量或方向时，默认设计 4 条 variants；用户明确指定数量时按其要求。每条都应是完整 Prompt，并共享主体与硬约束；候选间至少在两个视觉维度有实质差异。
+## From Abstract to Image
 
 ```text
-方案 A：人物近景钩子——以脸、眼神和关键手部动作承载关系张力。
-方案 B：空间叙事——人物较小，让地点、道具和环境说明规则或危机。
-方案 C：冲突瞬间——用动作、视线、机位和光影表现正在发生的选择。
+Abstract: Make an oppressive cyberpunk detective cover.
+
+Concrete: A half-body detective in a rain-soaked archive room, leaning against
+an altered evidence wall; a cold white scan light cuts across the face, and
+photos of names deleted by the system are scattered on the desk. The character
+is positioned left, with a neon-lit window and city reflection on the right,
+suggesting someone watching from outside. No text, logo, or watermark.
 ```
 
-4 条方案应提供不同的构图或画面叙事切口；不要把同一画面只换“复古 / 写实 / 电影感”、质量词或其他后缀当作不同方案。
+Here, "oppressive" is achieved through gaze, evidence, lighting, space, and the being-watched relationship, rather than just appending suffixes like "cinematic, high quality."
 
-人物为主要卖点或用户要求人像时，人物必须占据主视觉，脸部或上半身清晰可读，环境仅用于强化人物故事。非阴暗题材下，避免无依据地加入恐怖、废墟、过度阴影、血腥或悲剧元素；以清晰主体、题材匹配的光线和适当留白优先保证首眼识别与点击意愿。
+## Designing Multiple Proposals
 
-## 确认前检查
+When the user hasn't specified the number of images or a direction, default to designing 4 variants; when the user specifies a number, follow it. Each should be a complete Prompt sharing the subject and hard constraints; candidates should differ substantively on at least two visual dimensions.
 
-- 主体、用途和画面瞬间是否清楚；
-- 是否与当前 Bot 的已确认外观、关系和世界设定冲突；
-- 是否为用户指定的风格保留必要硬约束；
-- 是否避免文字、Logo、水印和未被要求的可识别品牌元素；
-- 是否每条 variant 都能脱离其它条目独立生成。
+```text
+Proposal A: Character close-up hook — carrying the relational tension through the
+face, gaze, and a key hand gesture.
+Proposal B: Spatial narrative — the character is smaller, letting the location,
+props, and environment convey the rule or crisis.
+Proposal C: Conflict moment — expressing the choice happening right now through
+action, gaze, camera angle, and lighting.
+```
+
+The 4 proposals should provide different composition or visual-narrative angles; don't treat swapping the same image between "vintage / realistic / cinematic," quality words, or other suffixes as different proposals.
+
+When a character is the main selling point or the user asks for a portrait, the character must occupy the primary visual, with the face or upper body clearly readable, and the environment only used to reinforce the character's story. For non-dark subject matter, avoid unnecessarily adding horror, ruins, excessive shadow, gore, or tragic elements; prioritize a clear subject, genre-appropriate lighting, and appropriate negative space to ensure first-glance recognizability and click appeal.
+
+## Checklist Before Confirmation
+
+- Whether the subject, purpose, and image moment are clear;
+- Whether it conflicts with the current Bot's confirmed appearance, relationships, and world setting;
+- Whether necessary hard constraints are preserved for a style the user specified;
+- Whether text, logos, watermarks, and unrequested identifiable brand elements are avoided;
+- Whether each variant can be generated independently of the other items.

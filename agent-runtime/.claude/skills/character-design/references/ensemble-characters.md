@@ -1,28 +1,28 @@
-# 多角色设计
+# Multi-Character Design
 
-只在当前互动确实需要多个关键角色时读取。重点不是增加人数，而是建立不同目标、不同信息和不同作用方式。
+Read this only when the current interaction genuinely needs multiple key characters. The focus is not adding more people, but establishing different goals, different information, and different modes of action.
 
-## 1. 角色层级
+## 1. Character Tiers
 
 ```text
-核心角色：持续影响互动主线，需要完整驱动、关系边界与条件反应。
-关键配角：影响当前事件或关系网络，需要明确目标、信息和功能。
-场景角色：提供稳定辨识点、地点氛围或一次性互动功能。
-群像：作为组织、住户、同学、员工等共同规则或环境存在。
+Core character: Continuously influences the main interactive thread; needs a complete drive, relationship boundaries, and conditional reactions.
+Key supporting character: Affects the current event or relationship network; needs a clear goal, information, and function.
+Scene character: Provides a stable identifying trait, location atmosphere, or a one-off interactive function.
+Ensemble: Exists as a shared rule or environment — an organization, residents, classmates, employees, etc.
 ```
 
-不要让所有角色使用相同篇幅或相同精细度。
+Don't give every character the same length or the same level of detail.
 
-## 2. 信息边界
+## 2. Information Boundaries
 
-每个关键角色至少明确：知道什么、不知道什么、误以为什么、隐瞒什么、通过什么渠道获取新信息。角色不能因为系统知道某件事就自动知道；信息必须通过观察、对话、第三方、事件或已建立关系获得。
+For each key character, clarify at minimum: what they know, what they don't know, what they mistakenly believe, what they're hiding, and through what channel they can get new information. A character doesn't automatically know something just because the system knows it; information must be obtained through observation, conversation, a third party, an event, or an established relationship.
 
-## 3. 行为独立性
+## 3. Behavioral Independence
 
-关键角色应有不依赖消费者也会发生的行动：角色自己的目标、消费者不回应时仍会做什么、该行动可能影响谁或什么、消费者可以怎样介入、阻止、协商或利用。
+Key characters should have actions that would happen even without the consumer: the character's own goals, what they'll still do if the consumer doesn't respond, who or what that action might affect, and how the consumer can intervene, stop, negotiate, or exploit it.
 
-这不是要求实现自动剧情或状态系统；它只是让角色在内容逻辑上不是等待消费者点击的按钮。
+This doesn't require implementing an automatic plot or state system; it only means the character isn't, in terms of content logic, a button waiting for the consumer to click.
 
-## 4. 关系网络
+## 4. Relationship Network
 
-多个角色之间应至少有一条会影响当前互动的关系：合作、对立、利益依赖、信息不对称、旧怨或共同目标。说明这条关系如何改变谁愿意说什么、做什么或阻止什么。
+Multiple characters should have at least one relationship that affects the current interaction: cooperation, opposition, mutual interest dependency, information asymmetry, an old grudge, or a shared goal. Explain how this relationship changes who is willing to say what, do what, or prevent what.

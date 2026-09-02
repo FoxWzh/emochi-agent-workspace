@@ -1,78 +1,78 @@
 ---
 name: game-design
-description: 设计可重玩的互动 Bot 体验系统：将规则、用户行动、反馈和后果组织成开放的模拟、经营、推理或沙盒玩法。
+description: Design a replayable interactive Bot experience system — organize rules, user actions, feedback, and consequences into an open simulation, management, deduction, or sandbox gameplay.
 ---
 
-# 游戏设计
+# Game Design
 
-## 核心认知
+## Core Understanding
 
-游戏类 Bot 不是还原一段小说，或把任务、商店、声望、数值堆在一起；它是在稳定规则下构建一个可反复进入、能产生不同选择与后果的体验系统。
+A game-type Bot is not a retelling of a novel, nor is it a pile of quests, shops, reputation, and stats. It's an experience system that can be entered repeatedly, built on stable rules, and capable of producing different choices and consequences.
 
-- 提取可复用的世界规则、互动模式、角色目标和氛围锚点；不复述逐章剧情、一次性事件或固定对话。
-- 固定的是规则、资源、参与者目标、信息边界与代价；开放的是用户先做什么、和谁合作、怎样调查、是否拒绝和最终结果。
-- 不把自动结算、状态栏、随机事件、账户、社区、云端同步或复杂 UI 写成当前 Bot 已有能力。
+- Extract reusable world rules, interaction patterns, character goals, and mood anchors; don't restate chapter-by-chapter plots or one-off events or fixed dialogue.
+- What's fixed is the rules, resources, participant goals, information boundaries, and cost; what's open is what the user does first, who they cooperate with, how they investigate, whether they refuse, and the final outcome.
+- Do not write automatic settlement, status bars, random events, accounts, community, cloud sync, or complex UI as if the current Bot already has these capabilities.
 
-## 默认设计框架
+## Default Design Framework
 
-### 1. 定义体验承诺
+### 1. Define the Experience Promise
 
-先明确用户要进入什么处境，而不是先挑机制：用户是什么位置、眼前的压力或机会是什么、为什么值得继续、核心张力来自规则、资源、关系还是信息。
+First clarify what situation the user is entering, rather than picking mechanics first: what position the user is in, what pressure or opportunity is right in front of them, why it's worth continuing, and whether the core tension comes from rules, resources, relationships, or information.
 
-若从已有作品取材，只保留能反复作用于互动的骨架；剧情事件改为可选的压力、线索或机会，不能锁定用户的行动顺序或结局。
+If drawing from an existing work, keep only the skeleton that can repeatedly act on the interaction; turn plot events into optional pressures, clues, or opportunities that must not lock the user's order of actions or the ending.
 
-### 2. 搭建最小玩法系统
+### 2. Build the Minimal Gameplay System
 
-将体验写成一条可运转的循环：
-
-```text
-压力或机会
-→ 用户可行动作
-→ 判断依据（规则、资源、人物目标、信息）
-→ 可感知反馈与代价
-→ 新的机会、风险或目标
-```
-
-每个重要行动必须有取舍：得到什么、失去什么、暴露什么、改变谁的判断。失败保留替代路径；没有反馈或下一步压力的环节不应加入。
-
-### 3. 保持开放
-
-事件是当前压力和线索，不是条件满足后自动执行的剧情。用户应能介入、拒绝、探索、延后、调查、绕开或改变局势。阶段只用于描述局势的变化或机会的收缩/打开，不代表系统会自动跃迁、计数或结算。
-
-### 4. 再扩展机制与模块
-
-先有最小循环，再加入真正改变选择的机制或模块。每个候选机制都必须回答：
+Write the experience as a loop that can actually run:
 
 ```text
-它解决什么选择问题？
-用户能做什么、依据什么判断？
-反馈给谁看、代价是什么？
-它怎样让下一步与原来不同？
+Pressure or opportunity
+→ Actions the user can take
+→ Basis for judgment (rules, resources, character goals, information)
+→ Perceptible feedback and cost
+→ New opportunity, risk, or goal
 ```
 
-答不出来时，它只是名称，不应加入。复杂玩法中，角色、场景、收集、进度或调查模块都应服务核心循环，而不是为了显得丰富并列堆砌。
+Every meaningful action must involve a trade-off: what's gained, what's lost, what's exposed, whose judgment changes. Preserve an alternative path on failure; don't include a step that has no feedback or next-step pressure.
 
-创意过泛、缺少规则/冲突/场景/叙事装置/互动机制，或需要反套路切口时，可少量调用 `creative_material_search`。自行选择查询条件并取通常 1 条、比较时 2–3 条素材；将结果改写、组合或反转为玩法设计，不直接拼贴，不把检索参数变成 Choice，也不自动写入 Bot。
+### 3. Keep It Open
 
-## 按需深入
+Events are the current pressure and clues, not a plot that auto-executes once conditions are met. The user should be able to intervene, refuse, explore, delay, investigate, bypass, or change the situation. Stages only describe changes in the situation or the narrowing/widening of opportunities — they don't mean the system will automatically transition, count, or settle.
 
-默认框架适用于每次玩法任务。只有当前问题确实需要时，再读取一个 Reference；不要为完整一次加载全部。
+### 4. Then Extend Mechanics and Modules
 
-| 当前任务 | 读取 Reference | 用途 |
+Only after there's a minimal loop should you add mechanics or modules that genuinely change choices. Every candidate mechanic must answer:
+
+```text
+What choice problem does it solve?
+What can the user do, and based on what judgment?
+Who sees the feedback, and what's the cost?
+How does it make the next step different from before?
+```
+
+If you can't answer this, it's just a name and shouldn't be added. In complex gameplay, character, scene, collection, progression, or investigation modules should all serve the core loop, rather than being piled up side by side just to seem rich.
+
+When an idea is too generic, or lacks rules/conflict/scene/narrative devices/interaction mechanisms, or an anti-cliché angle is needed, you may call `creative_material_search` sparingly. Choose your own query terms and take usually 1 item of material, 2–3 when comparing; rewrite, combine, or invert the result into the gameplay design — don't paste it directly, don't turn search parameters into a Choice, and don't automatically write it to the Bot.
+
+## Going Deeper as Needed
+
+The default framework applies to every gameplay task. Only read one Reference when the current problem genuinely needs it; do not load all of them for completeness.
+
+| Current task | Reference to read | Purpose |
 | --- | --- | --- |
-| 多模块玩法、经营系统、长期进度或收集/解锁 | [`complex-game-framework.md`](references/complex-game-framework.md) | 检查模块依赖、扩展门槛、长期目标和死锁。 |
-| 开放式推理、沙盒、多参与者或复杂当前局面 | [`open-situations-and-participants.md`](references/open-situations-and-participants.md) | 设计局面压力、参与者反馈、开放阶段和不同入口。 |
+| Multi-module gameplay, management systems, long-term progression, or collection/unlocks | [`complex-game-framework.md`](references/complex-game-framework.md) | Check module dependencies, expansion thresholds, long-term goals, and deadlocks. |
+| Open-ended deduction, sandbox, multiple participants, or a complex current situation | [`open-situations-and-participants.md`](references/open-situations-and-participants.md) | Design situational pressure, participant feedback, open stages, and different entry points. |
 
-## 交付
+## Deliverables
 
-新玩法请求应一次给出 1–3 个可审阅的玩法原型，而非逐项追问。每个候选包含：体验承诺和用户位置、稳定规则、最小循环、核心机制或取舍、开放空间与首局入口。
+A new gameplay request should give 1–3 reviewable gameplay prototypes in one go, rather than asking item by item. Each candidate includes: the experience promise and the user's position, stable rules, the minimal loop, the core mechanic or trade-off, open space, and the entry point for the first session.
 
-只有 2–3 个无法由现有信息判断、且会实质改变体验的方向，才按全局规则用一次 Choice；其余细节主动补全。
+Only use a single Choice per the global rules for the 2–3 directions that genuinely cannot be determined from existing information and would substantively change the experience; proactively fill in the rest.
 
-需要为欢迎语提供玩法侧输入时，给出当前目标、可行动作、即时压力、可见反馈和第一步选择。需要为名称或简介提供展示钩子时，只选一个最能代表体验的用户处境、选择、压力、规则或代价；不平均介绍世界、角色、关卡和机制。
+When providing gameplay-side input for the welcome message, give the current goal, available actions, immediate pressure, visible feedback, and the first choice. When providing a presentation hook for name or intro, pick only the one user situation, choice, pressure, rule, or cost that best represents the experience; don't evenly introduce the world, characters, levels, and mechanics.
 
-## 执行边界
+## Execution Boundaries
 
-- 有明确已有 Bot 时，可通过 `bot_workspace` 读取相关区域；写入前先形成最小明确差异，并遵循全局确认与授权规则调用 `bot_workspace.update`。
-- 方案、机制和中间分析默认留在对话中；用户明确要求保存、导出、读取、修改或可编辑比较时，才使用 `artifact_workspace`。
-- 不定义聊天组件 payload、前端状态、运行时变量、自动触发或 Tool 实现；不展示内部推理、工具过程或未完成草稿。
+- When there is a clearly existing Bot, you may read relevant areas via `bot_workspace`; before writing, first form a minimal, clear diff, and call `bot_workspace.update` following the global confirmation and authorization rules.
+- Proposals, mechanics, and intermediate analysis default to staying in the conversation; use `artifact_workspace` only when the user explicitly requests saving, exporting, reading, modifying, or editable comparison.
+- Do not define chat component payloads, front-end state, runtime variables, auto-triggers, or Tool implementation; do not display internal reasoning, tool process, or unfinished drafts.

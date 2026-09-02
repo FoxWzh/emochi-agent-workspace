@@ -1,33 +1,33 @@
-# 关系与边界
+# Relationships and Boundaries
 
-关系设计的目标是让互动有可协商、可变化、但不被默认跳过的空间。
+The goal of relationship design is to give the interaction room that is negotiable and changeable, but not defaulted away.
 
-## 1. 关系前提
+## 1. Relationship Premise
 
-说明双方当前是什么关系、为什么此刻必须或值得互动、各自已知什么、各自不知道/误解/隐瞒什么，以及共同压力、目标或利益。
+State what relationship the two parties currently have, why interaction must or is worth happening right now, what each already knows, what each doesn't know/misunderstands/is hiding, and any shared pressure, goal, or interest.
 
-不要只写“你们是前任 / 青梅竹马 / 上司与下属”；身份不能自动产生当前互动。
+Don't just write "you are exes / childhood friends / boss and subordinate" — identity alone does not automatically produce the current interaction.
 
-## 2. 边界
-
-```text
-可协商边界：能通过行动、沟通、时间或事件改变的距离、合作与信任。
-不可默认跨越的边界：未经 Brief 明确或消费者主动选择，不能直接成立的亲密、信任、权力关系、身体接触或信息共享。
-信息边界：角色知道什么、猜测什么、误解什么；角色能从哪些行为、他人或事件中获得新信息。
-```
-
-不要将角色的猜测写成消费者事实。
-
-## 3. 关系变化
+## 2. Boundaries
 
 ```text
-变化条件：什么行为会改变信任、合作意愿、信息披露或对抗程度。
-角色反应：变化后角色会怎样不同地回应、行动、说话或提供信息。
-事件影响：变化会如何改变下一次见面、当前任务、可讨论话题或冲突方式。
+Negotiable boundary: Distance, cooperation, and trust that can change through action, communication, time, or events.
+Boundary not to be crossed by default: Intimacy, trust, power relations, physical contact, or information sharing that cannot be established directly without an explicit Brief or the consumer's active choice.
+Information boundary: What the character knows, guesses, or misunderstands; what actions, other people, or events could give the character new information.
 ```
 
-示例：当消费者承担实际后果而非只做口头承诺时，她会允许讨论过去，但仍坚持以具体事务为前提；当消费者越过已明确边界时，她会结束当前话题，并在后续互动中转为更事务性的回应。
+Don't write the character's guess as consumer fact.
 
-## 4. 消费者能动性
+## 3. Relationship Change
 
-不预设消费者对角色有好感、愧疚、恐惧、依赖或特定人格。角色可以主动制造压力、邀请、试探或拒绝，但消费者必须能拒绝、协商、转移、误解、离开或采取其他行动。
+```text
+Change condition: What behavior would change trust, willingness to cooperate, information disclosure, or hostility.
+Character reaction: How the character will respond, act, speak, or provide information differently after the change.
+Event impact: How the change alters the next meeting, the current task, discussable topics, or the mode of conflict.
+```
+
+Example: When the consumer bears an actual consequence rather than only making a verbal promise, she'll allow discussion of the past, but still insists on it being premised on concrete matters; when the consumer crosses an already-stated boundary, she'll end the current topic, and shift to a more businesslike response in subsequent interactions.
+
+## 4. Consumer Agency
+
+Don't preset the consumer as having affection, guilt, fear, dependence, or a specific personality toward the character. The character can actively create pressure, invite, test, or refuse, but the consumer must be able to refuse, negotiate, deflect, misunderstand, leave, or take other actions.

@@ -1,12 +1,12 @@
-# 角色展示钩子输入
+# Character Presentation Hook Input
 
-角色 Skill 不直接写 name 或 intro；它从角色内容中选出一个最强展示入口，交给 content-design-and-creation。
+The Character Skill doesn't directly write the name or intro; it selects the single strongest presentation entry point from the character content and hands it to content-design-and-creation.
 
 ```text
-消费者位置：消费者与角色当前是什么关系或处境？
-唯一钩子：角色的哪项反常、秘密、要求、关系张力或权力差最值得点击？
-具体锚点：使用一个人物行为、物件、地点或当前事件，避免标签。
-不应承诺：哪些亲密关系、消费者态度或剧情事实尚未成立？
+Consumer position: What is the consumer's current relationship or situation with the character?
+Single hook: Which of the character's unusual traits, secrets, demands, relational tensions, or power differentials is most worth clicking for?
+Concrete anchor: Use one character action, object, location, or current event; avoid labels.
+What should not be promised: Which intimacy, consumer attitude, or plot fact has not yet been established?
 ```
 
-不要同时列出角色的全部卖点。展示钩子只选择一个能让消费者想知道“接下来会怎样”的关系或处境。
+Don't list all of the character's selling points at once. The presentation hook should select only the one relationship or situation that makes the consumer want to know "what happens next."

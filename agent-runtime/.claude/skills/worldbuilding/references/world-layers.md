@@ -1,25 +1,25 @@
-# 世界分层
+# World Layers
 
-用于区分稳定世界规则、可互动环境、表达氛围与当前情境，避免把百科背景、当前事件和未来剧情混在一起。
+Used to distinguish stable world rules, an interactive environment, expressive atmosphere, and the current situation, avoiding mixing encyclopedic background, current events, and future plot together.
 
-## 分层
+## Layers
 
-| 层次 | 写什么 | 不写什么 |
+| Layer | What to write | What not to write |
 | --- | --- | --- |
-| 底层规律 | 能力边界、社会共识、资源/权力、越界代价 | 一次性写完所有历史与百科。 |
-| 环境与势力 | 当前会接触的地点、组织、制度、资源、限制和信息渠道 | 没有互动职责的地点名录。 |
-| 表达氛围 | 反复可感知的环境细节、节奏和避免项 | “高级/阴郁/有氛围”等空词。 |
-| 当前情境 | 此刻地点、压力、机会、线索、在场各方和用户入口 | 把未来事件或秘密写成已发生事实。 |
+| Underlying laws | Capability boundaries, social consensus, resources/power, cost of transgression | Writing all history and encyclopedic detail at once. |
+| Environment and factions | Locations, organizations, institutions, resources, constraints, and information channels that will currently be encountered | A directory of locations with no interactive role. |
+| Expressive atmosphere | Repeatedly perceptible environmental detail, pacing, and things to avoid | Empty words like "high-end/gloomy/atmospheric." |
+| Current situation | The current location, pressure, opportunity, clues, parties present, and the user's entry point | Writing a future event or secret as if it has already happened. |
 
-不是每个任务都需要四层。短互动通常只需要必要规则与当前情境；多地点/势力探索才扩到环境层。文风约束只有确实会改变互动表达时才写进 `content` 或 `advanced`。
+Not every task needs all four layers. A short interaction usually only needs the necessary rules and the current situation; expand to the environmental layer only when exploring multiple locations/factions. Style constraints are only written into `content` or `advanced` when they would genuinely change the interaction's expression.
 
-## 使用顺序
+## Order of Use
 
 ```text
-底层规律
-→ 环境/势力如何落实规则
-→ 当前情境怎样制造可进入的压力或机会
-→ 必要时补稳定表达氛围
+Underlying laws
+→ How the environment/factions implement the rules
+→ How the current situation creates enterable pressure or opportunity
+→ Add stable expressive atmosphere if necessary
 ```
 
-复杂剧场或游戏的事件/循环由 theater-design 或 game-design 组织；本 Reference 只提供世界如何限制、支持或改变行动。
+Events/loops for complex theater or games are organized by theater-design or game-design; this Reference only provides how the world constrains, supports, or changes actions.

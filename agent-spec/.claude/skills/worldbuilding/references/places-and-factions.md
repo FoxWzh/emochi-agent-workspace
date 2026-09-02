@@ -1,31 +1,32 @@
-# 地点与势力
+# Locations and Factions
 
-只在地点、组织或势力会改变互动时读取。名称本身不是内容；每个对象都要有资源、限制、信息、风险、机会或冲突职责。
+Read this only when locations, organizations, or factions would change the interaction. A name by itself is not content; every object needs a role in resources, constraints, information, risk, opportunity, or conflict.
 
-## 地点
-
-```text
-资源：用户或角色能得到什么？
-限制：什么不能做、需何种资格、会付什么代价？
-信息：这里能透露、隐藏或验证什么？
-风险：谁会注意、阻止、利用或误导？
-情境：为什么当前事件在这里发生？
-```
-
-不要为地图完整性列大量地点。优先当前开场、角色目标或事件会实际经过的地方。
-
-## 势力
+## Locations
 
 ```text
-目标：想维持、获得、掩盖或改变什么？
-资源/手段：如何影响他人？
-限制：不能或不愿做什么？
-关系：与其他势力、角色和用户的利益关系？
-信息：知道什么、如何获取或封锁？
+Resource: What can the user or character obtain?
+Constraint: What can't be done, what qualification is required, what cost is paid?
+Information: What can be revealed, hidden, or verified here?
+Risk: Who would notice, stop, exploit, or mislead?
+Situation: Why is the current event happening here?
 ```
 
-势力必须改变谁能进入哪里、谁愿意说什么、什么行动被奖励或阻止。
+Don't list a large number of locations just for map completeness. Prioritize places the current opening, character goals, or events would actually pass through.
 
-## 信息与当前压力
+## Factions
 
-对关键对象明确知道什么、不知道什么、误以为什么、隐瞒什么、如何获得新信息。事件写成可进入压力：谁想要什么、用户可调查/谈判/拒绝/利用什么、不同介入可能带来什么后果；不要锁死未来结果。
+```text
+Goal: What do they want to maintain, obtain, conceal, or change?
+Resources/means: How do they influence others?
+Constraint: What can they not or will not do?
+Relationship: What are their interests with other factions, characters, and the
+user?
+Information: What do they know, how do they obtain or block it?
+```
+
+A faction must change who can enter where, who is willing to say what, and what actions get rewarded or blocked.
+
+## Information and Current Pressure
+
+For key objects, clarify what they know, don't know, mistakenly believe, are hiding, and how they obtain new information. Write events as enterable pressure: who wants what, what the user can investigate/negotiate/refuse/exploit, and what consequences different interventions might bring; don't lock in future outcomes ahead of time.

@@ -1,22 +1,22 @@
-# 复杂玩法框架
+# Complex Gameplay Framework
 
-只在多模块确实彼此依赖时读取。先区分核心循环和可选模块，避免把地图、商店、战斗、收集、任务、阶段、UGC 等全部塞入第一版。
+Read this only when multiple modules genuinely depend on each other. First distinguish the core loop from optional modules; avoid cramming maps, shops, combat, collection, quests, stages, UGC, and everything else into the first version.
 
-## 依赖检查
+## Dependency Check
 
-对每个模块说明：它服务哪个用户选择、依赖哪些规则/资源/参与者、用户能看到什么反馈、没有实现运行时时如何降级为文本规则或不承诺。
+For each module, state: which user choice it serves, which rules/resources/participants it depends on, what feedback the user can see, and how it degrades to text-based rules or a non-commitment when there's no implemented runtime.
 
-复杂不等于可玩。先保证一条最小循环成立，再增加真正改变选择的模块。不要把账号、社区、云端同步、自动任务结算或复杂 UI 伪装成 Bot 已有能力。
+Complexity doesn't equal playability. First ensure a minimal loop works, then add modules that genuinely change choices. Don't disguise accounts, community, cloud sync, automatic quest settlement, or complex UI as capabilities the Bot already has.
 
-## 进度与解锁校验
+## Progression and Unlock Validation
 
-只有当进度、收集或解锁确实改变选择时才加入。对每个长期目标核对：
+Only add progression, collection, or unlocks if they genuinely change choices. For every long-term goal, verify:
 
 ```text
-可获得的途径 / 物品是否足够
-→ 是否有某个“最终奖励”同时被算作前置条件
-→ 被拒绝、错过或选择另一条路后是否仍有替代路径
-→ 解锁后是否提供新的行动、信息、关系或风险
+Whether the available means/items are sufficient
+→ Whether a "final reward" is also counted as a prerequisite
+→ Whether an alternative path remains after being refused, missed, or choosing another route
+→ Whether unlocking provides new actions, information, relationships, or risk
 ```
 
-不要只把阈值从 10 改成 9 来掩盖死锁。若需要补足来源，可设计一个符合世界规则、让用户参与定义偏好或承担取舍的开放获取方式；它仍应作为文本互动规则，而非承诺自动触发或自动结算。
+Don't just change a threshold from 10 to 9 to paper over a deadlock. If a source needs to be supplemented, design an open acquisition method consistent with world rules that lets the user participate in defining preferences or bearing trade-offs; it should still be a textual interaction rule, not a promise of automatic triggering or automatic settlement.

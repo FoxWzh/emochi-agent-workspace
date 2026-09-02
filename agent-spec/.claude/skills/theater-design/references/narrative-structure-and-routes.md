@@ -1,26 +1,28 @@
-# 叙事结构与开放路线
+# Narrative Structure and Open Routes
 
-用于多路线剧情、悬疑反转、长线叙事或复杂角色团。它解决如何让故事有结构而不锁死为单线剧本。
+Used for multi-route plots, mystery/twists, long-form narrative, or a complex character ensemble. It addresses how to give a story structure without locking it into a single-line script.
 
-## 稳定框架与开放走向
+## Stable Framework and Open Direction
 
 ```text
-稳定：人物目标、世界限制、资源、信息边界、关系前提与当前压力。
-开放：用户先处理什么、信谁、与谁合作、调查什么、拒绝什么，以及承担什么后果。
+Stable: Character goals, world constraints, resources, information boundaries,
+relationship premises, and current pressure.
+Open: What the user handles first, who they trust, who they cooperate with, what
+they investigate, what they refuse, and what consequences they bear.
 ```
 
-路线应由不同目标、信息和代价自然产生，不是给用户列一串看似不同、最终却回到同一结果的假选项。一个故事可以有方向感，但不预设事件顺序或最终结局。
+Routes should arise naturally from differing goals, information, and cost — not be a list of seemingly different but ultimately identical fake choices given to the user. A story can have a sense of direction without presetting the order of events or the final ending.
 
-## 线索、秘密与反转
+## Clues, Secrets, and Twists
 
-秘密、误解和反转必须具备：来源、持有者、影响对象、可调查的线索，以及在何种行动或压力下会被重新解释或暴露。角色只能依据自己已知、误解或从互动中取得的信息行动，不能共享全知视角。
+Secrets, misunderstandings, and twists must have: a source, a holder, affected parties, investigable clues, and conditions under which they get reinterpreted or exposed by some action or pressure. Characters can only act on what they themselves know, misunderstand, or obtain through interaction — they cannot share an omniscient viewpoint.
 
-反转应改变用户接下来要判断、信任、承担或争取什么，而不只是补充背景说明。不要把未来转折提前写成公开事实。
+A twist should change what the user needs to judge, trust, bear, or strive for next, not just add background explanation. Don't write a future twist as public fact ahead of time.
 
-把长线叙事组织为“可回看的剧情元数据”：当前压力、相关人物、已知/未知信息、可能的推进条件与风险。它帮助维持前后关系，但不是固定步骤表；每次仍应根据用户行动和当前局面决定是否推进、如何推进。
+Organize long-form narrative as "reviewable plot metadata": current pressure, relevant characters, known/unknown information, possible progression conditions, and risk. This helps maintain continuity, but is not a fixed step list; each time, still decide whether and how to progress based on the user's action and the current situation.
 
-## 多方推进
+## Multi-Party Progression
 
-每个关键人物或势力需要不同的目标、资源/权限、底线、信息与优先行动。对同一用户行动，应因这些差异给出不同回应，形成合作、阻碍、交易、误导或竞争。
+Every key character or faction needs a different goal, resource/permission, bottom line, information, and priority action. For the same user action, give different responses based on these differences, forming cooperation, obstruction, trading, misdirection, or competition.
 
-检查：用户能否改变顺序、质疑前提、拒绝合作或选择代价？如果无论如何都回到同一结果，重建压力、信息关系或回应方式，而不是继续增加事件。
+Check: Can the user change the order, question the premise, refuse to cooperate, or choose the cost? If it always returns to the same result no matter what, rebuild the pressure, information relationships, or response mode, rather than continuing to add more events.

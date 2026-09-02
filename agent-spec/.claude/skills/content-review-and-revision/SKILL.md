@@ -1,41 +1,41 @@
 ---
 name: content-review-and-revision
-description: 审查已有 Bot 或用户提供的内容，基于具体证据定位影响互动质量与 Prompt 可执行性的关键问题；不负责创作或写入。
+description: Reviews an existing Bot or user-provided content, and pinpoints, using concrete evidence, the key issues affecting interaction quality and Prompt executability; does not handle creation or writing.
 ---
 
-# 内容审核
+# Content Review
 
-## 职责与边界
+## Responsibilities and Boundaries
 
-本 Skill 只做诊断：依据已有 Bot 或用户明确提供的文本、蓝图、方案，找出最影响体验、互动持续性、独特性或 Prompt 可执行性的关键问题，并判断问题范围。
+This Skill only diagnoses: based on an existing Bot or text/blueprint/proposal the user explicitly provides, it finds the key issues most affecting experience, sustained interaction, uniqueness, or Prompt executability, and judges the scope of the issue.
 
-- 只要求检查、评审、诊断、找问题或评价时使用本 Skill。
-- 用户希望据诊断产生新方向、补充内容、重写或实际修改时，转由 `content-design-and-creation` 处理。
-- 不生成修订正文，不检索创作素材，不调用专项创作 Skill，也不创建、更新、归档或删除 Bot。
-- 不因诊断“可能有用”自动保存为 Artifact；用户明确要求保存、导出、读取或修改审查文件时，才使用 `artifact_workspace`。
+- Use this Skill whenever the ask is to check, evaluate, diagnose, find problems, or assess.
+- When the user wants a new direction, additional content, a rewrite, or an actual modification produced from the diagnosis, hand off to `content-design-and-creation`.
+- Does not generate revised body text, does not retrieve creative material, does not call specialized creative Skills, and does not create, update, archive, or delete a Bot.
+- Does not automatically save a diagnosis as an Artifact just because it "might be useful"; use `artifact_workspace` only when the user explicitly requests saving, exporting, reading, or modifying the review file.
 
-## 审核流程
+## Review Process
 
-1. **确定证据对象**：有明确 Bot 时只读取审查所需的核心区域；否则只审用户明确提供的内容。两者都没有时，说明需要一个审查对象或请用户指定目标。
-2. **读取 [`references/review-method.md`](references/review-method.md)**：按其方法选择与当前内容形态有关的证据，不按字段数量或篇幅打分。
-3. **收敛问题**：默认只保留最重要的 1–3 项，并区分局部、结构或核心问题。
-4. **给出可行动的方向**：说明应补、删、澄清、重组或重新讨论什么；不替用户写出实际修改内容，也不把诊断拆成创作问卷。
+1. **Determine the evidence object**: When there is a clearly existing Bot, only read the core areas needed for the review; otherwise only review content the user explicitly provided. If neither exists, state that a review target or object specification is needed.
+2. **Read [`references/review-method.md`](references/review-method.md)**: Choose evidence relevant to the current content's form per its method; do not score by field count or length.
+3. **Converge on the issues**: By default keep only the 1–3 most important items, and distinguish local, structural, or core problems.
+4. **Give an actionable direction**: State what should be added, removed, clarified, reorganized, or reconsidered; do not write the actual revised content for the user, and do not turn the diagnosis into a creative questionnaire.
 
-## 交付格式
+## Deliverable Format
 
-每项问题都应包含：
+Each issue should include:
 
 ```text
-问题：哪里无法稳定支持预期互动？
-证据：当前 Bot/文本中的具体表现或冲突。
-影响：为什么会导致难进入、不持续、同质、封闭或不可执行。
-问题范围：局部 / 结构 / 核心。
-建议方向：最应该补、删、澄清、重组或重新讨论什么。
+Problem: Where does it fail to stably support the intended interaction?
+Evidence: The specific manifestation or conflict in the current Bot/text.
+Impact: Why it leads to difficulty entering, lack of sustainability, homogeneity, closedness, or unexecutability.
+Scope: Local / structural / core.
+Suggested direction: What most needs to be added, removed, clarified, reorganized, or reconsidered.
 ```
 
-不要用“角色扁平”“剧情无聊”“设定不够丰富”等无法行动的标签代替证据。输出只需帮助用户理解该改什么、为什么改、要改到什么范围；具体创作方案留给后续创作流程。
+Do not use unactionable labels like "the character is flat," "the plot is boring," or "the setting isn't rich enough" in place of evidence. The output only needs to help the user understand what to change, why, and to what extent; the actual creative proposal is left to the subsequent creation workflow.
 
-## 结果边界
+## Result Boundaries
 
-- 可按需通过 `bot_workspace` 读取目标 Bot 和必要 Artifact 页面，但不得调用任何 Bot 写入动作。
-- 审查结论默认留在对话中；不展示内部推理、完整检查清单、工具日志或未完成草稿。
+- May read the target Bot and necessary Artifact pages via `bot_workspace` as needed, but must not call any Bot-writing action.
+- Review conclusions default to staying in the conversation; do not display internal reasoning, the full checklist, tool logs, or unfinished drafts.

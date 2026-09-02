@@ -1,54 +1,64 @@
-# 展示与欢迎语案例
+# Presentation and Welcome Message Examples
 
-用于实际撰写名称、简介或欢迎语，需要校准信息密度、第一眼吸引力或进入方式时。案例展示的是可迁移的写法，不是固定模板，也不应照抄特定角色、关系或题材。
+Used when actually writing the name, intro, or welcome message, and calibration is needed for information density, first-glance appeal, or entry style. The examples shown are transferable writing techniques, not fixed templates, and should not be copied verbatim for a specific character, relationship, or genre.
 
-## 简介：短而有点击理由
+## Intro: Short but with a Reason to Click
 
-简介不承担完整设定说明。通常只保留一个用户会愿意点开的切口：关系、身份错位、秘密、风险、反常设定，或自由进入体验。
-
-```text
-人物关系：
-“他每次替你解决麻烦，都会要求你替他保守一个更危险的秘密。”
-
-身份错位：
-“你是新来的宫廷译官，而王座旁那个从不说话的人，只肯让你听见他的真名。”
-
-世界入口：
-“在这座魔法学院里，写下你的角色，从今晚的分院宴开始。”
-
-玩法入口：
-“你接手了一家即将停业的夜班电台：每通匿名来电，都可能改变整座城市。”
-```
-
-这些例子都只露出一个足够具体的吸引点。不要把人物履历、世界规则、所有角色或全部机制挤进简介。
-
-## 欢迎语：事件已经开始
-
-欢迎语先把用户放进一个正在发生的局面，再保留自然回应空间。必要背景只解释此刻关系与风险。
+The intro doesn't carry the full setting explanation. Usually keep only one angle the user would want to click into: a relationship, an identity mismatch, a secret, risk, an unusual setting, or the promise of free entry into the experience.
 
 ```text
-直接冲突：
-门禁的红灯在你面前亮起。值夜的管理员没有抬头，只把你的通行证推回柜台：
-“它昨天还有效。现在有人把你的名字从系统里删掉了。”
-走廊尽头传来巡逻声。你可以问他是谁做的、要求查看记录，或先找地方避开。
+Character relationship:
+"Every time he solves your trouble, he demands you keep an even more dangerous secret for him."
 
-关系秘密：
-庆功宴的音乐刚停，搭档就把一枚不属于你的徽章塞进你掌心。
-“别让任何人看见。”她低声说，“尤其别让队长知道你今晚来过这里。”
-她没有解释。你可以追问徽章的来历、替她遮掩，或把它交出去。
+Identity mismatch:
+"You're the new court translator, and the one who never speaks beside the throne
+will only let you hear his true name."
 
-引导式进入：
-雨后的站台只剩最后一班列车。售票员看着你空白的目的地栏，敲了敲玻璃：
-“第一次来的人都要选一件事带走：名字、记忆，或者一个承诺。”
-列车马上关门。你可以询问代价、拒绝交易，或写下自己的目的地。
+World entry:
+"In this magic academy, write your character, and start tonight at the House Sorting Feast."
+
+Gameplay entry:
+"You've taken over a night-shift radio station about to close: every anonymous call
+could change the entire city."
 ```
 
-避免先用大段背景介绍、替用户行动/表态，或在第一段揭露全部秘密和后续剧情。
+These examples all show only one sufficiently concrete point of appeal. Don't cram a character's résumé, world rules, every character, or all the mechanics into the intro.
 
-## 复核
+## Welcome Message: The Event Has Already Begun
 
-- 名称能否让用户迅速识别对象、世界或关系入口？
-- 简介是否足够短，并只保留一个最有吸引力的切口？
-- 欢迎语是否在前几句就给出事件、反应和用户可回应的位置？
-- 用户能否自然地追问、选择、拒绝、协商或行动？
-- 是否与已确认的 Bot 核心内容一致，且没有把案例中的题材照搬进去？
+The welcome message first places the user into an unfolding situation, then leaves room for a natural response. Necessary background should only explain the current relationship and risk.
+
+```text
+Direct conflict:
+The access gate's red light comes on in front of you. The night-shift attendant
+doesn't look up, just pushes your pass back across the counter:
+"It was valid yesterday. Now someone's deleted your name from the system."
+Footsteps of a patrol echo from the end of the hallway. You can ask him who did it,
+demand to see the record, or find somewhere to hide first.
+
+Relational secret:
+The moment the celebration music stops, your partner presses a badge that isn't
+yours into your hand.
+"Don't let anyone see it," she whispers, "especially don't let the captain know
+you came here tonight."
+She doesn't explain. You can ask where the badge came from, cover for her,
+or hand it over.
+
+Guided entry:
+The last train of the night is all that's left on the rain-soaked platform.
+The ticket seller looks at your blank destination field and taps the glass:
+"Everyone who comes here for the first time has to choose one thing to take
+with them: a name, a memory, or a promise."
+The train is about to leave. You can ask about the cost, refuse the deal,
+or write down your own destination.
+```
+
+Avoid opening with a long background introduction, acting or speaking on the user's behalf, or revealing all the secrets and future plot in the first paragraph.
+
+## Review
+
+- Does the name let the user quickly recognize the object, world, or relationship entry point?
+- Is the intro short enough, keeping only the single most appealing angle?
+- Does the welcome message give the event, the reaction, and the user's responsive position within the first few sentences?
+- Can the user naturally ask further, choose, refuse, negotiate, or act?
+- Is it consistent with the Bot's already-confirmed core content, without transplanting the genre from the examples directly?
