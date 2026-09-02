@@ -309,6 +309,8 @@ test('Agent-created Bot event binds the created Bot to the current Session', asy
   const client = await (await import('node:fs/promises')).readFile(new URL('../src/app/App.jsx', import.meta.url), 'utf8');
   assert.match(client, /event\.type==='bot'&&event\.payload\?\.bot/);
   assert.match(client, /workObjectId:event\.payload\.work_object/);
+  assert.match(client, /openBotWorkspace\(sessionId,bot,\{openEditor:Boolean\(event\.payload\.created\)\}\)/);
+  assert.match(client, /openEditor\)\{showBotEditor\(selectedBot\.id\);setBotLibraryOpen\(false\);\}/);
 });
 
 test('Composer keeps the Bot edit action available after an Agent-created Bot sync', async () => {
@@ -407,7 +409,7 @@ test('Bot search binds exactly one matching Bot and update binds its explicit Bo
   assert.match(source, /session\.workObjectId=bot\.id;session\.updated_at/);
   assert.match(source, /work_object:bot\.id,updated:true,written/);
   const client = await (await import('node:fs/promises')).readFile(new URL('../src/app/App.jsx', import.meta.url), 'utf8');
-  assert.match(client, /void openBotWorkspace\(sessionId,bot\)/);
+  assert.match(client, /openBotWorkspace\(sessionId,bot,\{openEditor:Boolean\(event\.payload\.created\)\}\)/);
   assert.match(client, /showBotEditor\(created\.id\)/);
 });
 
