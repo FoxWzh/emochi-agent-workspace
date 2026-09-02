@@ -384,10 +384,12 @@ test('Bot update rejects non-canonical compatibility shapes before writing', asy
   assert.throws(() => botWorkspaceInput.parse({ action: 'update', bot_id: 'bot_1', changes: [{ path: 'advanced', value: { voice: '轻快' } }] }));
 });
 
-test('Agent adapter suppresses internal schema retry narration from streamed user text', async () => {
-  const source = await (await import('node:fs/promises')).readFile(new URL('./agent-adapter.js', import.meta.url), 'utf8');
-  assert.match(source, /Execution narration is transient SDK chatter/);
-  assert.match(source, /changes field expects an array/);
+test('Agent instruction prohibits user-visible tool narration and Bot roleplay invitations', async () => {
+  for(const relativePath of ['../agent-runtime/CLAUDE.md','../agent-spec/CLAUDE.md']){
+    const source = await (await import('node:fs/promises')).readFile(new URL(relativePath, import.meta.url), 'utf8');
+    assert.match(source, /严禁在用户可见回复中输出任何 Tool 调用前后的执行旁白/);
+    assert.match(source, /严禁邀请、引导或让用户体验、试玩、运行、扮演任何 Bot/);
+  }
 });
 
 test('Confirmation UI uses operation-specific labels instead of create labels for every action', async () => {
@@ -432,14 +434,13 @@ test('Bot write contract exposes one canonical update shape and enforces control
   assert.equal(optionAlias.options[0].description, '兼容文案');
 });
 
-test('Agent adapter keeps execution narration out of visible assistant text', async () => {
-  const { visibleAssistantText } = await import('./agent-adapter.js');
-  const message={message:{content:[{type:'text',text:`I'm creating the Bot. Let me read the relevant references. 参数格式有误，我调整后重试。
-
-## 午夜专线
-已完成创建。`}]}};
-  assert.equal(visibleAssistantText(message),`## 午夜专线
-已完成创建。`);
+test('Agent adapter uses tool-use structure rather than language-specific prose filtering', async () => {
+  const { createVisibleReplyGate } = await import('./agent-adapter.js');
+  const gate=createVisibleReplyGate();
+  gate.observe({message:{content:[{type:'text',text:'任何语言的工具执行说明。'},{type:'tool_use',id:'tool_1',name:'Read',input:{}}]}});
+  gate.observe({message:{content:[{type:'text',text:'## 正文结果\n已完成。'}]}});
+  assert.equal(gate.finish(),'## 正文结果\n已完成。');
+  assert.equal(gate.discardedForToolUse,1);
 });
 
 test('Observability records failed tool attempts with retry and error metadata', async () => {
@@ -517,27 +518,20 @@ test('Agent enables built-in public web retrieval and reports its visible activi
   assert.match(app, /\['skill','reference','web'\]/);
 });
 
-test('Visible reply gate removes only retry narration and retains substantive text before a tool call', async () => {
-  const { createVisibleReplyGate, buildAgentPrompt, visibleAssistantText } = await import('./agent-adapter.js');
+test('Visible reply gate enforces language-neutral Tool-only and text-only channels', async () => {
+  const { createVisibleReplyGate, buildAgentPrompt } = await import('./agent-adapter.js');
   const gate = createVisibleReplyGate();
-  gate.observe({ message: { content: [{ type: 'text', text: "确认收到，I need to omit the null fields. I'll omit `cover_url` entirely." }, { type: 'tool_use', id: 'create_1', name: 'mcp__emochi_workspace__bot_workspace', input: { action: 'create' } }] } });
+  gate.observe({ message: { content: [{ type: 'text', text: '确认收到，I need to omit the null fields.' }, { type: 'tool_use', id: 'create_1', name: 'mcp__emochi_workspace__bot_workspace', input: { action: 'create' } }] } });
   gate.observe({ message: { content: [{ type: 'text', text: '## 轮回传承\n已创建成功 ✅' }] } });
   assert.equal(gate.finish(), '## 轮回传承\n已创建成功 ✅');
   assert.equal(gate.discardedForToolUse, 1);
 
-  const coverDraft=`## 四个封面方向\n\n### 方向一：近景人物\n- 人物正面，灯光清晰。\n\n### 方向二：空间叙事\n- 人物在雨夜街道。`;
-  const draftGate = createVisibleReplyGate();
-  draftGate.observe({ message: { content: [{ type: 'text', text: coverDraft }, { type: 'tool_use', id: 'confirm_1', name: 'mcp__emochi_workspace__ui_interaction', input: { type: 'confirmation' } }] } });
-  assert.equal(draftGate.finish(), coverDraft);
-  assert.equal(draftGate.discardedForToolUse, 0);
-
-  const botContent='你正在分不清自己究竟是谁。\n\n## 当前局势\n一场清洗正在酝酿。';
-  assert.equal(visibleAssistantText({ message: { content: [{ type: 'text', text: botContent }] } }), botContent);
-  const prompt = buildAgentPrompt({ messages: [
-    { role: 'assistant', content: "I need to use the confirmation shape with `subject`." },
-    { role: 'user', content: '继续创建' },
-  ] });
-  assert.doesNotMatch(prompt, /I need to use the confirmation shape/);
+  const proseGate = createVisibleReplyGate();
+  const plainText='你正在分不清自己究竟是谁。\n\n## 当前局势\n一场清洗正在酝酿。';
+  proseGate.observe({ message: { content: [{ type: 'text', text: plainText }] } });
+  assert.equal(proseGate.finish(), plainText);
+  const prompt = buildAgentPrompt({ messages: [{ role: 'user', content: '继续创建' }] });
+  assert.match(prompt, /继续创建/);
 });
 
 test('Image task contract defaults to four outputs and sidebar omits transient Bot editing state', async () => {
