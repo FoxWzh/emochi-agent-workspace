@@ -517,15 +517,22 @@ test('Agent enables built-in public web retrieval and reports its visible activi
   assert.match(app, /\['skill','reference','web'\]/);
 });
 
-test('Visible reply gate drops tool-planning narration and keeps only the final assistant reply', async () => {
-  const { createVisibleReplyGate, buildAgentPrompt } = await import('./agent-adapter.js');
+test('Visible reply gate removes only retry narration and retains substantive text before a tool call', async () => {
+  const { createVisibleReplyGate, buildAgentPrompt, visibleAssistantText } = await import('./agent-adapter.js');
   const gate = createVisibleReplyGate();
-  gate.observe({ message: { content: [{ type: 'text', text: "确认收到，I need to omit the null fields. I'll omit `cover_url` entirely." }] } });
   gate.observe({ message: { content: [{ type: 'text', text: "确认收到，I need to omit the null fields. I'll omit `cover_url` entirely." }, { type: 'tool_use', id: 'create_1', name: 'mcp__emochi_workspace__bot_workspace', input: { action: 'create' } }] } });
   gate.observe({ message: { content: [{ type: 'text', text: '## 轮回传承\n已创建成功 ✅' }] } });
   assert.equal(gate.finish(), '## 轮回传承\n已创建成功 ✅');
   assert.equal(gate.discardedForToolUse, 1);
 
+  const coverDraft=`## 四个封面方向\n\n### 方向一：近景人物\n- 人物正面，灯光清晰。\n\n### 方向二：空间叙事\n- 人物在雨夜街道。`;
+  const draftGate = createVisibleReplyGate();
+  draftGate.observe({ message: { content: [{ type: 'text', text: coverDraft }, { type: 'tool_use', id: 'confirm_1', name: 'mcp__emochi_workspace__ui_interaction', input: { type: 'confirmation' } }] } });
+  assert.equal(draftGate.finish(), coverDraft);
+  assert.equal(draftGate.discardedForToolUse, 0);
+
+  const botContent='你正在分不清自己究竟是谁。\n\n## 当前局势\n一场清洗正在酝酿。';
+  assert.equal(visibleAssistantText({ message: { content: [{ type: 'text', text: botContent }] } }), botContent);
   const prompt = buildAgentPrompt({ messages: [
     { role: 'assistant', content: "I need to use the confirmation shape with `subject`." },
     { role: 'user', content: '继续创建' },

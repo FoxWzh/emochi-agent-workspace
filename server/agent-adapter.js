@@ -7,42 +7,57 @@ import { createWorkspaceTools } from './agent-tools.js';
 
 const rawText = (message) => (message.message?.content || []).filter((item) => item.type === 'text').map((item) => item.text).join('');
 // Execution narration is transient SDK chatter, not a user-facing assistant reply.
-// Keep this as a final defensive scrub for old persisted turns and gateway quirks;
-// new streamed turns are structurally gated below instead of relying on wording.
+// A narrow final scrub for known short retry narration. The main protection is
+// structural gating below; never use broad prose regexes that could eat a Bot
+// specification merely because it contains words such as “正在”, “创建” or “更新”.
 const internalNarrationPatterns = [
-  /\bI(?:'m| am) (?:creating|updating|reading)[^.\n]*[.。]?\s*/gi,
-  /\b(?:Let me|Now I(?:'ll| will)|I(?:'ll| will)) (?:read|create|update|retry)[^.\n]*[.。]?\s*/gi,
-  /\bI need to (?:omit|remove|fix|correct|change|use)[^.\n]*(?:null|field|schema|tool|argument|payload|parameter|format|retry|subject)[^.\n]*[.。]?\s*/gi,
-  /\bI(?:'ll| will) (?:omit|remove|fix|correct|retry|use)[^.\n]*(?:null|field|schema|tool|argument|payload|parameter|format|subject)[^.\n]*[.。]?\s*/gi,
-  /(?:参数格式有误|校验(?:失败|有误)?|工具调用失败)[^。\n]*[。]?\s*/g,
-  /用户已明确授权[^。\n]*(?:创建|更新|修改|执行)[^。\n]*[。]?\s*/g,
-  /(?:我(?:先|会|将|来|正在|现在)|正在)[^。\n]*(?:调用|读取|创建|更新|重试|校验|调整|设计|落地)[^。\n]*[。]?\s*/g,
+  /^\s*(?:I(?:'m| am) (?:creating|updating|reading)|(?:Let me|Now I(?:'ll| will)|I(?:'ll| will)) (?:read|create|update|retry))[^.\n]*[.。]?\s*/i,
+  /^\s*(?:I need to (?:omit|remove|fix|correct|change|use)|I(?:'ll| will) (?:omit|remove|fix|correct|retry|use))[^.\n]*(?:null|field|schema|tool|argument|payload|parameter|format|retry|subject)[^.\n]*[.。]?\s*/i,
+  /^\s*(?:The )?(?:changes field expects an array|change object needs[^.]*|schema(?: validation)? (?:error|failed))[^.\n]*[.。]?\s*/i,
+  /^\s*(?:参数格式有误|校验(?:失败|有误)?|工具调用失败)[^。\n]*[。]?\s*/,
 ];
-export const visibleAssistantText = message => internalNarrationPatterns
-  .reduce((value, pattern) => value.replace(pattern, ''), rawText(message))
-  .replace(/(?:The )?(?:changes field expects an array|change object needs[^.]*|(?:let me|I will) retry(?:[^.]*)|schema(?: validation)? (?:error|failed))[^.]*\.?\s*/gi,'')
-  .trim();
+export const visibleAssistantText = message => {
+  let value=rawText(message);
+  // Only strip a *leading run* of short, standalone execution sentences.
+  // Once real content begins, never scan the remaining prose for keywords.
+  while(true){
+    const next=internalNarrationPatterns.reduce((current,pattern)=>current.replace(pattern,''),value);
+    if(next===value)break;
+    value=next;
+  }
+  return value.trim();
+};
 const text = visibleAssistantText;
 const toolBlock = (message) => (message.message?.content || []).filter((item) => item.type === 'tool_use');
+const meaningfulAssistantText = value => {
+  const cleaned=String(value||'').trim();
+  if(!cleaned)return false;
+  // A heading, structured list/table, multiple paragraphs, or substantial copy
+  // is a user-facing draft even when the SDK attaches a tool use afterward.
+  return /^#{1,6}\s/m.test(cleaned)||/^\s*(?:[-*]|\d+[.)])\s+/m.test(cleaned)||/\n\s*\n/.test(cleaned)||cleaned.length>=180;
+};
+const executionOnlyText = value => {
+  const cleaned=String(value||'').trim();
+  return !meaningfulAssistantText(cleaned) && /(?:\b(?:i need|let me|i(?:'ll| will)|creating|updating|reading|retry|schema|validation|tool|argument|payload)\b|参数|校验|工具调用|重试|调用工具|读取(?:资料|参考)?|创建(?:中|Bot)?|更新(?:中|Bot)?)/i.test(cleaned);
+};
 
-// The SDK can emit natural-language planning beside (or shortly before) a tool
-// call. Do not commit any assistant text to the UI/history until the run ends:
-// a later tool call invalidates the staged text. This is intentionally based on
-// message structure rather than fragile English/Chinese phrasing.
+// The SDK may emit a short planning sentence beside (or shortly before) a tool
+// call. Hold it until the turn ends. A later tool call discards only that
+// execution chatter; it must never erase a substantive draft that happens to
+// be followed by a confirmation/other tool call.
 export const createVisibleReplyGate = () => {
   let staged = '';
   let discardedForToolUse = 0;
   return {
     observe(message) {
-      if (toolBlock(message).length) {
-        staged = '';
-        discardedForToolUse += 1;
+      const candidate=text(message);
+      const hasToolUse=toolBlock(message).length>0;
+      if(hasToolUse){
+        if(candidate&&meaningfulAssistantText(candidate))staged=candidate;
+        else if(candidate&&executionOnlyText(candidate)){staged='';discardedForToolUse+=1;}
         return;
       }
-      const candidate = text(message);
       if (!candidate) return;
-      // Partial SDK snapshots generally contain the accumulated response.
-      // Keep the latest full candidate; if a gateway emits deltas, append them.
       staged = candidate.startsWith(staged) ? candidate : staged && !staged.includes(candidate) ? `${staged}${candidate}` : candidate;
     },
     finish(result = '') {
