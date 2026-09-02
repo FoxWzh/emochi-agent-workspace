@@ -584,3 +584,21 @@ test('App distinguishes failed initial API load from a truly empty conversation 
   assert.match(app, /重新连接/);
   assert.match(app, /check线上 Agent 服务|线上 Agent 服务/);
 });
+
+test('Mobile client keeps the blank new-conversation state local and creates a fresh Session only on first send', async () => {
+  const client = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/main.jsx', import.meta.url), 'utf8');
+  const api = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/lib/api.js', import.meta.url), 'utf8');
+  assert.match(client, /const session=state\?\.sessions\?\.find\(item=>item\.id===activeSessionId\)\|\|null/);
+  assert.doesNotMatch(client, /sessions\?\.\[0\]/);
+  assert.match(client, /const startNewConversation=\(\)=>\{setActiveSessionId\(null\)/);
+  assert.match(client, /const ensureSession=async\(\)=>\{\s*if\(session\)return session;\s*const \{session:created\}=await api\.createSession\(\)/);
+  assert.match(client, /const target=await ensureSession\(\);/);
+  assert.match(api, /createSession:\(\)=>request\('\/api\/sessions',\{method:'POST',body:'\{\}'\}\)/);
+});
+
+test('Mobile history opens from the same right side as its header trigger', async () => {
+  const styles = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/styles/mobile.css', import.meta.url), 'utf8');
+  assert.match(styles, /right:0;bottom:0;left:0;.*bottom-sheet/s);
+  assert.match(styles, /\.side-drawer\{position:absolute;top:0;right:0;bottom:0;/);
+  assert.match(styles, /transform:translateX\(28px\)/);
+});

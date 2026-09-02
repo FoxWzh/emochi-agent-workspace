@@ -1,0 +1,2 @@
+import {X} from 'lucide-react';
+export function BottomSheet({open,title,onClose,children,actions}){if(!open)return null;return <div className="sheet-layer" role="dialog" aria-modal="true" aria-label={title}><button className="sheet-scrim" aria-label={`关闭${title}`} onClick={onClose}/><section className="bottom-sheet"><div className="sheet-grabber"/><header><h2>{title}</h2><div>{actions}<button className="sheet-close" aria-label={`关闭${title}`} onClick={onClose}><X size={19}/></button></div></header><div className="sheet-content">{children}</div></section></div>}
