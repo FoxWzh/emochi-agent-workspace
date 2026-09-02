@@ -150,7 +150,7 @@ export default function App(){
   const [activeArtifact,setActiveArtifact]=useState(null);
   const [artifactBrowserOpen,setArtifactBrowserOpen]=useState(false);
   const [artifactBrowserExpanded,setArtifactBrowserExpanded]=useState(false);
-  const [artifactWidth,setArtifactWidth]=useState(360);
+  const [artifactWidth,setArtifactWidth]=useState(460);
   const [resizingArtifact,setResizingArtifact]=useState(false);
   const [renameTarget,setRenameTarget]=useState(null);
   const [renameValue,setRenameValue]=useState('');
@@ -204,7 +204,7 @@ export default function App(){
   useEffect(()=>()=>{for(const writer of typewritersRef.current.values())window.clearInterval(writer.timer)},[]);
   useEffect(()=>{
     if(!resizingArtifact)return;
-    const resize=event=>setArtifactWidth(Math.min(720,Math.max(320,window.innerWidth-event.clientX)));
+    const resize=event=>setArtifactWidth(Math.min(720,Math.max(380,window.innerWidth-event.clientX)));
     const stop=()=>setResizingArtifact(false);
     window.addEventListener('pointermove',resize);window.addEventListener('pointerup',stop);window.addEventListener('pointercancel',stop);
     return()=>{window.removeEventListener('pointermove',resize);window.removeEventListener('pointerup',stop);window.removeEventListener('pointercancel',stop);};
