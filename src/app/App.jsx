@@ -190,7 +190,10 @@ export default function App(){
     setState(next);
     setActiveId(current=>{
       const preferred=preferredSessionId&&byId(next.sessions,preferredSessionId)?.id;
-      return preferred||current&&byId(next.sessions,current)?.id||next.sessions[0]?.id||null;
+      // Never fall back to the newest shared Session: on first load that would
+      // drop every client into the same conversation. Stay on the welcome
+      // state until this client picks or creates one.
+      return preferred||current&&byId(next.sessions,current)?.id||null;
     });
     return next;
   };

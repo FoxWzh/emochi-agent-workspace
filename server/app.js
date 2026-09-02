@@ -197,12 +197,13 @@ export function createServer(){return http.createServer(async(req,res)=>{try{
     image_gateway:process.env.IMAGE_GATEWAY_BASE_URL&&process.env.IMAGE_GATEWAY_API_KEY?'configured':'missing_configuration',
   });
   if(req.method==='GET'&&url.pathname==='/api/state'){
-    // A Session is the primary canvas, not an optional empty-state action.
-    // Ensure exactly one blank conversation exists on first load; the New
-    // button still reuses that blank record instead of accumulating extras.
+    // Reading state must not manufacture a Session. The workspace is shared by
+    // every connected client, so an auto-created blank record would become the
+    // implicit "current conversation" for all of them at once and their turns
+    // would land in the same Session. Each client creates its own via
+    // POST /api/sessions when the user actually starts a conversation.
     await transact(state=>{
-      if(!(state.sessions||[]).length)state.sessions.push(makeSession());
-      for(const session of state.sessions){ensureResourceGuide(state,session);consolidateImageLibrary(state,session);}
+      for(const session of state.sessions||[]){ensureResourceGuide(state,session);consolidateImageLibrary(state,session);}
     });
     return json(res,200,{...(await publicState()),running_session_ids:[...runningSessions],image_tasks:[...imageTasks.values()].map(({id,session_id,turn_id,after_message_id,status,title,purpose,count,artifacts,error,created_at,updated_at})=>({id,session_id,turn_id,after_message_id,status,title,purpose,count,artifacts,error,created_at,updated_at}))});
   }
