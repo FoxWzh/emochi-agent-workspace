@@ -150,7 +150,7 @@ export default function App(){
   const [activeArtifact,setActiveArtifact]=useState(null);
   const [artifactBrowserOpen,setArtifactBrowserOpen]=useState(false);
   const [artifactBrowserExpanded,setArtifactBrowserExpanded]=useState(false);
-  const [artifactWidth,setArtifactWidth]=useState(360);
+  const [artifactWidth,setArtifactWidth]=useState(460);
   const [resizingArtifact,setResizingArtifact]=useState(false);
   const [renameTarget,setRenameTarget]=useState(null);
   const [renameValue,setRenameValue]=useState('');
@@ -204,7 +204,7 @@ export default function App(){
   useEffect(()=>()=>{for(const writer of typewritersRef.current.values())window.clearInterval(writer.timer)},[]);
   useEffect(()=>{
     if(!resizingArtifact)return;
-    const resize=event=>setArtifactWidth(Math.min(720,Math.max(320,window.innerWidth-event.clientX)));
+    const resize=event=>setArtifactWidth(Math.min(720,Math.max(380,window.innerWidth-event.clientX)));
     const stop=()=>setResizingArtifact(false);
     window.addEventListener('pointermove',resize);window.addEventListener('pointerup',stop);window.addEventListener('pointercancel',stop);
     return()=>{window.removeEventListener('pointermove',resize);window.removeEventListener('pointerup',stop);window.removeEventListener('pointercancel',stop);};
@@ -338,9 +338,10 @@ export default function App(){
         bots:current.bots.some(item=>item.id===bot.id)?current.bots.map(item=>item.id===bot.id?{...item,...bot,basic:{...(item.basic||{}),...(bot.basic||{})},advanced:{...(item.advanced||{}),...(bot.advanced||{})}}:item):[bot,...current.bots],
         sessions:current.sessions.map(session=>session.id===sessionId&&event.payload.work_object?{...session,workObjectId:event.payload.work_object}:session),
       }));
-      // Search/update/create resolved a concrete Bot. Fill the composer and make
-      // its three editable business pages immediately available in the right rail.
-      if(event.payload.work_object)void openBotWorkspace(sessionId,bot).catch(error=>setErrorBySession(current=>({...current,[sessionId]:error.message})));
+      // All concrete Bot events fill the composer. Creation is the only event
+      // that should proactively navigate the user into the right-side editor;
+      // search/update must not interrupt an already-open resource view.
+      if(event.payload.work_object)void openBotWorkspace(sessionId,bot,{openEditor:Boolean(event.payload.created)}).catch(error=>setErrorBySession(current=>({...current,[sessionId]:error.message})));
     }
     if(event.type==='workspace')setState(current=>({...current,sessions:current.sessions.map(session=>session.id===sessionId?{...session,workObjectId:event.payload?.work_object||null}:session)}));
     if(event.type==='artifact'&&event.payload.artifact){const artifact=event.payload.artifact;setArtifactEventsBySession(current=>({...current,[sessionId]:{...(current[sessionId]||{}),[artifact.id]:artifact}}));}
