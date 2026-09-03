@@ -40,7 +40,7 @@ The configured endpoint **must be Claude Agent SDK-compatible** and support the 
 
 ```text
 KAON_GATEWAY_BASE_URL  # SDK-compatible Anthropic base URL
-KAON_GATEWAY_MODEL     # falls back to deepseek-v4-flash if omitted
+KAON_GATEWAY_MODEL     # falls back to the Claude Code `sonnet` alias if omitted
 KAON_GATEWAY_API_KEY   # secret; never commit
 ```
 
