@@ -648,3 +648,24 @@ test('Mobile shows the persisted user message as soon as the SSE response opens'
   assert.match(client, /\},\(\)=>void reload\(\)\);/);
   assert.match(api, /onOpen\?\.\(\);/);
 });
+
+test('Mobile resource sheet supports opening images and saving text artifacts through the existing API', async () => {
+  const client = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/main.jsx', import.meta.url), 'utf8');
+  const resourceSheet = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/components/ResourceSheet.jsx', import.meta.url), 'utf8');
+  const api = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/lib/api.js', import.meta.url), 'utf8');
+  assert.match(client, /<ResourceSheet open=\{resourcesOpen\}/);
+  assert.match(client, /onUpdate=\{updateArtifact\}/);
+  assert.match(resourceSheet, /imagesFor\(artifact\)/);
+  assert.match(resourceSheet, /onUpdate\(artifact\.id,\{data:value\}\)/);
+  assert.match(api, /updateArtifact:\(id,patch\)=>request\(`\/api\/artifacts\/\$\{id\}`/);
+});
+
+test('Mobile composer exposes the server cancellation endpoint while a turn is running', async () => {
+  const client = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/main.jsx', import.meta.url), 'utf8');
+  const composer = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/components/Composer.jsx', import.meta.url), 'utf8');
+  const api = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/lib/api.js', import.meta.url), 'utf8');
+  assert.match(client, /const stop=async\(\)=>\{if\(!session\|\|!busy\)return;try\{await api\.cancelTurn\(session\.id\)/);
+  assert.match(client, /onStop=\{stop\}/);
+  assert.match(composer, /onClick=\{busy\?onStop:onSend\}/);
+  assert.match(api, /cancelTurn:id=>request\(`\/api\/sessions\/\$\{id\}\/cancel`/);
+});

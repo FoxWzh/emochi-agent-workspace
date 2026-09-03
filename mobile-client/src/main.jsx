@@ -3,7 +3,7 @@ import {useEffect,useMemo,useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import {api,streamMessage} from './lib/api';
 import {ConversationHistory} from './components/ConversationHistory';
-import {BottomSheet} from './components/BottomSheet';
+import {ResourceSheet} from './components/ResourceSheet';
 import {BotSwitcher} from './components/BotSwitcher';
 import {Composer} from './components/Composer';
 import {MessageFeed} from './components/MessageFeed';
@@ -45,6 +45,8 @@ function App(){
     }
     return created;
   };
+  const updateArtifact=async(id,patch)=>{try{await api.updateArtifact(id,patch);await reload()}catch(cause){setError(cause.message)}};
+  const stop=async()=>{if(!session||!busy)return;try{await api.cancelTurn(session.id)}catch(cause){if(cause.message!=='session_not_running')setError(cause.message)}};
   const deleteSession=async id=>{try{await api.deleteSession(id);if(id===session?.id)startNewConversation();await reload()}catch(cause){setError(cause.message)}};
   const respondInteraction=async(item,option)=>{if(!session||busy)return;try{await api.resolveInteraction(session.id,item.id,{option_id:option.id,title:option.title,description:option.description||''});await reload();const text=item.type==='confirmation'?`我确认：${option.title}${option.description?`（${option.description}）`:''}`:`我选择「${option.title}」${option.description?`：${option.description}`:''}`;setText('');void send(text)}catch(cause){setError(cause.message)}};
   const selectBot=async id=>{try{
@@ -88,10 +90,10 @@ function App(){
     </header>
     {error&&<p className="runtime-error">{error}</p>}
     <section className={`thread ${session?.messages?.length?'has-messages':''}`}>{session?.messages?.length||streamingText||session?.interactions?.length?<MessageFeed messages={session?.messages||[]} streamingText={streamingText} interactions={session?.interactions||[]} onRespond={respondInteraction} busy={busy}/>:<div className="welcome"><i>✦</i><span>EMOCHI CREATIVE AGENT</span><h1>{session?session.title||'继续创作':'从一个念头，开始创造'}</h1><p>{session?'继续输入内容，或通过左上角切换正在编辑的 Bot。':'输入你想创作、修改或探索的内容；首条消息发送后会创建一段新的对话。'}</p></div>}</section>
-    <Composer value={text} onChange={setText} file={file} onPick={pickFile} onRemove={()=>setFile(null)} onSend={send} busy={busy}/>
+    <Composer value={text} onChange={setText} file={file} onPick={pickFile} onRemove={()=>setFile(null)} onSend={send} onStop={stop} busy={busy}/>
     <ConversationHistory open={historyOpen} onClose={()=>setHistoryOpen(false)} sessions={state.sessions||[]} currentId={session?.id} onSelect={selectSession} onCreate={startNewConversation} onDelete={deleteSession}/>
     <BotSwitcher open={botOpen} onClose={()=>setBotOpen(false)} bots={state.bots||[]} currentId={selectedBotId} onSelect={selectBot}/>
-    <BottomSheet open={resourcesOpen} title="资源区" onClose={()=>setResourcesOpen(false)}><div className="resource-list">{!session?<p>新对话还没有资源。发送第一条消息后，这里会显示该对话的创作成果。</p>:artifacts.length?artifacts.map(item=><article key={item.id}><i>▧</i><span><b>{item.title}</b><small>{item.type==='image_library'?'图片资源':'文本 · 可继续查看和编辑'}</small></span></article>):<p>还没有资源。对话中生成的图片、文本和 Bot 内容会出现在这里。</p>}</div></BottomSheet>
+    <ResourceSheet open={resourcesOpen} onClose={()=>setResourcesOpen(false)} artifacts={artifacts} onUpdate={updateArtifact}/>
   </main>;
 }
 createRoot(document.getElementById('root')).render(<App/>);
