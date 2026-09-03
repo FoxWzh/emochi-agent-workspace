@@ -597,3 +597,87 @@ test('two clients loading the workspace do not share an implicit Session', async
     assert.equal((await call('/api/state')).sessions.length, 2);
   } finally { await new Promise((resolve) => server.close(resolve)); delete process.env.EMOCHI_DATA_DIR; await rm(dir, { recursive: true, force: true }); }
 });
+
+test('Mobile client keeps the blank new-conversation state local and creates a fresh Session only on first send', async () => {
+  const client = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/main.jsx', import.meta.url), 'utf8');
+  const api = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/lib/api.js', import.meta.url), 'utf8');
+  assert.match(client, /const session=state\?\.sessions\?\.find\(item=>item\.id===activeSessionId\)\|\|null/);
+  assert.doesNotMatch(client, /sessions\?\.\[0\]/);
+  assert.match(client, /const startNewConversation=\(\)=>\{setActiveSessionId\(null\)/);
+  assert.match(client, /const ensureSession=async\(\)=>\{\s*if\(session\)return session;\s*const \{session:created\}=await api\.createSession\(\)/);
+  assert.match(client, /const target=await ensureSession\(\);/);
+  assert.match(api, /createSession:\(\)=>request\('\/api\/sessions',\{method:'POST',body:'\{\}'\}\)/);
+});
+
+test('Mobile client renders persisted messages, streams deltas, and resolves pending interactions', async () => {
+  const client = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/main.jsx', import.meta.url), 'utf8');
+  const feed = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/components/MessageFeed.jsx', import.meta.url), 'utf8');
+  const api = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/lib/api.js', import.meta.url), 'utf8');
+  assert.match(client, /<MessageFeed messages=\{session\?\.messages\|\|\[\]\}/);
+  assert.match(client, /if\(event\.type==='delta'\)setStreamingText/);
+  assert.match(client, /api\.resolveInteraction\(session\.id,item\.id/);
+  assert.match(client, /void send\(text\)/);
+  assert.match(feed, /item\.status==='pending'/);
+  assert.match(feed, /message\.attachments\?\.length/);
+  assert.match(api, /resolveInteraction:/);
+});
+
+test('Mobile history opens from the same right side as its header trigger', async () => {
+  const styles = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/styles/mobile.css', import.meta.url), 'utf8');
+  assert.match(styles, /\.side-drawer\{position:absolute;top:0;right:0;bottom:0;/);
+  assert.match(styles, /transform:translateX\(28px\)/);
+});
+
+test('Mobile composer click sends the draft text rather than treating the click event as message content', async () => {
+  const client = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/main.jsx', import.meta.url), 'utf8');
+  assert.match(client, /const outgoing=\(typeof forcedText==='string'\?forcedText:text\)\.trim\(\);/);
+  assert.doesNotMatch(client, /const outgoing=\(forcedText\?\?text\)\.trim\(\);/);
+});
+
+test('Mobile Bot selection does not create an empty Session before the first message', async () => {
+  const client = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/main.jsx', import.meta.url), 'utf8');
+  assert.match(client, /const \[draftBotId,setDraftBotId\]=useState\(null\);/);
+  assert.match(client, /if\(draftBotId\)\{\s*await api\.setWorkObject\(created\.id,draftBotId\);\s*await reload\(\);\s*\}/);
+  assert.match(client, /if\(session\)\{await api\.setWorkObject\(session\.id,id\);await reload\(\)\}/);
+  assert.doesNotMatch(client, /const selectBot=async id=>\{try\{const target=await ensureSession\(\)/);
+});
+
+test('Mobile shows the persisted user message as soon as the SSE response opens', async () => {
+  const client = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/main.jsx', import.meta.url), 'utf8');
+  const api = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/lib/api.js', import.meta.url), 'utf8');
+  assert.match(client, /\},\(\)=>void reload\(\)\);/);
+  assert.match(api, /onOpen\?\.\(\);/);
+});
+
+test('Mobile resource sheet supports opening images and saving text artifacts through the existing API', async () => {
+  const client = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/main.jsx', import.meta.url), 'utf8');
+  const resourceSheet = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/components/ResourceSheet.jsx', import.meta.url), 'utf8');
+  const api = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/lib/api.js', import.meta.url), 'utf8');
+  assert.match(client, /<ResourceSheet open=\{resourcesOpen\}/);
+  assert.match(client, /onUpdate=\{updateArtifact\}/);
+  assert.match(resourceSheet, /imagesFor\(artifact\)/);
+  assert.match(resourceSheet, /onUpdate\(artifact\.id,\{data:value\}\)/);
+  assert.match(api, /updateArtifact:\(id,patch\)=>request\(`\/api\/artifacts\/\$\{id\}`/);
+});
+
+test('Mobile composer exposes the server cancellation endpoint while a turn is running', async () => {
+  const client = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/main.jsx', import.meta.url), 'utf8');
+  const composer = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/components/Composer.jsx', import.meta.url), 'utf8');
+  const api = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/lib/api.js', import.meta.url), 'utf8');
+  assert.match(client, /const stop=async\(\)=>\{if\(!session\|\|!busy\)return;try\{await api\.cancelTurn\(session\.id\)/);
+  assert.match(client, /onStop=\{stop\}/);
+  assert.match(composer, /onClick=\{busy\?onStop:onSend\}/);
+  assert.match(api, /cancelTurn:id=>request\(`\/api\/sessions\/\$\{id\}\/cancel`/);
+});
+
+test('Mobile resource area exposes the full Bot edit form and saves canonical Bot fields', async () => {
+  const sheet = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/components/ResourceSheet.jsx', import.meta.url), 'utf8');
+  const api = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/lib/api.js', import.meta.url), 'utf8');
+  assert.match(sheet, /<BotEditor bot=\{bot\}/);
+  for (const label of ['基础信息', '内容设定', '高级设置', '名称', '简介', '欢迎语', '标签', 'Voice', '示例对话']) assert.match(sheet, new RegExp(label));
+  assert.match(sheet, /area:'basic',operation:'replace'/);
+  assert.match(sheet, /area:'content',operation:'replace'/);
+  assert.match(sheet, /area:'advanced',operation:'replace'/);
+  assert.match(sheet, /api\.uploadImage\(/);
+  assert.match(api, /updateBot:\(id,changes\)=>request\(`\/api\/bots\/\$\{id\}`/);
+});

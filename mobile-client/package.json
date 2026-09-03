@@ -1,0 +1,1 @@
+{"name":"emochi-mobile-client","version":"0.1.0","private":true,"type":"module","scripts":{"dev":"vite","build":"vite build"},"dependencies":{"@vitejs/plugin-react":"^5.0.0","lucide-react":"^0.468.0","react":"^19.0.0","react-dom":"^19.0.0","vite":"^7.0.0"}}
