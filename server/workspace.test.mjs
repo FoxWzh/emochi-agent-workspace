@@ -627,3 +627,24 @@ test('Mobile history opens from the same right side as its header trigger', asyn
   assert.match(styles, /\.side-drawer\{position:absolute;top:0;right:0;bottom:0;/);
   assert.match(styles, /transform:translateX\(28px\)/);
 });
+
+test('Mobile composer click sends the draft text rather than treating the click event as message content', async () => {
+  const client = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/main.jsx', import.meta.url), 'utf8');
+  assert.match(client, /const outgoing=\(typeof forcedText==='string'\?forcedText:text\)\.trim\(\);/);
+  assert.doesNotMatch(client, /const outgoing=\(forcedText\?\?text\)\.trim\(\);/);
+});
+
+test('Mobile Bot selection does not create an empty Session before the first message', async () => {
+  const client = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/main.jsx', import.meta.url), 'utf8');
+  assert.match(client, /const \[draftBotId,setDraftBotId\]=useState\(null\);/);
+  assert.match(client, /if\(draftBotId\)\{\s*await api\.setWorkObject\(created\.id,draftBotId\);\s*await reload\(\);\s*\}/);
+  assert.match(client, /if\(session\)\{await api\.setWorkObject\(session\.id,id\);await reload\(\)\}/);
+  assert.doesNotMatch(client, /const selectBot=async id=>\{try\{const target=await ensureSession\(\)/);
+});
+
+test('Mobile shows the persisted user message as soon as the SSE response opens', async () => {
+  const client = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/main.jsx', import.meta.url), 'utf8');
+  const api = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/lib/api.js', import.meta.url), 'utf8');
+  assert.match(client, /\},\(\)=>void reload\(\)\);/);
+  assert.match(api, /onOpen\?\.\(\);/);
+});

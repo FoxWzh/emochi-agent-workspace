@@ -14,6 +14,8 @@ const botName=bot=>bot?.basic?.name||'自由探索';
 function App(){
   const [state,setState]=useState(null);
   const [activeSessionId,setActiveSessionId]=useState(null);
+  // A Bot can be picked before the first message without creating an empty server Session.
+  const [draftBotId,setDraftBotId]=useState(null);
   const [botOpen,setBotOpen]=useState(false);
   const [historyOpen,setHistoryOpen]=useState(false);
   const [resourcesOpen,setResourcesOpen]=useState(false);
@@ -23,27 +25,40 @@ function App(){
   const [streamingText,setStreamingText]=useState('');
   const [error,setError]=useState('');
   const session=state?.sessions?.find(item=>item.id===activeSessionId)||null;
-  const bot=useMemo(()=>state?.bots?.find(item=>item.id===session?.workObjectId),[state,session?.workObjectId]);
+  const selectedBotId=session?.workObjectId??draftBotId;
+  const bot=useMemo(()=>state?.bots?.find(item=>item.id===selectedBotId),[state,selectedBotId]);
   const reload=async()=>{try{setState(await api.state());setError('')}catch(cause){setError(cause.message)}};
   useEffect(()=>{void reload()},[]);
 
-  const selectSession=id=>{setActiveSessionId(id);setHistoryOpen(false);setText('');setFile(null);setStreamingText('')};
+  const selectSession=id=>{const next=state?.sessions?.find(item=>item.id===id);setActiveSessionId(id);setDraftBotId(next?.workObjectId||null);setHistoryOpen(false);setText('');setFile(null);setStreamingText('')};
   // "New conversation" intentionally remains local until the user sends their
   // first message; this avoids shared empty Sessions under concurrent visitors.
-  const startNewConversation=()=>{setActiveSessionId(null);setHistoryOpen(false);setText('');setFile(null);setStreamingText('');setBotOpen(false);setResourcesOpen(false)};
+  const startNewConversation=()=>{setActiveSessionId(null);setDraftBotId(null);setHistoryOpen(false);setText('');setFile(null);setStreamingText('');setBotOpen(false);setResourcesOpen(false)};
   const ensureSession=async()=>{
     if(session)return session;
     const {session:created}=await api.createSession();
     setActiveSessionId(created.id);
     await reload();
+    if(draftBotId){
+      await api.setWorkObject(created.id,draftBotId);
+      await reload();
+    }
     return created;
   };
   const deleteSession=async id=>{try{await api.deleteSession(id);if(id===session?.id)startNewConversation();await reload()}catch(cause){setError(cause.message)}};
   const respondInteraction=async(item,option)=>{if(!session||busy)return;try{await api.resolveInteraction(session.id,item.id,{option_id:option.id,title:option.title,description:option.description||''});await reload();const text=item.type==='confirmation'?`我确认：${option.title}${option.description?`（${option.description}）`:''}`:`我选择「${option.title}」${option.description?`：${option.description}`:''}`;setText('');void send(text)}catch(cause){setError(cause.message)}};
-  const selectBot=async id=>{try{const target=await ensureSession();await api.setWorkObject(target.id,id);await reload();setBotOpen(false)}catch(cause){setError(cause.message)}};
+  const selectBot=async id=>{try{
+    // Do not create an empty Session merely to choose a Bot. Persist the choice
+    // only when there is an active conversation; otherwise retain it locally.
+    setDraftBotId(id);
+    if(session){await api.setWorkObject(session.id,id);await reload()}
+    setBotOpen(false);
+  }catch(cause){setError(cause.message)}};
   const pickFile=selected=>{if(selected)setFile({file:selected,name:selected.name,preview:URL.createObjectURL(selected)})};
   const send=async forcedText=>{
-    const outgoing=(forcedText??text).trim();
+    // React passes a MouseEvent to an onClick handler. Only a string is an
+    // explicit forced message; otherwise send the composer state.
+    const outgoing=(typeof forcedText==='string'?forcedText:text).trim();
     if(busy||(!outgoing&&!file))return;
     setBusy(true);setError('');
     try{
@@ -60,7 +75,7 @@ function App(){
         if(event.type==='delta')setStreamingText(current=>current+String(event.payload?.text||''));
         if(event.type==='done')void reload();
         if(event.type==='error')setError(event.payload?.message||'生成失败，请重试。');
-      });
+      },()=>void reload());
       setStreamingText('');await reload();
     }catch(cause){setError(cause.message)}finally{setBusy(false)}
   };
@@ -75,7 +90,7 @@ function App(){
     <section className={`thread ${session?.messages?.length?'has-messages':''}`}>{session?.messages?.length||streamingText||session?.interactions?.length?<MessageFeed messages={session?.messages||[]} streamingText={streamingText} interactions={session?.interactions||[]} onRespond={respondInteraction} busy={busy}/>:<div className="welcome"><i>✦</i><span>EMOCHI CREATIVE AGENT</span><h1>{session?session.title||'继续创作':'从一个念头，开始创造'}</h1><p>{session?'继续输入内容，或通过左上角切换正在编辑的 Bot。':'输入你想创作、修改或探索的内容；首条消息发送后会创建一段新的对话。'}</p></div>}</section>
     <Composer value={text} onChange={setText} file={file} onPick={pickFile} onRemove={()=>setFile(null)} onSend={send} busy={busy}/>
     <ConversationHistory open={historyOpen} onClose={()=>setHistoryOpen(false)} sessions={state.sessions||[]} currentId={session?.id} onSelect={selectSession} onCreate={startNewConversation} onDelete={deleteSession}/>
-    <BotSwitcher open={botOpen} onClose={()=>setBotOpen(false)} bots={state.bots||[]} currentId={session?.workObjectId} onSelect={selectBot}/>
+    <BotSwitcher open={botOpen} onClose={()=>setBotOpen(false)} bots={state.bots||[]} currentId={selectedBotId} onSelect={selectBot}/>
     <BottomSheet open={resourcesOpen} title="资源区" onClose={()=>setResourcesOpen(false)}><div className="resource-list">{!session?<p>新对话还没有资源。发送第一条消息后，这里会显示该对话的创作成果。</p>:artifacts.length?artifacts.map(item=><article key={item.id}><i>▧</i><span><b>{item.title}</b><small>{item.type==='image_library'?'图片资源':'文本 · 可继续查看和编辑'}</small></span></article>):<p>还没有资源。对话中生成的图片、文本和 Bot 内容会出现在这里。</p>}</div></BottomSheet>
   </main>;
 }
