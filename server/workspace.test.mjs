@@ -669,3 +669,15 @@ test('Mobile composer exposes the server cancellation endpoint while a turn is r
   assert.match(composer, /onClick=\{busy\?onStop:onSend\}/);
   assert.match(api, /cancelTurn:id=>request\(`\/api\/sessions\/\$\{id\}\/cancel`/);
 });
+
+test('Mobile resource area exposes the full Bot edit form and saves canonical Bot fields', async () => {
+  const sheet = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/components/ResourceSheet.jsx', import.meta.url), 'utf8');
+  const api = await (await import('node:fs/promises')).readFile(new URL('../mobile-client/src/lib/api.js', import.meta.url), 'utf8');
+  assert.match(sheet, /<BotEditor bot=\{bot\}/);
+  for (const label of ['基础信息', '内容设定', '高级设置', '名称', '简介', '欢迎语', '标签', 'Voice', '示例对话']) assert.match(sheet, new RegExp(label));
+  assert.match(sheet, /area:'basic',operation:'replace'/);
+  assert.match(sheet, /area:'content',operation:'replace'/);
+  assert.match(sheet, /area:'advanced',operation:'replace'/);
+  assert.match(sheet, /api\.uploadImage\(/);
+  assert.match(api, /updateBot:\(id,changes\)=>request\(`\/api\/bots\/\$\{id\}`/);
+});

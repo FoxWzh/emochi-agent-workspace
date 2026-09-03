@@ -45,6 +45,7 @@ function App(){
     }
     return created;
   };
+  const updateBot=updated=>setState(current=>({...current,bots:current.bots.map(item=>item.id===updated.id?updated:item)}));
   const updateArtifact=async(id,patch)=>{try{await api.updateArtifact(id,patch);await reload()}catch(cause){setError(cause.message)}};
   const stop=async()=>{if(!session||!busy)return;try{await api.cancelTurn(session.id)}catch(cause){if(cause.message!=='session_not_running')setError(cause.message)}};
   const deleteSession=async id=>{try{await api.deleteSession(id);if(id===session?.id)startNewConversation();await reload()}catch(cause){setError(cause.message)}};
@@ -93,7 +94,7 @@ function App(){
     <Composer value={text} onChange={setText} file={file} onPick={pickFile} onRemove={()=>setFile(null)} onSend={send} onStop={stop} busy={busy}/>
     <ConversationHistory open={historyOpen} onClose={()=>setHistoryOpen(false)} sessions={state.sessions||[]} currentId={session?.id} onSelect={selectSession} onCreate={startNewConversation} onDelete={deleteSession}/>
     <BotSwitcher open={botOpen} onClose={()=>setBotOpen(false)} bots={state.bots||[]} currentId={selectedBotId} onSelect={selectBot}/>
-    <ResourceSheet open={resourcesOpen} onClose={()=>setResourcesOpen(false)} artifacts={artifacts} onUpdate={updateArtifact}/>
+    <ResourceSheet open={resourcesOpen} onClose={()=>setResourcesOpen(false)} artifacts={artifacts} onUpdate={updateArtifact} bot={bot} onBotUpdated={updateBot}/>
   </main>;
 }
 createRoot(document.getElementById('root')).render(<App/>);
